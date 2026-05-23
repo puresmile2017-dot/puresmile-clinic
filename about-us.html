@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | أنقى ابتسامة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(10,38,71,0.85), rgba(10,38,71,0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop');
+            height: 45vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-top: 65px;
+        }
+        .vision-section { padding: 80px 0; }
+        .v-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .v-card { background: white; padding: 40px; border-radius: 20px; border-top: 6px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
+        .v-card:hover { transform: translateY(-10px); }
+        .v-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+        @media (max-width: 768px) { .v-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        </header>
+
+    <section class="about-hero">
+        <div class="container">
+            <h1 style="font-size: 3.5rem;">عن أنقى ابتسامة</h1>
+            <p style="color: var(--accent); font-size: 1.5rem; font-weight: bold;">رواد طب الأسنان في منطقة جازان</p>
+        </div>
+    </section>
+
+    <section class="container vision-section">
+        <div class="section-title-wrapper">
+            <div class="main-title-box"><h2>قصتنا ورؤيتنا</h2></div>
+        </div>
+        <p style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto; color: #555; line-height: 2;">
+            بدأنا كحلم بسيط لتوفير رعاية طبية تليق بأهالي صبيا، واليوم نحن فخورون بكوننا الوجهة الأولى لكل من يبحث عن الجودة والأمان. نجمع بين الخبرة الطبية الطويلة وأحدث التقنيات العالمية لنرسم لك ابتسامة تدوم.
+        </p>
+        
+        <div class="v-grid">
+            <div class="v-card">
+                <i class="fas fa-eye"></i>
+                <h3>رؤيتنا</h3>
+                <p>أن نصبح المعيار الذهبي لطب وتجميل الأسنان في المملكة، عبر الابتكار المستمر والتميز في خدمة المراجعين.</p>
+            </div>
+            <div class="v-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>رسالتنا</h3>
+                <p>تقديم حلول علاجية متكاملة بأيدي أمهر الاستشاريين، مع الالتزام التام بأعلى معايير النظافة والتعقيم العالمية.</p>
+            </div>
+        </div>
+      </section>
+	 <div class="footer-actions">
+    <a href="index.html" class="custom-button">العودة للقائمة الرئيسية</a>
+</div>
+</body>
+</html>

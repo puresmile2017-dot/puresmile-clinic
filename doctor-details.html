@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الطبيب | أنقى ابتسامة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a2647;
+            --accent: #b19470;
+            --bg-soft: #f9fbfd;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-soft);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .dr-profile-header {
+            background: var(--primary);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 10% 30%, rgba(177, 148, 112, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 90% 70%, rgba(10, 38, 71, 0.2) 0%, transparent 30%);
+        }
+
+        .profile-main-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-main-img:hover {
+            transform: scale(1.05);
+        }
+
+        .dr-profile-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .specialty {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .bio {
+            max-width: 750px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 16px;
+            line-height: 1.8;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .bio h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .doc-whatsapp-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #fdf6e9, #e5cf9a);
+            color: var(--primary);
+            padding: 12px 26px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            border: 1.5px solid var(--accent);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .doc-whatsapp-box:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(177, 148, 112, 0.3);
+        }
+
+        .cases-gallery {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
+        /* تعديل الشبكة لتصبح حالة واحدة في كل صف مع تقليل العرض لتكون مركزة وواضحة */
+        .cases-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 650px;
+            margin: 20px auto 0 auto;
+        }
+
+        .case-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            border-top: 5px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(10, 38, 71, 0.08);
+            border-top-color: var(--accent);
+        }
+
+        .case-item h4 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+
+        /* تنسيق الصور لتكون مستطيلة وكبيرة، واحدة تلو الأخرى بشكل عمودي */
+        .img-box {
+            margin-bottom: 20px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .case-images-vertical img {
+            width: 100%;
+            height: 280px; /* مستطيل كبير وواضح */
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+        }
+
+        .case-images-vertical p {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-back-home:hover {
+            background-color: var(--accent);
+            color: var(--primary) !important;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="dr-profile-header">
+        <div class="container">
+            <img id="dr-image" src="" alt="صورة الطبيب" class="profile-main-img">
+            <h1 id="dr-name"></h1>
+            <p id="dr-specialty" class="specialty"></p>
+            <div class="bio">
+                <h3>نبذة تعريفية</h3>
+                <p id="dr-bio"></p>
+            </div>
+            <a href="https://wa.me/message/3Z7JYCW6QBGKG1" target="_blank" class="doc-whatsapp-box">
+                <i class="fab fa-whatsapp"></i> تواصل مع العيادة لحجز موعد
+            </a>
+        </div>
+    </section>
+
+    <section class="cases-gallery container">
+        <h2 class="section-title">نماذج من الحالات (قبل وبعد)</h2>
+        <div id="cases-container" class="cases-grid"></div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html" class="btn-back-home"><i class="fas fa-home"></i> العودة للرئيسية</a>
+        </div>
+    </section>
+
+    <script>
+        // هنا يتم تخصيص الصور لكل طبيب بشكل مختلف
+        // في حال أردت إضافة صور جديدة ضعها في مجلد img باسم: doc[رقم الطبيب]_case[1 أو 2 أو 3]_before.jpg وهكذا
+        const doctorsCases = {
+            1: [
+                { title: "الحالة الأولى (د. عصام)", before: "img/doc1_c1_before.jpg", after: "img/doc1_c1_after.jpg" },
+                { title: "الحالة الثانية (د. عصام)", before: "img/doc1_c2_before.jpg", after: "img/doc1_c2_after.jpg" }
+            ],
+            2: [
+                { title: "الحالة الأولى (د. روان)", before: "img/doc2_c1_before.jpg", after: "img/doc2_c1_after.jpg" }
+            ],
+            3: [
+                { title: "الحالة الأولى (د. رشيكا)", before: "img/doc3_c1_before.jpg", after: "img/doc3_c1_after.jpg" },
+                { title: "الحالة الثانية (د. رشيكا)", before: "img/doc3_c2_before.jpg", after: "img/doc3_c2_after.jpg" }
+            ],
+            4: [
+                { title: "الحالة الأولى (د. زرعة)", before: "img/doc4_c1_before.jpg", after: "img/doc4_c1_after.jpg" }
+            ],
+            5: [
+                { title: "الحالة الأولى (د. سارة)", before: "img/doc5_c1_before.jpg", after: "img/doc5_c1_after.jpg" }
+            ],
+            6: [
+                { title: "الحالة الأولى (د. امل)", before: "img/doc6_c1_before.jpg", after: "img/doc6_c1_after.jpg" }
+            ],
+            7: [
+                { title: "الحالة الأولى (د. اثير)", before: "img/doc7_c1_before.jpg", after: "img/doc7_c1_after.jpg" }
+            ],
+            8: [
+                { title: "الحالة الأولى (د. المها)", before: "img/doc8_c1_before.jpg", after: "img/doc8_c1_after.jpg" }
+            ],
+            9: [
+                { title: "الحالة الأولى (د. حامد)", before: "img/doc9_c1_before.jpg", after: "img/doc9_c1_after.jpg" }
+            ]
+        };
+
+        const doctorsData = {
+            1: { 
+                name: "د. عصام الشميري", 
+                specialty: "أخصائي جراحة الوجه والفكين",
+                bio: "خبير رائد في جراحة الوجه والفكين بخبرة تمتد لأكثر من 20 عاماً. متخصص في العمليات الجراحية المعقدة، زراعة الأسنان المتقدمة، وعلاج إصابات الوجه والفكين.", 
+                img: "img/dr-essam.jpg"
+            },
+            2: { 
+                name: "د. روان دوش", 
+                specialty: "أخصائية تقويم الأسنان",
+                bio: "خبرة تزيد عن 10 سنوات في معالجة حالات تزاحم الأسنان وإطباق الفكين باستخدام أحدث أنواع التقويم الشفاف والمعدني.", 
+                img: "img/dr-rawan.jpg"
+            },
+            3: { 
+                name: "د. رشيكا ريدي", 
+                specialty: "أخصائية تقويم الأسنان",
+                bio: "أخصائية متمرسة في تقويم الأسنان، متميزة في وضع الخطط العلاجية المتكاملة للأطفال والبالغين للحصول على إطباق مثالي.", 
+                img: "img/dr-rashika.jpg"
+            },
+            4: { 
+                name: "د. زرعة دهاس", 
+                specialty: "استشارية علاج عصب وجذور الأسنان (البورد السعودي)",
+                bio: "متخصصة في علاج القنوات الجذرية المعقدة باستخدام الميكروسكوب لضمان أعلى دقة في الحفاظ على الأسنان الطبيعية.", 
+                img: "img/dr-zarah.jpg"
+            },
+            5: { 
+                name: "د. سارة صوري", 
+                specialty: "طبيبة أسنان عام", 
+                bio: "خبيرة في الحشوات التجميلية وتصميم الابتسامة الرقمية ورعاية صحة الفم الشاملة.", 
+                img: "img/dr-sarah.jpg"
+            },
+            6: { 
+                name: "د. امل العبسي", 
+                specialty: "طبيبة أسنان عام", 
+                bio: "تتميز بدقة عالية في تنفيذ التركيبات السنية وتقديم علاجات وقائية متطورة لكافة أفراد العائلة.", 
+                img: "img/dr-amal.jpg"
+            },
+            7: { 
+                name: "د. اثير خواجي", 
+                specialty: "طبيبة أسنان عام", 
+                bio: "متخصصة في التشخيص الدقيق وعلاجات اللثة وتبييض الأسنان بأحدث تقنيات الليزر.", 
+                img: "img/dr-atheer.jpg"
+            },
+            8: { 
+                name: "د. المها سادلي", 
+                specialty: "طبيبة أسنان عام", 
+                bio: "رعاية أسنان متكاملة مع التركيز على الجانب الجمالي والراحة النفسية للمراجع أثناء العلاج.", 
+                img: "img/dr-maha.jpg"
+            },
+            9: { 
+                name: "د. حامد ذباب", 
+                specialty: "طبيب أسنان عام", 
+                bio: "رعاية أسنان متكاملة مع التركيز على الجانب العلاجي العام والمتابعة الدورية للمراجعين.", 
+                img: "img/dr-hamid.jpg"
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const doctorId = urlParams.get('id');
+        const doc = doctorsData[doctorId];
+        const docCases = doctorsCases[doctorId] || [];
+
+        if (doc) {
+            document.getElementById('dr-name').innerText = doc.name;
+            document.getElementById('dr-specialty').innerText = doc.specialty;
+            document.getElementById('dr-bio').innerText = doc.bio;
+            document.getElementById('dr-image').src = doc.img;
+            
+            const container = document.getElementById('cases-container');
+            if (docCases.length > 0) {
+                docCases.forEach(c => {
+                    container.innerHTML += `
+                        <div class="case-item">
+                            <h4>${c.title}</h4>
+                            <div class="case-images-vertical">
+                                <div class="img-box">
+                                    <p><i class="fas fa-chevron-left" style="color:#b19470"></i> قبل</p>
+                                    <img src="${c.before}" alt="قبل" onerror="this.src='img/white-placeholder.jpg'; this.style.border='1px solid #ddd';">
+                                </div>
+                                <div class="img-box">
+                                    <p><i class="fas fa-chevron-right" style="color:#b19470"></i> بعد</p>
+                                    <img src="${c.after}" alt="بعد" onerror="this.src='img/white-placeholder.jpg'; this.style.border='1px solid #ddd';">
+                                </div>
+                            </div>
+                        </div>`;
+                });
+            } else {
+                container.innerHTML = "<p style='text-align: center; width: 100%; color: #666; background: white; padding: 20px; border-radius: 12px;'>لا توجد حالات مسجلة حالياً لهذا الطبيب.</p>";
+            }
+        } else {
+            document.body.innerHTML = "<h2 style='text-align:center; margin-top:100px; color:#0a2647;'>عذراً، لم يتم العثور على بيانات هذا الطبيب.</h2>";
+        }
+    </script>
+<a href="index.html" class="btn-back">
+            العودة للرئيسية
+            <i class="fas fa-arrow-left"></i>
+        </a>
+</body>
+</html>

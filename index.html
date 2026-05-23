@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHF0H39WBG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GHF0H39WBG');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنقى ابتسامة | لطب الأسنان</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- قسم الإحصائيات (العدادات) --- */
+        .stats-section {
+            padding: 60px 20px;
+            background-color: var(--bg-soft, #f9fbfd);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--white, #ffffff);
+            padding: 35px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            border-top: 5px solid var(--primary, #0a2647);
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(10, 38, 71, 0.08);
+            border-top-color: var(--accent, #b19470);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary, #0a2647);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent, #b19470);
+        }
+
+        /* --- تعديل قسم الأطباء --- */
+        .doctors-title-box {
+            text-align: center;
+            margin: 0 auto 40px auto;
+            background: linear-gradient(135deg, rgba(249, 251, 253, 0.9), rgba(229, 207, 154, 0.1));
+            padding: 24px 20px;
+            border-radius: 16px;
+            border: 2px solid var(--accent, #b19470);
+            box-shadow: 0 6px 20px rgba(177, 148, 112, 0.06);
+            max-width: 550px;
+        }
+
+        .doctors-title-box h2 {
+            color: var(--primary, #0a2647);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .doctors-title-box p {
+            color: var(--accent, #b19470);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        /* --- إصلاح شامل لقسم المقدمة (Hero) في الجوال --- */
+        @media (max-width: 768px) {
+            .hero-section-final {
+                min-height: 80vh;
+                padding: 40px 15px;
+            }
+
+            .hero-content-final {
+                text-align: center !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+            }
+
+            .hero-content-final h1 {
+                font-size: 2.1rem !important; /* حجم متناسق غير مقصوص */
+                line-height: 1.3 !important;
+                margin-bottom: 15px;
+            }
+
+            .hero-content-final p {
+                font-size: 1rem !important;
+                line-height: 1.5;
+                margin-bottom: 25px;
+            }
+
+            .btn-whatsapp-luxury {
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                width: auto !important;
+                max-width: 95% !important;
+                margin: 0 auto !important;
+                font-size: 0.95rem !important;
+            }
+
+            .doctors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+   <header class="header">
+    <nav class="navbar container">
+        <!-- 1. الشعار (Logo) -->
+        <div class="logo-container" onclick="window.location.href='index.html'">
+            <div class="logo-placeholder">
+                <img src="img/logo.png" alt="شعار" id="main-logo">
+            </div>
+            <div class="logo-text">أنقى <span>ابتسامة</span></div>
+        </div>
+
+        <!-- 2. القائمة الرئيسية (تظهر في الكمبيوتر وتتحول لمنسدلة في الجوال) -->
+        <ul class="nav-links" id="nav-links">
+           <li><a href="about-us.html">من نحن</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#doctors">أطباؤنا</a></li>
+            <li><a href="#reviews">تقييماتنا</a></li>
+			 <li><a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+
+        <!-- 3. أزرار الأكشن -->
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a href="https://wa.me/message/3Z7JYCW6QBGKG1" target="_blank" rel="noopener noreferrer" class="btn-reservation">
+                <i class="fab fa-whatsapp"></i> حجز موعد
+            </a>
+            
+            <!-- زر الجوال (الثلاث شرطات) -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</header>
+    <section id="home" class="hero-section-final">
+        <div class="hero-overlay-final"></div>
+        <div class="container hero-container-final">
+            <div class="hero-content-final">
+                <h1>نبتكر الابتسامة<br><span style="color:#b19470">التي تستحقها</span></h1>
+                <p> رعاية طبية تخصصية بمعايير عالمية في قلب صبيا. نعتني بأدق التفاصيل لنضمن لك راحة تامة ونتائج مذهلة.</p>
+                <a href="https://wa.me/message/3Z7JYCWSQRQKQ1" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-luxury">
+                    <i class="fab fa-whatsapp"></i> لتصل الينا بشكل اسرع راسنا واتس
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services container">
+        <div class="section-title">
+            <h2>خدماتنا المتميزة</h2>
+        </div>
+        <div class="services-grid">
+            <div class="s-card">
+                <i class="fas fa-tooth s-icon"></i>
+                <h3>زراعة الأسنان</h3>
+                <p>أحدث التقنيات لتعويض الأسنان المفقودة.</p>
+            </div>
+            <div class="s-card">
+                <i class="fas fa-magic s-icon"></i>
+                <h3>تجميل الأسنان</h3>
+                <p>عدسات الفينير وتبييض الأسنان بالليزر الحشوات التجميلية.</p>
+            </div>
+            <div class="s-card">
+                <i class="fas fa-teeth s-icon"></i>
+                <h3>تقويم الأسنان</h3>
+                <p>حلول التقويم الشفاف والمعدني للأطفال والكبار.</p>
+            </div>
+			 <div class="s-card">
+                <i class="fas fa-teeth s-icon"></i>
+			<h3>جراحة الأسنان</h3>
+                <p>خلع الأسنان العادي والجراحي وخلغ ضروس العقل المطمورة وقص اللثة بالليزر.</p>
+				</div>
+        </div>
+    </section>
+
+    <section id="doctors" class="doctors" style="padding: 80px 0;">
+        <div class="container">
+            
+            <div class="doctors-title-box">
+                <h2>طاقمنا الطبي</h2>
+                <p>نخبة من الأخصائيين في خدمتكم</p>
+            </div>
+            
+            <div class="doctors-grid">
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=1'">
+                    <img src="img/dr-essam.jpg" alt="د. عصام الشميري" class="dr-img">
+                    <h4>د. عصام الشميري</h4>
+                    <p>جراحة الوجه والفكين</p>
+                </div>
+				<div class="dr-card" onclick="window.location.href='doctor-details.html?id=4'">
+                    <img src="img/dr-zarah.jpg" alt="د. زرعة دهاس" class="dr-img">
+                    <h4>د. زرعة دهاس</h4>
+                    <p>استشارية علاج عصب</p>
+                </div>
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=2'">
+                    <img src="img/dr-rawan.jpg" alt="د. روان دوش" class="dr-img">
+                    <h4>د. روان دوش</h4>
+                    <p>أخصائية تقويم</p>
+                </div>
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=3'">
+                    <img src="img/dr-rashika.jpg" alt="د. رشيكا ريدي" class="dr-img">
+                    <h4>د. رشيكا ريدي</h4>
+                    <p>أخصائية تقويم</p>
+                </div>
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=9'">
+                    <img src="img/dr-hamid.jpg" alt="د. حامد ذباب" class="dr-img">
+                    <h4>د. حامد ذباب</h4>
+                    <p>طبيب أسنان عام</p>
+                </div>
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=5'">
+                    <img src="img/dr-sarah.jpg" alt="د. سارة صوري" class="dr-img">
+                    <h4>د. سارة صوري</h4>
+                    <p>طبيبة أسنان عام</p>
+                </div>
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=6'">
+                    <img src="img/dr-amal.jpg" alt="د. امل العبسي" class="dr-img">
+                    <h4>د. امل العبسي</h4>
+                    <p>طبيبة أسنان عام</p>
+                </div>
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=7'">
+                    <img src="img/dr-atheer.jpg" alt="د. اثير خواجي" class="dr-img">
+                    <h4>د. اثير خواجي</h4>
+                    <p>طبيبة أسنان عام</p>
+                </div>
+                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=8'">
+                    <img src="img/dr-maha.jpg" alt="د. المها سادلي" class="dr-img">
+                    <h4>د. المها سادلي</h4>
+                    <p>طبيبة أسنان عام</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="stat1" data-target="9454">0</div>
+                <div class="stat-label">عميل سعيد +</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number" id="stat2" data-target="9">0</div>
+                <div class="stat-label">سنوات من التميز +</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number" id="stat3" data-target="16450">0</div>
+                <div class="stat-label">زائر للموقع +</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews" style="padding: 80px 0; background: #f9fbfd;">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: #0a2647; font-size: 32px;">ماذا يقول مراجعونا؟</h2>
+                <p style="color: #b19470; font-weight: bold;">أكثر من 5000 ابتسامة سعيدة في صبيا</p>
+            </div>
+            <div class="reviews-grid" id="reviewsContainer"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.instagram.com/puresmile2030" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram"></i></a>
+                <a href="https://www.snapchat.com/add/puresmile2030" target="_blank" rel="noopener noreferrer"><i class="fab fa-snapchat"></i></a>
+                <a href="https://www.tiktok.com/@puresmile2030" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p style="margin-top: 30px; opacity: 0.7;">جميع الحق محفوظة © مركز أنقى ابتسامة لطب الأسنان 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".stat-number");
+            const duration = 2000; // 2 ثانية
+
+            const startCount = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute("data-target");
+                        let start = 0;
+                        const step = Math.ceil(target / (duration / 16)); // 60 إطار في الثانية
+
+                        const updateCounter = () => {
+                            start += step;
+                            if (start >= target) {
+                                counter.innerText = target.toLocaleString() + "+";
+                            } else {
+                                counter.innerText = start.toLocaleString() + "+";
+                                setTimeout(updateCounter, 16);
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter); // إيقاف المراقبة بعد التشغيل
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(startCount, {
+                root: null,
+                threshold: 0.3
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html>

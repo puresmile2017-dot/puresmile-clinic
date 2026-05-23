@@ -1,0 +1,524 @@
+:root {
+    --primary: #0a2647;
+    --accent: #b19470;
+    --gold-light: #c5a059;
+    --bg-soft: #f9fbfd;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --radius-premium: 20px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Cairo', sans-serif; 
+    background: var(--bg-soft); 
+    color: var(--text-dark); 
+    line-height: 1.7; 
+    direction: rtl; 
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.header { 
+    background: var(--primary); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    padding: 15px 0; 
+}
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+.logo-container { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+#main-logo { height: 50px; width: auto; object-fit: contain; }
+.logo-text { color: white; font-size: 20px; font-weight: 800; line-height: 1.2; }
+.logo-text span { color: var(--accent); }
+.logo-text small { display: block; font-size: 11px; font-weight: 400; opacity: 0.8; color: white; }
+
+
+/* الروابط العلوية (مميزة وجذابة) */
+.nav-links { list-style: none; display: flex; gap: 25px; }
+.nav-links a { 
+    text-decoration: none; 
+    color: white; 
+    font-weight: 600; 
+    font-size: 14px; 
+    transition: 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 5px;
+}
+.nav-links a:hover { 
+    color: var(--accent); 
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* زر الحجز (مضيء ومميز) */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(197, 160, 89, 0);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+        transform: scale(1);
+    }
+}
+
+.btn-reservation {
+    background: #c5a059; /* لون ذهبي وفاتح قليلاً */
+    color: var(--primary);
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    animation: pulseGlow 2s infinite;
+}
+.btn-reservation:hover {
+    background: #f4d06f; /* لون أفتح عند المرور */
+    transform: scale(1.06);
+    animation: none; /* إيقاف الوميض عند التمرير ليصبح هادئاً */
+}
+
+/* Hero Section */
+.hero-section-final {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    background: url('img/clinic-hero.jpg') no-repeat center center / cover;
+    background-attachment: fixed;
+}
+.hero-overlay-final {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(10, 38, 71, 0.1), rgba(10, 38, 71, 0.8) 50%, #0a2647 100%);
+    z-index: 1;
+}
+.hero-container-final { width: 100%; display: flex; justify-content: flex-end; padding-right: 5%; position: relative; z-index: 5; }
+.hero-content-final { max-width: 650px; text-align: right; color: #ffffff; }
+.hero-content-final h1 { font-size: 3.8rem; line-height: 1.4; margin-bottom: 25px; }
+.hero-content-final p { font-size: 1.3rem; line-height: 1.8; margin-bottom: 35px; }
+.hero-content-final {
+    text-align: right; /* لتغيير مكان المحاذاة بالكامل (يمين، يسار، أو وسط) */
+    /* يمكنك استخدام خاصية margin للتحكم الدقيق بالإزاحة: */
+    margin-right: 250px; /* قم بزيادة الرقم لإزاحة النص أكثر لليسار، أو قلله لليمين */
+}
+/* زر الواتساب ومربع النص */
+.btn-whatsapp-luxury {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #fdf6e9, #e5cf9a); /* تدرج ذهبي فاتح وراقي */
+    color: #0a2647;
+    padding: 14px 28px; /* حجم أصغر ومناسب */
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px; /* حجم النص مناسب وأصغر */
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 1.5px solid #b19470;
+    transition: all 0.3s ease-in-out;
+    /* تأثير الإطار اللامع */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-whatsapp-luxury::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: 0.6s;
+}
+
+.btn-whatsapp-luxury:hover::before {
+    left: 100%;
+}
+
+.btn-whatsapp-luxury:hover { 
+    background: #ffffff; 
+    color: #0a2647; 
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(177, 148, 112, 0.4);
+    border-color: #c5a059;
+}
+
+/* Services */
+.services { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.s-card { background: var(--white); padding: 35px; border-radius: var(--radius-premium); transition: 0.4s; border-top: 5px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.s-card:hover { transform: translateY(-10px); border-top-color: var(--accent); }
+.s-icon { font-size: 40px; color: var(--primary); margin-bottom: 20px; }
+
+/* Doctors Grid */
+.doctors { background-color: var(--white); padding: 80px 0; }
+.doctors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+.dr-card {
+    background: var(--bg-soft);
+    padding: 30px 20px;
+    border-radius: var(--radius-premium);
+    text-align: center;
+    transition: 0.4s;
+    border-bottom: 4px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.dr-card:hover {
+    transform: translateY(-10px);
+    background: var(--white);
+    box-shadow: 0 15px 30px rgba(10, 38, 71, 0.08);
+    border-bottom-color: var(--accent);
+}
+.dr-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--white);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+.dr-card h4 { color: var(--primary); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.dr-card p { color: var(--accent); font-size: 14px; font-weight: 600; }
+
+/* Reviews */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px;
+}
+.review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-right: 5px solid #b19470;
+}
+.stars { color: #ffc107; margin-bottom: 10px; }
+.review-text { font-size: 14px; color: #444; line-height: 1.6; font-style: italic; }
+.reviewer-name { display: block; margin-top: 15px; font-weight: bold; color: #0a2647; font-size: 13px; }
+
+/* Doctor Details Profile */
+.dr-profile-header {
+    background: var(--primary);
+    color: white;
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+}
+.profile-main-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.dr-profile-header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+.specialty { color: var(--accent); font-size: 1.2rem; font-weight: 700; margin-bottom: 30px; }
+.bio {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 15px;
+    line-height: 1.7;
+}
+.cases-gallery { padding: 60px 0; }
+.cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 30px; }
+.case-item { background: var(--bg-soft); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.case-item h4 { color: var(--primary); margin-bottom: 15px; text-align: center; font-size: 18px; }
+.case-images img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; margin-top: 5px; }
+
+/* Back Home Button */
+.btn-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0a2647;
+    color: #ffffff !important;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid #b19470;
+    transition: all 0.3s ease;
+}
+.btn-back-home:hover {
+    background-color: #b19470;
+    color: #0a2647 !important;
+    transform: translateY(-3px);
+}
+    back-home:hover {
+    background-color: #b19470;
+    color: #0a2647 !important;
+    transform: translateY(-3px);
+}
+/* Footer */
+.footer { background: var(--primary); color: white; padding: 60px 0 30px; border-top: 5px solid var(--accent); text-align: center; }
+.social-links a { color: white; font-size: 24px; margin: 0 12px; transition: 0.3s; }
+.social-links a:hover { color: var(--accent); }
+
+@media (max-width: 968px) {
+    .hero-content-final h1 { font-size: 2.2rem; }
+    .hero-content-final p { font-size: 1rem; }
+    .nav-links { display: none; }
+}
+/* تفعيل التفاعل باللمس للأجهزة الذكية والجوالات */
+@media (max-width: 768px) {
+    .s-card:active, .s-card:focus,
+    .dr-card:active, .dr-card:focus {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(10, 38, 71, 0.08);
+        border-top-color: var(--accent);
+        background: var(--white);
+    }
+    
+    .dr-card {
+        /* إتاحة مساحة أكبر قليلاً للضغط بالإصبع في الجوال */
+        padding: 40px 15px;
+    }
+}
+
+/* --- تنسيق قسم التقييمات --- */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 15px;
+}
+
+.review-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    border-right: 6px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* تأثير اللمسة الماسية (إضاءة ولمعان) عند التمرير */
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: all 0.6s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(177, 148, 112, 0.15);
+    border-color: var(--gold-light);
+}
+
+.review-card:hover::before {
+    left: 100%;
+}
+
+/* تفعيل التأثير عند اللمس في الجوال */
+@media (max-width: 768px) {
+    .review-card:active {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 12px 30px rgba(10, 38, 71, 0.08);
+        border-color: var(--gold-light);
+    }
+}
+/* --- تعديل قسم الأطباء --- */
+.doctors-title-box {
+    text-align: center;
+    margin: 0 auto 40px auto;
+    background: linear-gradient(135deg, rgba(249, 251, 253, 0.9), rgba(229, 207, 154, 0.1));
+    padding: 24px 20px; /* تم تصغير البادينغ ليتناسب مع النص */
+    border-radius: 16px; /* تقليل التدوير ليتناسب مع الحجم الجديد */
+    border: 2px solid var(--accent, #b19470);
+    box-shadow: 0 6px 20px rgba(177, 148, 112, 0.06);
+    max-width: 550px; /* تقليل العرض الأقصى للإطار */
+}
+
+.doctors-title-box h2 {
+    color: var(--primary, #0a2647);
+    font-size: 1.8rem; /* تصغير الخط ليتناسب مع حجم الإطار */
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.doctors-title-box p {
+    color: var(--accent, #b19470);
+    font-size: 1.05rem; /* تصغير الخط */
+    font-weight: 600;
+    margin: 0;
+}
+
+/* تعديل الشبكة لتصبح 3 أطباء في الصف الواحد */
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 أطباء في الصف */
+    gap: 25px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* لتجاوب الشاشات الصغيرة: ليصبح طبيبين أو طبيب في الصفوف الصغيرة */
+/* في وضع الكمبيوتر: إخفاء زر الجوال */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* في وضع الجوال (أصغر من 768px) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+    }
+
+    .nav-links {
+        display: none; /* إخفاء القائمة العادية */
+        position: absolute;
+        top: 100%; /* تظهر تحت الهيدر مباشرة */
+        left: 0;
+        width: 100%;
+        background: #0a2647;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    /* كلاس يضيفه الجافاسكريبت عند الضغط ليظهر القائمة */
+    .nav-links.active {
+        display: flex;
+    }
+}
+/* --- إصلاح تداخل الهيدر والتجاوب --- */
+
+/* وضع الكمبيوتر */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* وضع الجوال (أصغر من 968px ليتناسب مع الكود السابق لديك) */
+@media (max-width: 968px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        display: none; /* مخفية افتراضياً في الجوال */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0a2647;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+    /* عند تفعيل القائمة */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* منع التداخل مع زر الحجز */
+    .btn-reservation {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+.footer-actions {
+    display: flex;
+    justify-content: center; /* يضعه في الجهة اليمنى كما طلبت */
+    padding: 20px;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #1a2e4a; /* اللون الكحلي */
+    color: #ffffff; /* لون النص */
+    text-decoration: none;
+    border: 2px solid #c5a059; /* الحدود الذهبية */
+    border-radius: 8px; /* زوايا منحنية قليلاً */
+    font-weight: bold;
+    transition: all 0.3s ease; /* لإضافة تأثير حركة ناعم عند المرور بالفأرة */
+}
+
+/* تأثير عند المرور بالفأرة */
+.custom-button:hover {
+    background-color: #c5a059; /* يصبح ذهبي عند التمرير */
+    color: #1a2e4a; /* ويصبح النص كحلي */
+    border-color: #1a2e4a;
+}
