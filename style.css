@@ -125,7 +125,7 @@ body {
 .hero-content-final {
     text-align: right; /* لتغيير مكان المحاذاة بالكامل (يمين، يسار، أو وسط) */
     /* يمكنك استخدام خاصية margin للتحكم الدقيق بالإزاحة: */
-    margin-right: 250px; /* قم بزيادة الرقم لإزاحة النص أكثر لليسار، أو قلله لليمين */
+    margin-right: 3px; /* قم بزيادة الرقم لإزاحة النص أكثر لليسار، أو قلله لليمين */
 }
 /* زر الواتساب ومربع النص */
 .btn-whatsapp-luxury {
@@ -265,7 +265,13 @@ body {
 .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 30px; }
 .case-item { background: var(--bg-soft); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 .case-item h4 { color: var(--primary); margin-bottom: 15px; text-align: center; font-size: 18px; }
-.case-images img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; margin-top: 5px; }
+.case-images img { 
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    border-radius: 10px; 
+    margin-top: 5px; 
+}
 
 /* Back Home Button */
 .btn-back-home {

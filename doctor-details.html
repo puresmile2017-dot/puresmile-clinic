@@ -158,11 +158,13 @@
         }
 
         .case-images-vertical img {
-            width: 100%;
-            height: 280px; /* مستطيل كبير وواضح */
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    width: 100%;
+    height: auto; /* تغيير من 280px إلى auto */
+    object-fit: contain; /* تغيير من cover إلى contain */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    display: block;
+}
         }
 
         .case-images-vertical p {
@@ -347,9 +349,6 @@
             document.body.innerHTML = "<h2 style='text-align:center; margin-top:100px; color:#0a2647;'>عذراً، لم يتم العثور على بيانات هذا الطبيب.</h2>";
         }
     </script>
-<a href="index.html" class="btn-back">
-            العودة للرئيسية
-            <i class="fas fa-arrow-left"></i>
-        </a>
+
 </body>
 </html>
