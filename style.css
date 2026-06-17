@@ -330,7 +330,11 @@ body {
     gap: 25px;
     padding: 15px;
 }
-
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.review-card { border: 1px solid #ddd; padding: 20px; border-radius: 12px; background: #fff; }
+.review-text { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.review-text.full { -webkit-line-clamp: unset; }
+.read-more { color: #007bff; cursor: pointer; font-weight: bold; }
 .review-card {
     background: var(--white);
     padding: 25px;
@@ -341,7 +345,17 @@ body {
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
+.avatar-icon { 
+    width: 35px; height: 35px; border-radius: 50%; object-fit: cover; margin-left: 10px; 
+}
+.stars-container { 
+    color: #f39c12; margin: 8px 0; font-size: 14px; 
+}
+.review-text { 
+    line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical; overflow: hidden; transition: 0.3s; 
+}
+.review-text.full { -webkit-line-clamp: unset; }
 /* تأثير اللمسة الماسية (إضاءة ولمعان) عند التمرير */
 .review-card::before {
     content: '';
