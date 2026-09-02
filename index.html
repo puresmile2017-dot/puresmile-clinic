@@ -1,150 +1,31 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أنقى ابتسامة لطب الأسنان</title>
+    <title>مركز أنقى ابتسامة لطب الأسنان</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/png" href="img/logo-icon.png">
-<meta name="description" content="عيادة Pure Smile في صبيا: وجهتك الأولى لابتسامة مثالية. نقدم خدمات متكاملة في تجميل الأسنان، زراعة الأسنان، وعلاج العصب بأحدث تقنيات طب الأسنان. احجز موعدك اليوم.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800;900&display=swap" rel="stylesheet">      <!-- cod font -->
+   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo-icon.png">
+	<link rel="stylesheet" href="popup.css">
+    <meta name="description" content="أنقى ابتسامة.. وجهتك الأولى في جازان لطب الأسنان. نجمع بين الخبرة والدقة في علاج العصب، التقويم، والزراعة لنرسم لك ابتسامة تليق بك. احجز موعدك الآن.">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHF0H39WBG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GHF0H39WBG');
- 
-</script>
-   
-    <style>
-        /* --- قسم الإحصائيات (العدادات) --- */
-        .stats-section {
-            padding: 60px 20px;
-            background-color: var(--bg-soft, #f9fbfd);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            background: var(--white, #ffffff);
-            padding: 35px 20px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-            border-top: 5px solid var(--primary, #0a2647);
-            transition: all 0.4s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(10, 38, 71, 0.08);
-            border-top-color: var(--accent, #b19470);
-        }
-
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--primary, #0a2647);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--accent, #b19470);
-        }
-
-        /* --- تعديل قسم الأطباء --- */
-        .doctors-title-box {
-            text-align: center;
-            margin: 0 auto 40px auto;
-            background: linear-gradient(135deg, rgba(249, 251, 253, 0.9), rgba(229, 207, 154, 0.1));
-            padding: 24px 20px;
-            border-radius: 16px;
-            border: 2px solid var(--accent, #b19470);
-            box-shadow: 0 6px 20px rgba(177, 148, 112, 0.06);
-            max-width: 550px;
-        }
-
-        .doctors-title-box h2 {
-            color: var(--primary, #0a2647);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .doctors-title-box p {
-            color: var(--accent, #b19470);
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .doctors-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1050px;
-            margin: 0 auto;
-        }
-
-        /* --- إصلاح شامل لقسم المقدمة (Hero) في الجوال --- */
-        @media (max-width: 768px) {
-            .hero-section-final {
-                min-height: 80vh;
-                padding: 40px 15px;
-            }
-
-            .hero-content-final {
-                text-align: center !important;
-                margin: 0 auto !important;
-                width: 100% !important;
-            }
-
-            .hero-content-final h1 {
-                font-size: 2.1rem !important; /* حجم متناسق غير مقصوص */
-                line-height: 1.3 !important;
-                margin-bottom: 15px;
-            }
-
-            .hero-content-final p {
-                font-size: 1rem !important;
-                line-height: 1.5;
-                margin-bottom: 25px;
-            }
-
-            .btn-whatsapp-luxury {
-                display: flex !important;
-                justify-content: center;
-                align-items: center;
-                width: auto !important;
-                max-width: 95% !important;
-                margin: 0 auto !important;
-                font-size: 0.95rem !important;
-            }
-
-            .doctors-grid {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            }
-        }
-    </style>
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHF0H39WBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GHF0H39WBG');
+    </script>
 </head>
 <body>
 
-   <header class="header">
+<!-- ===== HEADER ===== -->
+<header class="header">
     <nav class="navbar container">
-        <!-- 1. الشعار (Logo) -->
         <div class="logo-container" onclick="window.location.href='index.html'">
             <div class="logo-placeholder">
                 <img src="img/logo.png" alt="شعار" id="main-logo">
@@ -152,228 +33,704 @@
             <div class="logo-text">أنقى <span>ابتسامة</span></div>
         </div>
 
-        <!-- 2. القائمة الرئيسية (تظهر في الكمبيوتر وتتحول لمنسدلة في الجوال) -->
         <ul class="nav-links" id="nav-links">
-           <li><a href="about-us.html">من نحن</a></li>
+            <li><a href="about-us.html">من نحن</a></li>
             <li><a href="#services">خدماتنا</a></li>
             <li><a href="#doctors">أطباؤنا</a></li>
-			<li><a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a></li>
+            <li><a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a></li>
             <li><a href="#reviews">تقييماتنا</a></li>
             <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
 
-        <!-- 3. أزرار الأكشن -->
-        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
-            <a href="https://wa.me/message/3Z7JYCW6QBGKG1" target="_blank" rel="noopener noreferrer" class="btn-reservation">
+        <div class="nav-actions">
+            <a href="https://wa.me/message/3Z7JYCW6QBGKG1" target="_blank" class="btn-reservation">
                 <i class="fab fa-whatsapp"></i> حجز موعد
             </a>
-            
-            <!-- زر الجوال (الثلاث شرطات) -->
             <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 </header>
-    <section id="home" class="hero-section-final">
-        <div class="hero-overlay-final"></div>
-        <div class="container hero-container-final">
-            <div class="hero-content-final">
-                <h1>نبتكر الابتسامة<br><span style="color:#b19470">التي تستحقها</span></h1>
-                <p> رعاية طبية تخصصية بمعايير عالمية في قلب صبيا. نعتني بأدق التفاصيل لنضمن لك راحة تامة ونتائج مذهلة.</p>
-                <a href="https://wa.me/message/3Z7JYCW6QBGKG1" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-luxury">
-                    <i class="fab fa-whatsapp"></i> لتصل الينا بشكل اسرع راسنا واتس
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero-section-final">
+    <div class="hero-overlay-final"></div>
+    <div class="container hero-container-final">
+        <div class="hero-content-final">
+            <h1>نبتكر الابتسامة<br><span style="color:#F6F3ED;">التي تستحقها</span></h1>
+            <p>رعاية طبية تخصصية بمعايير عالمية. نعتني بأدق التفاصيل لنضمن لك راحة تامة ونتائج مذهلة.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="services">
+    <div class="container">
+        <div class="services-title-box">
+            <h2>خدماتنا المتميزة</h2>
+            <p>نقدم لك أحدث التقنيات بأعلى معايير الجودة</p>
+        </div>
+        <div class="services-grid">
+
+            <!-- بطاقة 1: زراعة الأسنان -->
+            <div class="service-card" style="background-image: url('img/service-bg-1.jpg');">
+                <div class="service-overlay"></div>
+                <span class="corner-bl"></span>
+                <span class="corner-br"></span>
+                <div class="service-icon">
+                    <img src="img/icon-1.png" alt="زراعة الأسنان">
+                </div>
+                <h3>زراعة الأسنان</h3>
+                <div class="gold-line"></div>
+                <p>أحدث التقنيات لتعويض الأسنان المفقودة بثبات ومظهر طبيعي</p>
+                <a href="service-implants.html?type=implants" class="service-btn">أعرف المزيد</a>
+            </div>
+
+            <!-- بطاقة 2: تجميل الأسنان -->
+            <div class="service-card" style="background-image: url('img/service-bg-2.jpg');">
+                <div class="service-overlay"></div>
+                <span class="corner-bl"></span>
+                <span class="corner-br"></span>
+                <div class="service-icon">
+                    <img src="img/icon-2.png" alt="تجميل الأسنان">
+                </div>
+                <h3>تجميل الأسنان</h3>
+                <div class="gold-line"></div>
+                <p>عدسات التبييض وتثبيت الأسنان بأحدث التقنيات</p>
+                <a href="cosmetic-dentistry.html?type=cosmetics" class="service-btn">أعرف المزيد</a>
+            </div>
+
+            <!-- بطاقة 3: تقويم الأسنان -->
+            <div class="service-card" style="background-image: url('img/service-bg-3.jpg');">
+                <div class="service-overlay"></div>
+                <span class="corner-bl"></span>
+                <span class="corner-br"></span>
+                <div class="service-icon">
+                    <img src="img/icon-3.png" alt="تقويم الأسنان">
+                </div>
+                <h3>تقويم الأسنان</h3>
+                <div class="gold-line"></div>
+                <p>حلول تقويم متكاملة للأطفال والكبار بأحدث الأجهزة</p>
+                <a href="orthodontic.html?type=ortho" class="service-btn">أعرف المزيد</a>
+            </div>
+
+            <!-- بطاقة 4: جراحة الأسنان -->
+            <div class="service-card" style="background-image: url('img/service-bg-4.jpg');">
+                <div class="service-overlay"></div>
+                <span class="corner-bl"></span>
+                <span class="corner-br"></span>
+                <div class="service-icon">
+                    <img src="img/icon-4.png" alt="جراحة الأسنان">
+                </div>
+                <h3>جراحة الأسنان</h3>
+                <div class="gold-line"></div>
+                <p>عمليات دقيقة وآمنة بأعلى معايير الجودة والتعقيم</p>
+                <a href="oral-surgery.html?type=surgery" class="service-btn">أعرف المزيد</a>
+            </div>
+
+            <!-- بطاقة 5: علاج عصب الاسنان -->
+            <div class="service-card" style="background-image: url('img/service-bg-5.jpg');">
+                <div class="service-overlay"></div>
+                <span class="corner-bl"></span>
+                <span class="corner-br"></span>
+                <div class="service-icon">
+                    <img src="img/icon-5.png" alt="علاج العصب">
+                </div>
+                <h3>علاج العصب</h3>
+                <div class="gold-line"></div>
+                <p>معالجة جذور الأسنان بدقة وأمان لتحلص من الألم وحفظ السن الطبيعي</p>
+                <a href="root-canal.html?type=aesthetic" class="service-btn">أعرف المزيد</a>
+            </div>
+
+            <!-- بطاقة 6: التركيبات -->
+            <div class="service-card" style="background-image: url('img/service-bg-6.jpg');">
+                <div class="service-overlay"></div>
+                <span class="corner-bl"></span>
+                <span class="corner-br"></span>
+                <div class="service-icon">
+                    <img src="img/icon-6.png" alt="التركيبات">
+                </div>
+                <h3>التركيبات</h3>
+                <div class="gold-line"></div>
+                <p>تركيبات ثابتة ومتحركة بتقنيات عالية الجودة</p>
+                <a href="prosthodontics.html?type=crowns" class="service-btn">أعرف المزيد</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== DOCTORS ===== -->
+<section id="doctors" class="doctors">
+    <div class="container">
+        <div class="doctors-title-box">
+            <h2>طاقمنا الطبي</h2>
+            <p>نخبة من الأخصائيين في خدمتكم</p>
+        </div>
+        <div class="doctors-grid">
+
+            <!-- د. عصام الشميري (ID=1) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=1'">
+                <div class="dr-header">
+                    <h4>د. عصام الشميري</h4>
+                    <p class="dr-specialty">جراحة الوجه والفكين</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-essam.jpg" alt="د. عصام الشميري" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. عصام</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- د. عيسى بليقص (ID=2) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=2'">
+                <div class="dr-header">
+                    <h4>د. عيسى بليقص</h4>
+                    <p class="dr-specialty">أخصائي تقويم الأسنان</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-esaa.jpg" alt="د. عيسى بليقص" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. عيسى</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أخصائي العصب (ID=9) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=9'">
+                <div class="dr-header">
+                    <h4>أخصائي العصب</h4>
+                    <p class="dr-specialty">أخصائي علاج عصب وجذور الأسنان</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-hussein.jpg" alt="أخصائي العصب" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على أخصائي العصب</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- د. روان دوش (ID=3) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=3'">
+                <div class="dr-header">
+                    <h4>د. روان دوش</h4>
+                    <p class="dr-specialty">أخصائية تقويم</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-rawan.jpg" alt="د. روان دوش" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. روان</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- د. رشيكا ريدي (ID=4) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=4'">
+                <div class="dr-header">
+                    <h4>د. رشيكا ريدي</h4>
+                    <p class="dr-specialty">أخصائية تقويم</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-rashika.jpg" alt="د. رشيكا ريدي" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. رشيكا</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- د. حامد ذباب (ID=5) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=5'">
+                <div class="dr-header">
+                    <h4>د. حامد ذباب</h4>
+                    <p class="dr-specialty">طبيب أسنان عام</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-hamid.jpg" alt="د. حامد ذباب" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. حامد</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- د. امل العبسي (ID=6) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=6'">
+                <div class="dr-header">
+                    <h4>د. امل العبسي</h4>
+                    <p class="dr-specialty">طبيبة أسنان عام</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-amal.jpg" alt="د. امل العبسي" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. امل</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- د. اثير خواجي (ID=7) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=7'">
+                <div class="dr-header">
+                    <h4>د. اثير خواجي</h4>
+                    <p class="dr-specialty">طبيبة أسنان عام</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-atheer.jpg" alt="د. اثير خواجي" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. اثير</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- د. المها سادلي (ID=8) -->
+            <div class="dr-card" onclick="window.location.href='doctor-details.html?id=8'">
+                <div class="dr-header">
+                    <h4>د. المها سادلي</h4>
+                    <p class="dr-specialty">طبيبة أسنان عام</p>
+                </div>
+                <div class="dr-img-wrapper">
+                    <img src="img/dr-maha.jpg" alt="د. المها سادلي" class="dr-img">
+                    <div class="dr-btn-wrapper">
+                        <div class="dr-btn">تعرف على د. المها</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== STATS SECTION (Glassmorphic Luxury) ===== -->
+<section class="stats-section">
+    <div class="stats-container">
+        <h2 class="stats-section-title">إنجازات نفتخر بها</h2>
+        <div class="stats-grid">
+            <!-- البطاقة الأولى: زائر للموقع -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <div class="stat-number" data-target="16450">0</div>
+                <div class="stat-label">زائر للموقع</div>
+            </div>
+
+            <!-- البطاقة الثانية: سنوات من التميز -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">سنوات من التميز</div>
+            </div>
+
+            <!-- البطاقة الثالثة: عميل سعيد -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+                <div class="stat-number" data-target="9454">0</div>
+                <div class="stat-label">عميل سعيد</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews" class="reviews" style="padding:80px 0; background:#FAF8F4;">
+    <div class="container">
+        <div class="section-title" style="text-align:center; margin-bottom:50px;">
+            <h2 style="color:#151F6D; font-size:32px;">ماذا يقول مراجعونا عنا؟</h2>
+        </div>
+        <div class="reviews-grid" id="reviewsContainer"></div>
+    </div>
+</section>
+
+<!-- ===== قسم الخريطة فقط ===== -->
+<div class="map-section">
+    <div class="map-wrapper">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.295656631394!2d42.67969307116396!3d17.155823151468358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fd51ef3083a015%3A0x1e56af3974cbe5e2!2z2YXYsdmD2LIg2KfZhtmC2Ykg2KfYqNiq2LPYp9mF2Kkg2YTYt9ioINin2YTYo9iz2YbYp9mG!5e0!3m2!1sar!2s!4v1784311570989!5m2!1sar!2s" width="100%" height="250" style="border:0; display:block;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+<!-- ===== FOOTER الأزرق ===== -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- العمود 1 (يمين): الشعار والأيقونات -->
+        <div class="footer-col footer-col-brand">
+            <div class="footer-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+                <img src="img/logo.png" alt="شعار أنقى ابتسامة">
+                <div class="footer-logo-text">أنقى <span>ابتسامة</span></div>
+            </div>
+            <p class="footer-desc">وجهتك الأولى في جازان لطب الأسنان</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/puresmile.sa?igsi=NHB1NXFkeXFqZ3Rq" target="_blank" rel="noopener">
+                    <img src="img/instagram-icon.png" alt="انستقرام">
+                </a>
+                <a href="https://www.snapchat.com/add/puresmile.sa?share_id=ygteCfX5opY&locale=ar-SA-u-nu-latn0" target="_blank" rel="noopener">
+                    <img src="img/snapchat-icon.png" alt="سناب شات">
+                </a>
+                <a href="https://www.tiktok.com/@puresmile.sa?_r=1&_t=ZS-99I24P1m4Z7" target="_blank" rel="noopener">
+                    <img src="img/tiktok-icon.png" alt="تيك توك">
                 </a>
             </div>
         </div>
-    </section>
 
-    <section id="services" class="services container">
-        <div class="section-title">
-            <h2>خدماتنا المتميزة</h2>
-        </div>
-        <div class="services-grid">
-            <div class="s-card">
-                <i class="fas fa-tooth s-icon"></i>
-                <h3>زراعة الأسنان</h3>
-                <p>أحدث التقنيات لتعويض الأسنان المفقودة.</p>
-            </div>
-            <div class="s-card">
-                <i class="fas fa-magic s-icon"></i>
-                <h3>تجميل الأسنان</h3>
-                <p>عدسات الفينير وتبييض الأسنان بالليزر الحشوات التجميلية.</p>
-            </div>
-            <div class="s-card">
-                <i class="fas fa-teeth s-icon"></i>
-                <h3>تقويم الأسنان</h3>
-                <p>حلول التقويم الشفاف والمعدني للأطفال والكبار.</p>
-            </div>
-			 <div class="s-card">
-                <i class="fas fa-teeth s-icon"></i>
-			<h3>جراحة الأسنان</h3>
-                <p>خلع الأسنان العادي والجراحي وخلغ ضروس العقل المطمورة وقص اللثة بالليزر.</p>
-				</div>
-				 <div class="s-card">
-                <i class="fas fa-teeth s-icon"></i>
-			<h3>التجميل</h3>
-                <p>غمازات خدود، توريد شفايف، توريد للثة</p>
-				</div>
-				 <div class="s-card">
-                <i class="fas fa-teeth s-icon"></i>
-			<h3>التركيبات</h3>
-                <p>تركيبات زريكون و ايماكس، دايركت فينير.</p>
-				</div>
-        </div>
-    </section>
-
-    <section id="doctors" class="doctors" style="padding: 80px 0;">
-        <div class="container">
-            
-            <div class="doctors-title-box">
-                <h2>طاقمنا الطبي</h2>
-                <p>نخبة من الأخصائيين في خدمتكم</p>
-            </div>
-            
-            <div class="doctors-grid">
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=1'">
-                    <img src="img/dr-essam.jpg" alt="د. عصام الشميري" class="dr-img">
-                    <h4>د. عصام الشميري</h4>
-                    <p>جراحة الوجه والفكين</p>
-                </div>
-				<div class="dr-card" onclick="window.location.href='doctor-details.html?id=4'">
-                    <img src="img/dr-zarah.jpg" alt="د. زرعة دهاس" class="dr-img">
-                    <h4>د. زرعة دهاس</h4>
-                    <p>استشارية علاج عصب</p>
-                </div>
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=2'">
-                    <img src="img/dr-rawan.jpg" alt="د. روان دوش" class="dr-img">
-                    <h4>د. روان دوش</h4>
-                    <p>أخصائية تقويم</p>
-                </div>
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=3'">
-                    <img src="img/dr-rashika.jpg" alt="د. رشيكا ريدي" class="dr-img">
-                    <h4>د. رشيكا ريدي</h4>
-                    <p>أخصائية تقويم</p>
-                </div>
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=9'">
-                    <img src="img/dr-hamid.jpg" alt="د. حامد ذباب" class="dr-img">
-                    <h4>د. حامد ذباب</h4>
-                    <p>طبيب أسنان عام</p>
-                </div>
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=5'">
-                    <img src="img/dr-sarah.jpg" alt="د. سارة صوري" class="dr-img">
-                    <h4>د. سارة صوري</h4>
-                    <p>طبيبة أسنان عام</p>
-                </div>
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=6'">
-                    <img src="img/dr-amal.jpg" alt="د. امل العبسي" class="dr-img">
-                    <h4>د. امل العبسي</h4>
-                    <p>طبيبة أسنان عام</p>
-                </div>
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=7'">
-                    <img src="img/dr-atheer.jpg" alt="د. اثير خواجي" class="dr-img">
-                    <h4>د. اثير خواجي</h4>
-                    <p>طبيبة أسنان عام</p>
-                </div>
-                <div class="dr-card" onclick="window.location.href='doctor-details.html?id=8'">
-                    <img src="img/dr-maha.jpg" alt="د. المها سادلي" class="dr-img">
-                    <h4>د. المها سادلي</h4>
-                    <p>طبيبة أسنان عام</p>
-                </div>
-                
+        <!-- العمود 2: روابط سريعة -->
+        <div class="footer-col">
+            <h4 class="footer-heading">روابط سريعة</h4>
+            <div class="footer-links-grid">
+                <a href="about-us.html">من نحن</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#doctors">أطباؤنا</a>
+                <a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a>
+                <a href="#reviews">تقييماتنا</a>
+                <a href="contact.html">تواصل معنا</a>
             </div>
         </div>
-    </section>
 
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" id="stat1" data-target="9454">0</div>
-                <div class="stat-label">عميل سعيد +</div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-number" id="stat2" data-target="9">0</div>
-                <div class="stat-label">سنوات من التميز +</div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-number" id="stat3" data-target="16450">0</div>
-                <div class="stat-label">زائر للموقع +</div>
+        <!-- العمود 3: تواصل معنا -->
+        <div class="footer-col footer-col-contact">
+            <h4 class="footer-heading">تواصل معنا</h4>
+            <a href="tel:0550133938" class="footer-phone">
+        <img src="img/phone-icon.png" alt="اتصال" style="width:20px; height:20px; object-fit:contain; filter: brightness(0) invert(1);">
+              0550133938
+            </a>
+            <p class="footer-contact-note">للاستفسار عن طريق الإتصال</p>
+        </div>
+
+        <!-- العمود 4 (يسار، ممتد): طرق الدفع -->
+        <div class="footer-col footer-col-payment">
+            <h4 class="footer-heading">طرق الدفع</h4>
+            <div class="payment-bar">
+                <div class="payment-icons payment-icons-desktop">
+                    <div class="payment-row">
+                        <img src="img/mada.png" alt="مدى">
+                        <img src="img/visa.png" alt="فيزا">
+                    </div>
+                    <div class="payment-row">
+                        <img src="img/tamara.png" alt="تمارا">
+                        <img src="img/tabby.png" alt="التابي">
+                        <img src="img/mis.png" alt="MIS">
+                    </div>
+                </div>
+                <div class="payment-icons-mobile">
+                    <div class="icons-row">
+                        <img src="img/mada.png" alt="مدى">
+                        <img src="img/visa.png" alt="فيزا">
+                    </div>
+                    <div class="icons-row">
+                        <img src="img/tamara.png" alt="تمارا">
+                        <img src="img/tabby.png" alt="التابي">
+                        <img src="img/mis.png" alt="MIS">
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="reviews" class="reviews" style="padding: 80px 0; background: #f9fbfd;">
-        <div class="container">
-            <div class="section-title" style="text-align: center; margin-bottom: 50px;">
-                <h2 style="color: #0a2647; font-size: 32px;">ماذا يقول مراجعونا عنا؟</h2>
-               
-            </div>
-            <div class="reviews-grid" id="reviewsContainer"></div>
+    <!-- شريط الحقوق -->
+    <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة &copy; لدى مركز أنقى ابتسامة لطب الأسنان 2026</p>
+    </div>
+</footer>
+
+<style>
+/* === قسم الخريطة === */
+.map-section {
+    background: #ffffff;
+    padding: 0;
+    border-top: 4px solid #C9C4BA; /* إطار على خلفية فاتحة */
+}
+.map-wrapper {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+.map-wrapper iframe {
+    height: 250px;
+    display: block;
+}
+
+/* === الفوتر الأزرق === */
+.main-footer {
+    background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%);
+    color: #ffffff;
+    font-family: 'Cairo', sans-serif;
+    padding: 0;
+}
+
+/* === الأعمدة الأربعة - عمود الدفع ممتد === */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.8fr;
+    gap: 30px;
+}
+
+/* === تنسيقات عامة للأعمدة === */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.footer-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+.footer-logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+}
+.footer-logo-text span {
+    color: #F6F3ED;
+}
+.footer-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.footer-social {
+    display: flex;
+    gap: 14px;
+}
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #F6F3ED; /* إطار على خلفية زرقاء */
+}
+.footer-social a:hover {
+    background: #F6F3ED;
+    transform: translateY(-3px);
+    border-color: #F6F3ED;
+}
+.footer-social img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+.footer-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 12px;
+}
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 2px;
+    background: #F6F3ED;
+}
+
+/* روابط سريعة مع دوائر ذهبية */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 20px;
+}
+.footer-links-grid a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.footer-links-grid a::before {
+    content: '●';
+    color: #F6F3ED;
+    font-size: 10px;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+.footer-links-grid a:hover {
+    color: #F6F3ED;
+    transform: translateX(-6px);
+}
+
+/* تواصل معنا */
+.footer-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #F6F3ED;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-bottom: 8px;
+}
+.footer-phone:hover {
+    color: #ffffff;
+}
+.footer-contact-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+}
+
+/* === عمود طرق الدفع === */
+.footer-col-payment .payment-bar {
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #C9C4BA; /* إطار على خلفية فاتحة */
+    border-radius: 12px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 100%;
+}
+.payment-icons-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.payment-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.payment-row img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+}
+.payment-icons-mobile {
+    display: none;
+}
+
+/* === شريط الحقوق === */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 18px 30px;
+    text-align: center;
+}
+.footer-bottom p {
+    color: #ffffff;
+    font-size: 11px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* === تجاوب: 4 أعمدة → 2 عمودين → 1 عمود === */
+@media (max-width: 1000px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .footer-col-payment {
+        grid-column: span 2;
+    }
+    .footer-col-payment .payment-bar {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col-payment {
+        grid-column: span 1;
+    }
+    .footer-logo {
+        justify-content: center;
+    }
+    .footer-social {
+        justify-content: center;
+    }
+    .footer-heading::after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+    .footer-links-grid {
+        justify-items: center;
+    }
+    .footer-phone {
+        justify-content: center;
+    }
+    .payment-bar {
+        width: 100%;
+    }
+    .payment-icons-desktop {
+        display: none;
+    }
+    .payment-icons-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    .icons-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    .payment-icons-mobile img {
+        height: 26px;
+        width: auto;
+        object-fit: contain;
+    }
+    .footer-bottom p {
+        font-size: 11px;
+    }
+}
+</style>
+
+<!-- ===== FAB (الزر العائم) ===== -->
+<div class="fab" id="fab">
+    <div class="fab-popup">
+        <div class="fab-menu">
+            <a href="tel:0550133938" class="fab-item fab-call">
+                <div class="fab-label">اتصل بنا</div>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.7 11.7 0 003.67.59 1 1 0 011 1V20a1 1 0 01-1 1C10.3 21 3 13.7 3 4a1 1 0 011-1h3.47a1 1 0 011 1c0 1.27.2 2.5.59 3.67a1 1 0 01-.25 1.01z"/></svg>
+            </a>
+            <a href="https://wa.me/966550133938" target="_blank" class="fab-item fab-whatsapp">
+                <div class="fab-label">راسلنا عبر واتساب</div>
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M16.01 3C8.83 3 3 8.74 3 15.83c0 2.5.73 4.82 1.98 6.79L3 29l6.57-1.92a13.08 13.08 0 006.44 1.66c7.18 0 13.01-5.74 13.01-12.83S23.19 3 16.01 3zm0 23.5a10.5 10.5 0 01-5.36-1.47l-.38-.22-3.89 1.14 1.16-3.78-.24-.39a10.34 10.34 0 01-1.58-5.45c0-5.73 4.72-10.39 10.53-10.39s10.53 4.66 10.53 10.39S21.82 26.5 16.01 26.5z"/><path d="M22.1 18.53c-.33-.16-1.96-.96-2.27-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.05 1.29-.19.22-.39.24-.72.08-.33-.16-1.4-.5-2.66-1.58-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.5.14-.66.15-.15.33-.39.5-.58.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.58-.08-.16-.74-1.78-1.01-2.43-.27-.65-.55-.56-.74-.57h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.73s1.18 3.17 1.34 3.39c.16.22 2.32 3.52 5.62 4.94.78.33 1.39.53 1.87.68.79.25 1.5.22 2.07.13.63-.09 1.96-.8 2.24-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.38z"/></svg>
+            </a>
+            <a href="#" class="fab-item fab-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+                <div class="fab-label">العودة للأعلى</div>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.6L19 12z"/></svg>
+            </a>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.instagram.com/puresmile2030" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram"></i></a>
-                <a href="https://www.snapchat.com/add/puresmile2030" target="_blank" rel="noopener noreferrer"><i class="fab fa-snapchat"></i></a>
-                <a href="https://www.tiktok.com/@puresmile2030" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-            </div>
-			<div class="footer-contact" style="text-align: center; margin-bottom: 10px; color: #ffffff; font-family: inherit; font-size: 16px;">
-    <p style="margin: 5px 0;">العنوان: صبيا، الحسيني، على طريق العيدابي</p>
-    <p style="margin: 5px 0;">
-        اتصل بنا: 
-        <a href="tel:0550133938" style="color: #ffffff; text-decoration: none;">0550133938</a>
-    </p>
+    </div>
+    <button class="fab-main" id="fabMain" aria-label="اختر طريقة التواصل">
+        <svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 00-8 8v4a3 3 0 003 3h1v-4H6v-3a6 6 0 1112 0v3h-2v4h1a3 3 0 003-3v-4a8 8 0 00-8-8zm-3 18a3 3 0 003 2 3 3 0 003-2H9z"/></svg>
+    </button>
 </div>
-            <p style="margin-top: 30px; opacity: 0.7;">جميع الحق محفوظة © مركز أنقى ابتسامة لطب الأسنان 2026</p>
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const counters = document.querySelectorAll(".stat-number");
-            const duration = 2000; // 2 ثانية
-
-            const startCount = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = +counter.getAttribute("data-target");
-                        let start = 0;
-                        const step = Math.ceil(target / (duration / 16)); // 60 إطار في الثانية
-
-                        const updateCounter = () => {
-                            start += step;
-                            if (start >= target) {
-                                counter.innerText = target.toLocaleString() + "+";
-                            } else {
-                                counter.innerText = start.toLocaleString() + "+";
-                                setTimeout(updateCounter, 16);
-                            }
-                        };
-                        
-                        updateCounter();
-                        observer.unobserve(counter); // إيقاف المراقبة بعد التشغيل
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(startCount, {
-                root: null,
-                threshold: 0.3
-            });
-
-            counters.forEach(counter => {
-                observer.observe(counter);
-            });
-        });
-    </script>
+<!-- ===== SCRIPTS ===== -->
+<script src="script.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>

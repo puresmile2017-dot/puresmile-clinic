@@ -1,0 +1,290 @@
+/* =========================================
+   Pure Smile Popup - Professional Design
+   ========================================= */
+
+/* منع تمرير الصفحة عند ظهور النافذة */
+body.puresmile-popup-open {
+    overflow: hidden;
+}
+
+/* =========================================
+   الخلفية الشفافة
+   ========================================= */
+.puresmile-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 15, 30, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999999;
+}
+
+.puresmile-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================================
+   النافذة الرئيسية
+   ========================================= */
+.puresmile-popup {
+    position: relative;
+    width: min(800px, 100%);
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    transform: scale(0.94) translateY(15px);
+    transition: transform 0.35s cubic-bezier(.2, .8, .2, 1);
+    direction: rtl;
+}
+
+.puresmile-overlay.show .puresmile-popup {
+    transform: scale(1) translateY(0);
+}
+
+/* =========================================
+   زر الإغلاق
+   ========================================= */
+.puresmile-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.puresmile-close:hover {
+    background: rgba(0, 0, 0, 0.70);
+    transform: rotate(90deg);
+}
+
+/* =========================================
+   محتوى النافذة
+   ========================================= */
+.puresmile-popup-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    min-height: 380px;
+    max-height: 500px;
+}
+
+/* =========================================
+   الصورة
+   ========================================= */
+.puresmile-popup-image {
+    width: 100%;
+    min-height: 380px;
+    position: relative;
+    overflow: hidden;
+}
+
+.puresmile-popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* شريط علوي فوق الصورة */
+.puresmile-popup-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(21, 31, 109, 0.55), transparent);
+    pointer-events: none;
+}
+
+/* =========================================
+   معلومات العرض (الجهة اليسرى/اليمنى)
+   ========================================= */
+.puresmile-popup-info {
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    direction: rtl;
+    text-align: right;
+}
+
+.puresmile-popup-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #151F6D;
+    background: #F6F3ED;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.puresmile-popup-info h2 {
+    margin: 0 0 8px;
+    color: #151F6D;
+    font-size: 26px;
+    line-height: 1.3;
+    font-weight: 900;
+}
+
+.puresmile-popup-info p {
+    margin: 0 0 18px;
+    color: #555770;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.puresmile-popup-info strong {
+    color: #151F6D;
+}
+
+/* =========================================
+   النموذج
+   ========================================= */
+#puresmilePopupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#puresmilePopupForm label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #151F6D;
+}
+
+#puresmilePopupForm input {
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    border: 1.5px solid #C9C4BA;
+    border-radius: 10px;
+    padding: 0 14px;
+    background: #FAF8F4;
+    color: #333333;
+    font-size: 15px;
+    outline: none;
+    direction: rtl;
+    text-align: right;
+    transition: 0.25s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+#puresmilePopupForm input:focus {
+    border-color: #151F6D;
+    box-shadow: 0 0 0 3px rgba(21, 31, 109, 0.10);
+    background: #ffffff;
+}
+
+#puresmilePopupForm button {
+    width: 100%;
+    height: 48px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #151F6D, #1a3a5c);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: 'Cairo', sans-serif;
+    border: 1.5px solid #F6F3ED;
+}
+
+#puresmilePopupForm button:hover {
+    background: #F6F3ED;
+    color: #151F6D;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(21, 31, 109, 0.20);
+    border-color: #C9C4BA;
+}
+
+/* =========================================
+   الجوال - تصميم مختلف
+   ========================================= */
+@media (max-width: 700px) {
+    .puresmile-overlay {
+        padding: 10px;
+    }
+
+    .puresmile-popup {
+        width: 100%;
+        max-height: 92vh;
+        overflow-y: auto;
+        border-radius: 14px;
+    }
+
+    .puresmile-popup-content {
+        display: block;
+        min-height: auto;
+        max-height: none;
+    }
+
+    .puresmile-popup-image {
+        height: 160px;
+        min-height: 160px;
+        max-height: 160px;
+    }
+
+    .puresmile-popup-info {
+        padding: 20px 18px 22px;
+    }
+
+    .puresmile-popup-info h2 {
+        font-size: 20px;
+    }
+
+    .puresmile-popup-info p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .puresmile-popup-label {
+        font-size: 11px;
+        padding: 4px 12px;
+    }
+
+    .puresmile-close {
+        width: 32px;
+        height: 32px;
+        top: 8px;
+        right: 8px;
+        font-size: 18px;
+    }
+
+    #puresmilePopupForm input {
+        height: 42px;
+        font-size: 14px;
+    }
+
+    #puresmilePopupForm button {
+        height: 44px;
+        font-size: 14px;
+    }
+}

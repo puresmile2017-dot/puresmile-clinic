@@ -1,54 +1,111 @@
 :root {
-    --primary: #0a2647;
-    --accent: #b19470;
-    --gold-light: #c5a059;
-    --bg-soft: #f9fbfd;
+    --primary: #151F6D;
+    --accent: #F6F3ED;
+    --gold-light: #C9C4BA;
+    --bg-soft: #FAF8F4;
     --white: #ffffff;
-    --text-dark: #1a1a1a;
+    --text-dark: #1a1a2e;
     --radius-premium: 20px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    font-family: 'Cairo', sans-serif; 
-    background: var(--bg-soft); 
-    color: var(--text-dark); 
-    line-height: 1.7; 
-    direction: rtl; 
+/* ===== منع التجاوز الأفقي نهائياً ===== */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text-dark);
+    line-height: 1.7;
+    direction: rtl;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* Header */
-.header { 
-    background: var(--primary); 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-    padding: 15px 0; 
+/* ===== HEADER زجاجي عائم ===== */
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90%, 1200px);   /* استخدام min() لضمان عدم تجاوز العرض */
+    background: rgba(21, 31, 109, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 5px 30px;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: none;
+    box-sizing: border-box;
 }
-.navbar { display: flex; justify-content: space-between; align-items: center; }
-.logo-container { display: flex; align-items: center; gap: 15px; cursor: pointer; }
-#main-logo { height: 50px; width: auto; object-fit: contain; }
-.logo-text { color: white; font-size: 20px; font-weight: 800; line-height: 1.2; }
-.logo-text span { color: var(--accent); }
-.logo-text small { display: block; font-size: 11px; font-weight: 400; opacity: 0.8; color: white; }
-
-
-/* الروابط العلوية (مميزة وجذابة) */
-.nav-links { list-style: none; display: flex; gap: 25px; }
-.nav-links a { 
-    text-decoration: none; 
-    color: white; 
-    font-weight: 600; 
-    font-size: 14px; 
-    transition: 0.3s ease-in-out;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    min-height: 36px;
+    width: 100%;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+#main-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+.logo-text {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+.logo-text span {
+    color: var(--accent);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
     position: relative;
     padding-bottom: 5px;
 }
-.nav-links a:hover { 
-    color: var(--accent); 
+.nav-links a:hover {
+    color: var(--accent);
 }
 .nav-links a::after {
     content: '';
@@ -57,56 +114,72 @@ body {
     right: 0;
     width: 0;
     height: 2px;
-    background-color: var(--accent);
-    transition: width 0.3s ease;
+    background: var(--accent);
+    transition: 0.3s;
 }
 .nav-links a:hover::after {
     width: 100%;
 }
-
-/* زر الحجز (مضيء ومميز) */
-@keyframes pulseGlow {
-    0% {
-        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7);
-        transform: scale(1);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(197, 160, 89, 0);
-        transform: scale(1.02);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
-        transform: scale(1);
-    }
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
 }
 
+/* زر حجز موعد */
 .btn-reservation {
-    background: #c5a059; /* لون ذهبي وفاتح قليلاً */
+    background: #C9C4BA;
     color: var(--primary);
-    padding: 12px 24px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     transition: 0.3s;
     animation: pulseGlow 2s infinite;
+    white-space: nowrap;
 }
 .btn-reservation:hover {
-    background: #f4d06f; /* لون أفتح عند المرور */
+    background: #f4d06f;
     transform: scale(1.06);
-    animation: none; /* إيقاف الوميض عند التمرير ليصبح هادئاً */
+    animation: none;
+}
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(201, 196, 186, 0.7); transform: scale(1); }
+    70% { box-shadow: 0 0 0 15px rgba(201, 196, 186, 0); transform: scale(1.02); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 196, 186, 0); transform: scale(1); }
 }
 
-/* Hero Section */
+/* أيقونة القائمة (مخفية على الكمبيوتر) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    flex-shrink: 0;
+}
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s;
+    display: block;
+}
+
+/* ===== HERO ===== */
 .hero-section-final {
     position: relative;
     width: 100%;
     height: 85vh;
     display: flex;
     align-items: center;
-    background: url('img/clinic-hero.jpg') no-repeat center center / cover;
+    background: url('img/clinic-hero.jpg') no-repeat center center/cover;
     background-attachment: fixed;
 }
 .hero-overlay-final {
@@ -115,38 +188,51 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(10, 38, 71, 0.1), rgba(10, 38, 71, 0.8) 50%, #0a2647 100%);
+    background: linear-gradient(to right, rgba(21, 31, 109, 0.1), rgba(21, 31, 109, 0.8) 50%, #151F6D 100%);
     z-index: 1;
 }
-.hero-container-final { width: 100%; display: flex; justify-content: flex-end; padding-right: 5%; position: relative; z-index: 5; }
-.hero-content-final { max-width: 650px; text-align: right; color: #ffffff; }
-.hero-content-final h1 { font-size: 3.8rem; line-height: 1.4; margin-bottom: 25px; }
-.hero-content-final p { font-size: 1.3rem; line-height: 1.8; margin-bottom: 35px; }
-.hero-content-final {
-    text-align: right; /* لتغيير مكان المحاذاة بالكامل (يمين، يسار، أو وسط) */
-    /* يمكنك استخدام خاصية margin للتحكم الدقيق بالإزاحة: */
-    margin-right: 3px; /* قم بزيادة الرقم لإزاحة النص أكثر لليسار، أو قلله لليمين */
+.hero-container-final {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+    position: relative;
+    z-index: 5;
+    box-sizing: border-box;
 }
-/* زر الواتساب ومربع النص */
+.hero-content-final {
+    max-width: 650px;
+    text-align: right;
+    color: #fff;
+}
+.hero-content-final h1 {
+    font-size: 3.8rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+.hero-content-final p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
 .btn-whatsapp-luxury {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, #fdf6e9, #e5cf9a); /* تدرج ذهبي فاتح وراقي */
-    color: #0a2647;
-    padding: 14px 28px; /* حجم أصغر ومناسب */
+    background: linear-gradient(135deg, #fdf6e9, #e5cf9a);
+    color: #151F6D;
+    padding: 14px 28px;
     border-radius: 12px;
     font-weight: bold;
-    font-size: 15px; /* حجم النص مناسب وأصغر */
+    font-size: 15px;
     text-decoration: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border: 1.5px solid #b19470;
-    transition: all 0.3s ease-in-out;
-    /* تأثير الإطار اللامع */
+    border: 1.5px solid #F6F3ED;
+    transition: 0.3s;
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
 }
-
 .btn-whatsapp-luxury::before {
     content: '';
     position: absolute;
@@ -158,63 +244,520 @@ body {
     transform: rotate(45deg);
     transition: 0.6s;
 }
-
 .btn-whatsapp-luxury:hover::before {
     left: 100%;
 }
-
-.btn-whatsapp-luxury:hover { 
-    background: #ffffff; 
-    color: #0a2647; 
+.btn-whatsapp-luxury:hover {
+    background: #fff;
+    color: #151F6D;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(177, 148, 112, 0.4);
-    border-color: #c5a059;
+    box-shadow: 0 10px 20px rgba(246, 243, 237, 0.4);
+    border-color: #C9C4BA;
 }
 
-/* Services */
-.services { padding: 80px 0; }
-.section-title { text-align: center; margin-bottom: 50px; }
-.section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.s-card { background: var(--white); padding: 35px; border-radius: var(--radius-premium); transition: 0.4s; border-top: 5px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.s-card:hover { transform: translateY(-10px); border-top-color: var(--accent); }
-.s-icon { font-size: 40px; color: var(--primary); margin-bottom: 20px; }
-
-/* Doctors Grid */
-.doctors { background-color: var(--white); padding: 80px 0; }
-.doctors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-.dr-card {
-    background: var(--bg-soft);
-    padding: 30px 20px;
-    border-radius: var(--radius-premium);
+/* ===== SERVICES ===== */
+.services {
+    padding: 80px 0;
+    background: #FAF8F4;
+}
+.services-title-box {
     text-align: center;
-    transition: 0.4s;
-    border-bottom: 4px solid transparent;
+    margin-bottom: 50px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.services-title-box h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    padding: 0 30px;
+}
+.services-title-box h2::before,
+.services-title-box h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #C9C4BA);
+    transform: translateY(-50%);
+}
+.services-title-box h2::before {
+    left: -60px;
+    background: linear-gradient(90deg, transparent, #C9C4BA);
+}
+.services-title-box h2::after {
+    right: -60px;
+    background: linear-gradient(90deg, #C9C4BA, transparent);
+}
+.services-title-box p {
+    font-size: 18px;
+    color: #555;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    display: block;
+    width: fit-content;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 8px 30px;
+    border-radius: 30px;
+    border: 1px solid rgba(201, 196, 186, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    direction: rtl;
+    line-height: 1.6;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.service-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px;
+    padding: 20px 12px 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(201, 196, 186, 0.12);
+    overflow: hidden;
+    min-height: 280px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.service-card .service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(21, 31, 109, 0.78);
+    border-radius: 14px;
+    pointer-events: none;
+    z-index: 1;
+}
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 14px;
+    height: 14px;
+    border-top: 2.5px solid #C9C4BA;
+    border-left: 2.5px solid #C9C4BA;
+    border-radius: 3px 0 0 0;
+    pointer-events: none;
+    z-index: 3;
+}
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 14px;
+    height: 14px;
+    border-top: 2.5px solid #C9C4BA;
+    border-right: 2.5px solid #C9C4BA;
+    border-radius: 0 3px 0 0;
+    pointer-events: none;
+    z-index: 3;
+}
+.service-card .corner-bl {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    width: 14px;
+    height: 14px;
+    border-bottom: 2.5px solid #C9C4BA;
+    border-left: 2.5px solid #C9C4BA;
+    border-radius: 0 0 0 3px;
+    pointer-events: none;
+    z-index: 3;
+}
+.service-card .corner-br {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 14px;
+    height: 14px;
+    border-bottom: 2.5px solid #C9C4BA;
+    border-right: 2.5px solid #C9C4BA;
+    border-radius: 0 0 3px 0;
+    pointer-events: none;
+    z-index: 3;
+}
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: #C9C4BA;
+}
+.service-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #C9C4BA, #F6F3ED);
+    display: flex;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 15px rgba(201, 196, 186, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+.service-card:hover .service-icon {
+    transform: scale(1.06);
+    box-shadow: 0 6px 20px rgba(201, 196, 186, 0.35);
+}
+
+/* أيقونات الخدمات */
+.service-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(11%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(0.6);
+}
+.service-icon i {
+    color: #ffffff !important;
+    font-size: 28px !important;
+    position: relative;
+    z-index: 2;
+}
+.service-card .gold-line {
+    width: 55px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C9C4BA, #F6F3ED, #C9C4BA, transparent);
+    margin: 5px auto 12px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 8px rgba(201, 196, 186, 0.15);
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover .gold-line {
+    width: 75px;
+    box-shadow: 0 0 16px rgba(201, 196, 186, 0.3);
+}
+.service-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 4px;
+    position: relative;
+    z-index: 2;
+}
+.service-card p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 12px;
+    line-height: 1.5;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+.service-btn {
+    display: inline-block;
+    background: transparent;
+    color: #C9C4BA;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1.5px solid #C9C4BA;
     cursor: pointer;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+}
+.service-btn:hover {
+    background: #C9C4BA;
+    color: #151F6D;
+    transform: scale(1.04);
+    box-shadow: 0 4px 15px rgba(201, 196, 186, 0.25);
+}
+
+/* ===== DOCTORS ===== */
+.doctors {
+    padding: 80px 0;
+    background: #FAF8F4;
+}
+.doctors-title-box {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.doctors-title-box h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    padding: 0 30px;
+}
+.doctors-title-box h2::before,
+.doctors-title-box h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #C9C4BA);
+    transform: translateY(-50%);
+}
+.doctors-title-box h2::before {
+    left: -60px;
+    background: linear-gradient(90deg, transparent, #C9C4BA);
+}
+.doctors-title-box h2::after {
+    right: -60px;
+    background: linear-gradient(90deg, #C9C4BA, transparent);
+}
+.doctors-title-box p {
+    font-size: 18px;
+    color: #555;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 30px;
+    border: 1px solid rgba(201, 196, 186, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 0;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.dr-card {
+    background: linear-gradient(145deg, #e8edf5, #d5dde8);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
 }
 .dr-card:hover {
-    transform: translateY(-10px);
-    background: var(--white);
-    box-shadow: 0 15px 30px rgba(10, 38, 71, 0.08);
-    border-bottom-color: var(--accent);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+    border-color: #C9C4BA;
+}
+.dr-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.05s;
+}
+.dr-header {
+    padding: 14px 16px 10px;
+    text-align: right;
+    background: transparent;
+    border-bottom: 1px solid rgba(201, 196, 186, 0.15);
+}
+.dr-header h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+}
+.dr-header .dr-specialty {
+    font-size: 13px;
+    color: #C9C4BA;
+    font-weight: 600;
+    margin: 2px 0 0;
+}
+.dr-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    background: #1a1a2e;
 }
 .dr-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid var(--white);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    object-position: top center;
+    display: block;
 }
-.dr-card h4 { color: var(--primary); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-.dr-card p { color: var(--accent); font-size: 14px; font-weight: 600; }
+.dr-btn-wrapper {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 2;
+}
+.dr-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #C9C4BA, #F6F3ED);
+    color: #151F6D;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 10px rgba(201, 196, 186, 0.2);
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+.dr-btn:hover {
+    transform: scale(1.1) translateY(-2px);
+    background: linear-gradient(135deg, #F6F3ED, #C9C4BA);
+    box-shadow: 0 8px 20px rgba(246, 243, 237, 0.5);
+}
+.dr-btn:active {
+    transform: scale(0.88);
+    background: #C9C4BA;
+    box-shadow: 0 2px 8px rgba(201, 196, 186, 0.3);
+    transition-duration: 0.05s;
+}
 
-/* Reviews */
+/* ===== STATS SECTION ===== */
+.stats-section {
+    position: relative;
+    padding: 35px 20px;
+    background: linear-gradient(rgba(21, 31, 109, 0.75), rgba(21, 31, 109, 0.85)), url('img/stats.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    box-sizing: border-box;
+}
+
+.stats-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stats-section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.stats-section-title::after {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #F6F3ED, transparent);
+    margin: 6px auto 0;
+    border-radius: 2px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(246, 243, 237, 0.5);
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 12px rgba(246, 243, 237, 0.4);
+    border-color: #F6F3ED;
+}
+
+.stat-icon {
+    color: #F6F3ED;
+    margin-bottom: 8px;
+    display: inline-flex;
+    padding: 6px;
+    background: rgba(246, 243, 237, 0.12);
+    border-radius: 50%;
+    border: 1px solid rgba(246, 243, 237, 0.3);
+}
+
+.stat-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #F6F3ED;
+    margin-bottom: 4px;
+    direction: ltr;
+    display: inline-block;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.stat-number::after {
+    content: '';
+    margin-right: 3px;
+    color: #F6F3ED;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== REVIEWS ===== */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -222,323 +765,640 @@ body {
     max-height: 500px;
     overflow-y: auto;
     padding: 10px;
+    align-items: start;
 }
 .review-card {
     background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-right: 5px solid #b19470;
-}
-.stars { color: #ffc107; margin-bottom: 10px; }
-.review-text { font-size: 14px; color: #444; line-height: 1.6; font-style: italic; }
-.reviewer-name { display: block; margin-top: 15px; font-weight: bold; color: #0a2647; font-size: 13px; }
-
-/* Doctor Details Profile */
-.dr-profile-header {
-    background: var(--primary);
-    color: white;
-    padding: 80px 0 60px;
-    text-align: center;
-    border-bottom: 4px solid var(--accent);
-}
-.profile-main-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid var(--accent);
-    margin-bottom: 20px;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-.dr-profile-header h1 { font-size: 2.2rem; margin-bottom: 10px; }
-.specialty { color: var(--accent); font-size: 1.2rem; font-weight: 700; margin-bottom: 30px; }
-.bio {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.08);
-    padding: 25px;
-    border-radius: 15px;
-    line-height: 1.7;
-}
-.cases-gallery { padding: 60px 0; }
-.cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 30px; }
-.case-item { background: var(--bg-soft); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.case-item h4 { color: var(--primary); margin-bottom: 15px; text-align: center; font-size: 18px; }
-.case-images img { 
-    width: 100%; 
-    height: auto; 
-    object-fit: contain; 
-    border-radius: 10px; 
-    margin-top: 5px; 
-}
-
-/* Back Home Button */
-.btn-back-home {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #0a2647;
-    color: #ffffff !important;
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 700;
-    border: 2px solid #b19470;
-    transition: all 0.3s ease;
-}
-.btn-back-home:hover {
-    background-color: #b19470;
-    color: #0a2647 !important;
-    transform: translateY(-3px);
-}
-    back-home:hover {
-    background-color: #b19470;
-    color: #0a2647 !important;
-    transform: translateY(-3px);
-}
-/* Footer */
-.footer { background: var(--primary); color: white; padding: 60px 0 30px; border-top: 5px solid var(--accent); text-align: center; }
-.social-links a { color: white; font-size: 24px; margin: 0 12px; transition: 0.3s; }
-.social-links a:hover { color: var(--accent); }
-
-@media (max-width: 968px) {
-    .hero-content-final h1 { font-size: 2.2rem; }
-    .hero-content-final p { font-size: 1rem; }
-    .nav-links { display: none; }
-}
-/* تفعيل التفاعل باللمس للأجهزة الذكية والجوالات */
-@media (max-width: 768px) {
-    .s-card:active, .s-card:focus,
-    .dr-card:active, .dr-card:focus {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(10, 38, 71, 0.08);
-        border-top-color: var(--accent);
-        background: var(--white);
-    }
-    
-    .dr-card {
-        /* إتاحة مساحة أكبر قليلاً للضغط بالإصبع في الجوال */
-        padding: 40px 15px;
-    }
-}
-
-/* --- تنسيق قسم التقييمات --- */
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 15px;
-}
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-.review-card { border: 1px solid #ddd; padding: 20px; border-radius: 12px; background: #fff; }
-.review-text { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.review-text.full { -webkit-line-clamp: unset; }
-.read-more { color: #007bff; cursor: pointer; font-weight: bold; }
-.review-card {
-    background: var(--white);
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
-    border-right: 6px solid var(--accent);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-right: 5px solid #F6F3ED;
+    transition: 0.4s;
 }
-.avatar-icon { 
-    width: 35px; height: 35px; border-radius: 50%; object-fit: cover; margin-left: 10px; 
-}
-.stars-container { 
-    color: #f39c12; margin: 8px 0; font-size: 14px; 
-}
-.review-text { 
-    line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical; overflow: hidden; transition: 0.3s; 
-}
-.review-text.full { -webkit-line-clamp: unset; }
-/* تأثير اللمسة الماسية (إضاءة ولمعان) عند التمرير */
-.review-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
-    transition: all 0.6s ease;
-}
-
 .review-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(177, 148, 112, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(246, 243, 237, 0.15);
     border-color: var(--gold-light);
 }
-
-.review-card:hover::before {
-    left: 100%;
+.stars {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+.review-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.review-text.full {
+    -webkit-line-clamp: unset;
+}
+.reviewer-name {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #151F6D;
+}
+.read-more {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 8px;
+}
+.avatar-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}
+.stars-container {
+    color: #f39c12;
+    margin: 8px 0;
+    font-size: 14px;
 }
 
-/* تفعيل التأثير عند اللمس في الجوال */
-@media (max-width: 768px) {
-    .review-card:active {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 12px 30px rgba(10, 38, 71, 0.08);
-        border-color: var(--gold-light);
-    }
+/* ===== FAB ===== */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99999;
+    width: 64px;
+    height: 64px;
+    pointer-events: none;
+    display: block;
 }
-/* --- تعديل قسم الأطباء --- */
-.doctors-title-box {
-    text-align: center;
-    margin: 0 auto 40px auto;
-    background: linear-gradient(135deg, rgba(249, 251, 253, 0.9), rgba(229, 207, 154, 0.1));
-    padding: 24px 20px; /* تم تصغير البادينغ ليتناسب مع النص */
-    border-radius: 16px; /* تقليل التدوير ليتناسب مع الحجم الجديد */
-    border: 2px solid var(--accent, #b19470);
-    box-shadow: 0 6px 20px rgba(177, 148, 112, 0.06);
-    max-width: 550px; /* تقليل العرض الأقصى للإطار */
+.fab-popup {
+    position: absolute;
+    bottom: 74px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    width: 64px;
 }
-
-.doctors-title-box h2 {
-    color: var(--primary, #0a2647);
-    font-size: 1.8rem; /* تصغير الخط ليتناسب مع حجم الإطار */
-    font-weight: 700;
-    margin-bottom: 6px;
+.fab-menu {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
 }
-
-.doctors-title-box p {
-    color: var(--accent, #b19470);
-    font-size: 1.05rem; /* تصغير الخط */
+.fab.open .fab-menu {
+    display: flex;
+    animation: fadeUp 0.3s ease;
+}
+.fab-item {
+    pointer-events: auto;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+    transition: 0.2s;
+    position: relative;
+}
+.fab-item svg {
+    width: 24px;
+    height: 24px;
+}
+.fab-item:hover {
+    transform: scale(1.05);
+}
+.fab-label {
+    position: absolute;
+    right: 68px;
+    background: #fff;
+    color: #222;
+    padding: 8px 14px;
+    border-radius: 30px;
+    white-space: nowrap;
+    font-size: 13px;
     font-weight: 600;
-    margin: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
 }
-
-/* تعديل الشبكة لتصبح 3 أطباء في الصف الواحد */
-.doctors-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 أطباء في الصف */
-    gap: 25px;
-    max-width: 1050px;
-    margin: 0 auto;
+.fab-item:hover .fab-label {
+    opacity: 1;
+    visibility: visible;
 }
-
-/* لتجاوب الشاشات الصغيرة: ليصبح طبيبين أو طبيب في الصفوف الصغيرة */
-/* في وضع الكمبيوتر: إخفاء زر الجوال */
-.menu-toggle {
-    display: none;
+.fab-call {
+    color: #C9C4BA;
+    border: 2px solid #C9C4BA;
+}
+.fab-whatsapp {
+    color: #25D366;
+    border: 2px solid #25D366;
+}
+.fab-top {
+    color: #F6F3ED;
+    border: 2px solid #F6F3ED;
+}
+.fab-call:hover {
+    background: #C9C4BA;
+    color: #151F6D;
+}
+.fab-whatsapp:hover {
+    background: #25D366;
+    color: #fff;
+}
+.fab-top:hover {
+    background: #F6F3ED;
+    color: #151F6D;
+}
+.fab-main {
+    box-sizing: border-box;
+    pointer-events: auto;
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #C9C4BA, #F6F3ED);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    margin-right: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    animation: pulse 2s infinite;
+    position: relative;
+    z-index: 2;
+}
+.fab-main svg {
+    width: 34px;
+    height: 34px;
+    fill: #151F6D;
+}
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(201, 196, 186, 0.6); }
+    70% { box-shadow: 0 0 0 14px rgba(201, 196, 186, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 196, 186, 0); }
 }
 
-/* في وضع الجوال (أصغر من 768px) */
+/* ============================================================ */
+/* ===== RESPONSIVE (جميع الشاشات) ===== */
+/* ============================================================ */
+
+/* شاشات كبيرة */
+@media (min-width: 1025px) {
+    .services-grid {
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+}
+
+/* تابلت */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* جوال */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+    .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 8px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
-    
-    .menu-toggle span {
-        width: 25px;
-        height: 3px;
-        background: white;
+    .service-card {
+        min-height: 240px !important;
+        padding: 14px 8px 12px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
-
-    .nav-links {
-        display: none; /* إخفاء القائمة العادية */
-        position: absolute;
-        top: 100%; /* تظهر تحت الهيدر مباشرة */
-        left: 0;
-        width: 100%;
-        background: #0a2647;
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
-        z-index: 1000;
+    .service-card::before,
+    .service-card::after,
+    .service-card .corner-bl,
+    .service-card .corner-br {
+        display: block !important;
+        width: 12px !important;
+        height: 12px !important;
+        border-width: 2px !important;
     }
-
-    /* كلاس يضيفه الجافاسكريبت عند الضغط ليظهر القائمة */
-    .nav-links.active {
-        display: flex;
+    .service-card .gold-line {
+        width: 80% !important;
+        margin: 5px auto 10px !important;
+        height: 2px !important;
+    }
+    .service-icon {
+        width: 50px !important;
+        height: 50px !important;
+        margin-bottom: 8px !important;
+    }
+    .service-icon img {
+        width: 28px !important;
+        height: 28px !important;
+        filter: brightness(0) saturate(100%) invert(11%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(0.6);
+    }
+    .service-icon i {
+        font-size: 26px !important;
+    }
+    .service-card h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 3px !important;
+    }
+    .service-card p {
+        font-size: 0.7rem !important;
+        margin-bottom: 10px !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .service-btn {
+        font-size: 0.65rem !important;
+        padding: 4px 10px !important;
+    }
+    .services-title-box h2 {
+        font-size: 30px !important;
+    }
+    .services-title-box h2::before,
+    .services-title-box h2::after {
+        width: 35px !important;
+    }
+    .services-title-box h2::before {
+        left: -45px !important;
+    }
+    .services-title-box h2::after {
+        right: -45px !important;
+    }
+    .services-title-box p {
+        white-space: nowrap !important;
+        font-size: 15px !important;
+        padding: 6px 20px !important;
     }
 }
-/* --- إصلاح تداخل الهيدر والتجاوب --- */
 
-/* وضع الكمبيوتر */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
+/* جوال صغير */
+@media (max-width: 480px) {
+    .services-grid {
+        gap: 8px !important;
+        padding: 0 6px !important;
+    }
+    .service-card {
+        min-height: 200px !important;
+        padding: 12px 6px 10px !important;
+    }
+    .service-card .gold-line {
+        width: 80% !important;
+        margin: 4px auto 8px !important;
+    }
+    .service-icon {
+        width: 44px !important;
+        height: 44px !important;
+        margin-bottom: 6px !important;
+    }
+    .service-icon img {
+        width: 24px !important;
+        height: 24px !important;
+        filter: brightness(0) saturate(100%) invert(11%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(0.6);
+    }
+    .service-icon i {
+        font-size: 22px !important;
+    }
+    .service-card h3 {
+        font-size: 0.8rem !important;
+    }
+    .service-card p {
+        font-size: 0.65rem !important;
+        -webkit-line-clamp: 2;
+    }
+    .service-btn {
+        font-size: 0.6rem !important;
+        padding: 3px 8px !important;
+    }
 }
 
-/* وضع الجوال (أصغر من 968px ليتناسب مع الكود السابق لديك) */
+/* شاشات صغيرة جداً */
+@media (max-width: 360px) {
+    .services-grid {
+        gap: 6px !important;
+        padding: 0 4px !important;
+    }
+    .service-card {
+        min-height: 170px !important;
+        padding: 10px 4px 8px !important;
+    }
+    .service-card .gold-line {
+        width: 80% !important;
+        margin: 3px auto 6px !important;
+    }
+    .service-icon {
+        width: 38px !important;
+        height: 38px !important;
+        margin-bottom: 4px !important;
+    }
+    .service-icon img {
+        width: 20px !important;
+        height: 20px !important;
+        filter: brightness(0) saturate(100%) invert(11%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(0.6);
+    }
+    .service-icon i {
+        font-size: 18px !important;
+    }
+    .service-card h3 {
+        font-size: 0.7rem !important;
+    }
+    .service-card p {
+        font-size: 0.6rem !important;
+        -webkit-line-clamp: 2;
+    }
+    .service-btn {
+        font-size: 0.55rem !important;
+        padding: 2px 6px !important;
+    }
+}
+
+/* ===== تعديلات HEADER و MENU للجوال ===== */
 @media (max-width: 968px) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+    .header {
+        top: 12px;
+        padding: 5px 20px;
     }
-    
-    .menu-toggle span {
-        width: 25px;
-        height: 3px;
-        background: white;
+    .navbar {
+        min-height: 32px;
+        position: relative;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    .logo-container {
+        margin-right: -10px;
+    }
+    .nav-actions {
+        margin-left: -10px;
+    }
+    #main-logo {
+        height: 40px;
+    }
+    .logo-text {
+        font-size: 16px;
+    }
+    .btn-reservation {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 3px;
+        padding: 6px;
+        background: transparent;
+        border: 2px solid #F6F3ED;
+        border-radius: 8px;
         transition: 0.3s;
     }
-
+    .menu-toggle span {
+        width: 20px;
+        height: 2px;
+        background: white;
+        border-radius: 2px;
+        display: block;
+    }
+    .menu-toggle:hover {
+        background: rgba(255,255,255,0.1);
+        border-color: #C9C4BA;
+    }
     .nav-links {
-        display: none; /* مخفية افتراضياً في الجوال */
+        display: flex !important;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #0a2647;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        z-index: 999;
+        top: calc(100% + 12px);
+        right: 10px;
+        width: auto;
+        min-width: 200px;
+        max-width: 280px;
+        background: rgba(21, 31, 109, 0.9);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 12px 16px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(246, 243, 237, 0.3);
+        gap: 4px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        pointer-events: none;
+        z-index: 9999;
     }
-
-    /* عند تفعيل القائمة */
     .nav-links.active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
     }
-
     .nav-links li {
-        margin: 10px 0;
+        list-style: none;
+        opacity: 1;
+        transform: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        animation: none;
     }
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    .nav-links li a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 10px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.2s;
+        white-space: nowrap;
+    }
+    .nav-links li a::before {
+        content: '✦';
+        color: #F6F3ED;
+        font-size: 12px;
+        width: 18px;
+        text-align: center;
+    }
+    .nav-links li a:hover {
+        color: #C9C4BA;
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        padding-right: 12px;
+    }
+    .close-menu-btn {
+        display: none;
+    }
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+        background: #F6F3ED;
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+        background: #F6F3ED;
+    }
+    .doctors-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+        justify-items: center;
+    }
+    .dr-card {
+        max-width: 320px;
+        width: 100%;
+    }
+    .dr-header h4 { font-size: 16px; }
+    .dr-header .dr-specialty { font-size: 13px; }
+    .dr-header { padding: 12px 12px 8px; }
+    .dr-btn { font-size: 10px; padding: 4px 12px; }
+    .doctors-title-box h2 { font-size: 28px; }
+    .doctors-title-box h2::before,
+    .doctors-title-box h2::after { width: 30px; }
+    .doctors-title-box h2::before { left: -40px; }
+    .doctors-title-box h2::after { right: -40px; }
+    .hero-section-final {
+        min-height: 80vh;
+        padding: 40px 15px;
+    }
+    .hero-content-final {
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+    .hero-content-final h1 { font-size: 2.1rem !important; }
+    .hero-content-final p { font-size: 1rem !important; }
+    .btn-whatsapp-luxury {
+        display: flex !important;
+        justify-content: center;
+        width: auto !important;
+        max-width: 95% !important;
+        margin: 0 auto !important;
+        font-size: 0.95rem !important;
+        padding: 12px 20px;
+    }
+    .fab {
+        right: 12px !important; bottom: 12px !important;
+        width: 60px !important; height: 60px !important;
+    }
+    .fab-main { width: 60px !important; height: 60px !important; }
+    .fab-main svg { width: 32px !important; height: 32px !important; }
+    .fab-item { width: 50px !important; height: 50px !important; }
+    .fab-item svg { width: 22px !important; height: 22px !important; }
+    .fab-label { right: 58px !important; font-size: 12px !important; padding: 5px 10px !important; }
+    .fab-popup { bottom: 68px !important; width: 60px !important; }
+}
 
-    /* منع التداخل مع زر الحجز */
-    .btn-reservation {
-        padding: 8px 15px;
+/* هاتف صغير */
+@media (max-width: 480px) {
+    .header {
+        top: 10px;
+        padding: 5px 15px;
+    }
+    .logo-container {
+        margin-right: -5px;
+    }
+    .nav-actions {
+        margin-left: -5px;
+    }
+    #main-logo {
+        height: 32px;
+    }
+    .logo-text {
         font-size: 13px;
     }
-}
-.footer-actions {
-    display: flex;
-    justify-content: center; /* يضعه في الجهة اليمنى كما طلبت */
-    padding: 20px;
+    .btn-reservation {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+    .doctors-grid { gap: 15px; padding: 0 10px; }
+    .dr-card { max-width: 280px; }
+    .fab {
+        right: 10px !important; bottom: 10px !important;
+        width: 54px !important; height: 54px !important;
+    }
+    .fab-main { width: 54px !important; height: 54px !important; }
+    .fab-main svg { width: 28px !important; height: 28px !important; }
+    .fab-item { width: 46px !important; height: 46px !important; }
+    .fab-item svg { width: 20px !important; height: 20px !important; }
+    .fab-label { right: 54px !important; font-size: 11px !important; padding: 4px 8px !important; }
+    .fab-popup { bottom: 62px !important; width: 54px !important; }
 }
 
-.custom-button {
+/* شاشة صغيرة جدًا */
+@media (max-width: 360px) {
+    #main-logo { max-height: 32px !important; }
+    .logo-text { font-size: 12px !important; }
+    .btn-reservation { padding: 4px 10px; font-size: 9px; }
+    .navbar { padding: 5px 10px; min-height: 36px; gap: 5px; }
+    .menu-toggle { padding: 5px; gap: 3px; }
+    .menu-toggle span { width: 18px; height: 2px; }
+    .doctors-grid { gap: 12px; padding: 0 8px; justify-items: center; }
+    .dr-card { max-width: 240px; width: 100%; }
+    .dr-header h4 { font-size: 13px; }
+    .dr-header .dr-specialty { font-size: 10px; }
+    .dr-header { padding: 8px 8px 5px; }
+    .dr-btn { font-size: 8px; padding: 2px 8px; bottom: 6px; right: 6px; border-radius: 12px; }
+}
+
+/* ===== إصلاح توسيط النص في الهيرو على الكمبيوتر ===== */
+@media (min-width: 992px) {
+    .hero-container-final {
+        justify-content: center !important;
+        padding-right: 0 !important;
+    }
+    .hero-content-final {
+        text-align: center !important;
+        margin-right: 0 !important;
+        max-width: 850px !important;
+    }
+}
+
+/* ===== حل مشكلة انكسار عبارة "نخبة من الأخصائيين في خدمتكم" ===== */
+.doctors-title-box p {
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
     display: inline-block;
-    padding: 12px 25px;
-    background-color: #1a2e4a; /* اللون الكحلي */
-    color: #ffffff; /* لون النص */
-    text-decoration: none;
-    border: 2px solid #c5a059; /* الحدود الذهبية */
-    border-radius: 8px; /* زوايا منحنية قليلاً */
-    font-weight: bold;
-    transition: all 0.3s ease; /* لإضافة تأثير حركة ناعم عند المرور بالفأرة */
 }
 
-/* تأثير عند المرور بالفأرة */
-.custom-button:hover {
-    background-color: #c5a059; /* يصبح ذهبي عند التمرير */
-    color: #1a2e4a; /* ويصبح النص كحلي */
-    border-color: #1a2e4a;
+@media (max-width: 480px) {
+    .doctors-title-box p {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .doctors-title-box p {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
 }

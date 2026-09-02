@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="علاج العصب في عيادات أنقى ابتسامة - علاج قناة الجذر بالميكروسكوب الجراحي، أحدث التقنيات وأعلى نسب النجاح.">
+    <title>علاج العصب | عيادات أنقى ابتسامة</title>
+   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800;900&display=swap" rel="stylesheet">      <!-- cod font -->
+   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="popup.css">
+    <style>
+        :root {
+            --primary-blue: #151F6D;
+            --secondary-blue: #0F1654;
+            --accent-gold: #F6F3ED;
+            --gold-light: #FAF8F4;
+            --bg-color: #FAF8F4;
+            --text-dark: #1a1a2e;
+            --text-muted: #555770;
+            --white: #ffffff;
+            --shadow-elite: 0 20px 40px rgba(21, 31, 109, 0.08);
+            --border-color: #C9C4BA;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            position: relative;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-dark);
+            direction: rtl;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
+        .elite-hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 80px 20px 70px;
+            text-align: center;
+            position: relative;
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+        .hero-icon-box {
+            width: 90px; height: 90px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-size: 38px;
+            color: var(--accent-gold);
+            box-shadow: 0 0 25px rgba(246,243,237,0.3);
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+        @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .elite-hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; }
+        .intro-description {
+            font-size: 1rem; color: rgba(255,255,255,0.9); max-width: 800px;
+            margin: 0 auto; line-height: 1.9;
+            background: rgba(255,255,255,0.08); padding: 18px 25px;
+            border-radius: 16px; border: 1px solid rgba(246,243,237,0.3);
+            word-wrap: break-word;
+        }
+        .gold-divider { width: 100px; height: 3px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); margin: 25px auto 0; border-radius: 2px; }
+        .main-wrapper { padding: 40px 0; width: 100%; max-width: 100%; box-sizing: border-box; }
+        .external-journey-header { text-align: center; margin-bottom: 30px; }
+        .external-journey-header h2 { font-size: 2rem; color: var(--primary-blue); font-weight: 900; margin-bottom: 8px; }
+        .external-journey-header p { font-size: 1.1rem; color: var(--text-muted); font-weight: 600; }
+        .section-title {
+            text-align: center; font-size: 1.9rem; color: var(--primary-blue);
+            margin-bottom: 20px; font-weight: 900; position: relative; padding-bottom: 12px;
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 80px; height: 3px; background: var(--border-color); border-radius: 2px;
+        }
+
+        /* === تخطيط مستطيل أبيض يحتوي على نص وفيديو === */
+        .signs-white-box {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-elite);
+            padding: 30px 25px;
+            margin-bottom: 50px;
+        }
+        .signs-flex {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .signs-text {
+            flex: 1;
+            text-align: right;
+        }
+        .signs-text h4 {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .signs-text p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .signs-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .signs-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        .signs-list li::before {
+            content: '●';
+            color: var(--primary-blue);
+            position: absolute;
+            right: 0;
+            top: 2px;
+            font-size: 0.9rem;
+        }
+        .signs-video {
+            flex: 0 0 350px;
+            max-width: 350px;
+        }
+        .signs-video .video-badge {
+            margin-bottom: 12px;
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--primary-blue);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+        .main-video-box {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--border-color);
+            box-shadow: 0 15px 35px rgba(21,31,109,0.15);
+            background: #000;
+            aspect-ratio: 9 / 16;
+        }
+        .main-video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* === الإحصائيات === */
+        .stats-section {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-elite);
+            padding: 30px 25px;
+            margin-bottom: 40px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .stat-item {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 20px 15px;
+            transition: 0.3s;
+        }
+        .stat-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 8px 20px rgba(246,243,237,0.2);
+        }
+        .stat-icon { font-size: 2rem; color: var(--primary-blue); margin-bottom: 8px; }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+        }
+        .stat-number .prefix,
+        .stat-number .suffix {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 900;
+        }
+        .stat-label { font-size: 0.95rem; color: var(--text-muted); font-weight: 600; margin-top: 5px; }
+
+        /* === مقالات وأقسام === */
+        .article-section {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-elite);
+            padding: 30px 25px;
+            margin-bottom: 50px;
+        }
+        .article-title {
+            font-size: 1.7rem;
+            color: var(--primary-blue);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+        .article-body h4 { font-size: 1.3rem; color: var(--primary-blue); font-weight: 800; margin: 20px 0 10px; }
+        .article-body p { margin-bottom: 15px; }
+
+        .microscope-card {
+            background: linear-gradient(135deg, var(--gold-light), #fff);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(21,31,109,0.08);
+            margin-bottom: 30px;
+        }
+        .microscope-card .percentage {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+        .microscope-card .description { font-size: 1rem; color: var(--text-muted); margin-top: 5px; }
+        .microscope-points { list-style: none; padding: 0; margin: 20px 0 0; text-align: right; }
+        .microscope-points li {
+            position: relative;
+            padding-right: 22px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .microscope-points li::before {
+            content: '●';
+            color: var(--primary-blue);
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .step-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .step-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 8px 20px rgba(246,243,237,0.2);
+        }
+        .step-number { font-size: 1.5rem; font-weight: 900; color: var(--primary-blue); margin-bottom: 10px; }
+        .step-card h4 { font-size: 1.1rem; color: var(--primary-blue); font-weight: 800; margin-bottom: 8px; }
+        .step-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* === فيديوهات العيادة === */
+        .clinic-videos-section {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-elite);
+            padding: 30px 25px;
+            margin-bottom: 50px;
+        }
+        .videos-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 6px 0 12px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-color) transparent;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .videos-scroll::-webkit-scrollbar { height: 6px; }
+        .videos-scroll::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
+        .videos-scroll::-webkit-scrollbar-track { background: transparent; }
+        .video-item {
+            flex: 0 0 190px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 8px 18px rgba(21,31,109,0.12);
+            transition: transform 0.3s ease;
+            position: relative;
+            aspect-ratio: 9 / 16;
+            border: 2px solid var(--border-color);
+        }
+        .video-item:hover { transform: translateY(-2px) scale(1.02); border-color: var(--accent-gold); }
+        .video-item video { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+        /* === الأسئلة الشائعة === */
+        .faq-section {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-elite);
+            margin-bottom: 50px;
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s;
+            background: var(--bg-color);
+        }
+        .faq-item.active { border-color: var(--accent-gold); background: var(--white); box-shadow: 0 8px 20px rgba(0,0,0,0.04); }
+        .faq-question {
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            gap: 15px;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: right;
+            font-family: inherit;
+            word-wrap: break-word;
+        }
+        .faq-plus-icon {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--primary-blue);
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-plus-icon { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            transition: all 0.35s ease;
+            word-wrap: break-word;
+        }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 0 20px 16px 20px; }
+
+        .action-footer { text-align: center; padding: 10px 0; }
+        .btn-elite-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: 0.3s;
+            border: 1.5px solid var(--accent-gold);
+            box-shadow: 0 5px 15px rgba(21,31,109,0.15);
+        }
+        .btn-elite-back:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(246,243,237,0.3);
+        }
+
+        /* FAB */
+        .fab { position: fixed; bottom: 20px; right: 20px; z-index: 99999; width: 60px; height: 60px; pointer-events: none; }
+        .fab-popup { position: absolute; bottom: 70px; right: 0; display: flex; flex-direction: column; align-items: center; pointer-events: none; width: 60px; }
+        .fab-menu { display: none; flex-direction: column; gap: 10px; align-items: center; }
+        .fab.open .fab-menu { display: flex; animation: fadeUp 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fab-item { pointer-events: auto; width: 50px; height: 50px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.15); text-decoration: none; transition: 0.2s; position: relative; }
+        .fab-item svg { width: 22px; height: 22px; }
+        .fab-item:hover { transform: scale(1.1); }
+        .fab-label { position: absolute; right: 55px; background: var(--primary-blue); color: var(--white); padding: 5px 12px; border-radius: 20px; white-space: nowrap; font-size: 11px; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transition: 0.25s; }
+        .fab-item:hover .fab-label { opacity: 1; visibility: visible; right: 60px; }
+        .fab-call { color: #C9C4BA; border: 2px solid #C9C4BA; }
+        .fab-whatsapp { color: #25D366; border: 2px solid #25D366; }
+        .fab-home { color: var(--primary-blue); border: 2px solid var(--primary-blue); }
+        .fab-top { color: #F6F3ED; border: 2px solid #F6F3ED; }
+        .fab-call:hover { background: #C9C4BA; color: var(--primary-blue); }
+        .fab-whatsapp:hover { background: #25D366; color: #fff; }
+        .fab-home:hover { background: var(--primary-blue); color: #fff; }
+        .fab-top:hover { background: #F6F3ED; color: var(--primary-blue); }
+        .fab-main { pointer-events: auto; width: 60px; height: 60px; border: none; border-radius: 50%; background: linear-gradient(135deg, #C9C4BA, #F6F3ED); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 25px rgba(201,196,186,0.4); animation: elitePulse 2s infinite; position: relative; z-index: 2; }
+        .fab-main svg { width: 30px; height: 30px; fill: var(--primary-blue); }
+        @keyframes fadeUp { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes elitePulse { 0% { box-shadow: 0 0 0 0 rgba(201,196,186,0.7); } 70% { box-shadow: 0 0 0 15px rgba(201,196,186,0); } 100% { box-shadow: 0 0 0 0 rgba(201,196,186,0); } }
+
+        /* تجاوب */
+        @media (max-width: 900px) {
+            .signs-flex { flex-direction: column; }
+            .signs-video { max-width: 300px; width: 100%; margin: 0 auto; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .stat-number { font-size: 1.8rem; }
+            .stat-number .prefix, .stat-number .suffix { font-size: 1.3rem; }
+            .stat-icon { font-size: 1.8rem; }
+            .video-item { flex: 0 0 180px; }
+        }
+        @media (max-width: 480px) {
+            .signs-video { max-width: 250px; }
+            .faq-section { padding: 18px 12px; }
+            .faq-question { padding: 12px 16px; font-size: 0.95rem; }
+            .faq-answer { font-size: 0.88rem; }
+            .stat-number { font-size: 1.5rem; }
+            .stat-number .prefix, .stat-number .suffix { font-size: 1.1rem; }
+            .stat-label { font-size: 0.8rem; }
+            .video-item { flex: 0 0 150px; }
+            .article-title { font-size: 1.4rem; }
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="elite-hero">
+        <div class="container">
+            <div class="hero-icon-box"><i class="fas fa-tooth"></i></div>
+            <h1>علاج العصب</h1>
+            <div class="intro-description">علاج العصب هو الإجراء الذي ينقذ سنك من الخلع. باستخدام الميكروسكوب الجراحي وتقنيات التعقيم الحديثة، نضمن إزالة كاملة للأنسجة الملتهبة وتنظيفاً دقيقاً لقنوات الجذر، لتحصل على راحة فورية وسن يدوم معك.</div>
+            <div class="gold-divider"></div>
+        </div>
+    </header>
+    <main class="main-wrapper container">
+        <div class="external-journey-header">
+            <h2>لماذا علاج العصب في أنقى ابتسامة؟</h2>
+            <p>دقة متناهية، تقنيات متقدمة، وأعلى نسب النجاح في جازان.</p>
+        </div>
+
+        <!-- علامات تحتاج علاج العصب (نص + فيديو داخل مستطيل أبيض) -->
+        <section class="signs-white-box">
+            <h3 class="section-title">متى تحتاج علاج العصب؟</h3>
+            <div class="signs-flex">
+                <div class="signs-text">
+                    <h4>هذه العلامات تقول إن سنك يحتاج علاج العصب الآن</h4>
+                    <p>لا تنتظر حتى يتفاقم الألم. جسمك يرسل إشارات واضحة — إذا كنت تعاني من واحدة أو أكثر مما يلي، فأنت بحاجة لموعد عاجل:</p>
+                    <ul class="signs-list">
+                        <li>حساسية مفرطة تمتد بعد زوال المثير</li>
+                        <li>ألم شديد لا يهدأ — حتى في الليل</li>
+                        <li>تغير لون السن إلى الداكن</li>
+                        <li>تورم في اللثة أو الخد مع أو بدون ألم</li>
+                        <li>ألم شديد عند المضغ أو لمس السن</li>
+                    </ul>
+                </div>
+                <div class="signs-video">
+                   
+                    <div class="main-video-box">
+                        <video controls muted loop playsinline controlsList="nodownload" disablePictureInPicture>
+                            <source src="img/video-root.mp4" type="video/mp4">
+                            متصفحك لا يدعم تشغيل الفيديو.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الإحصائيات -->
+        <section class="stats-section" aria-label="إحصائيات علاج العصب">
+            <h3 class="section-title">أرقام تعكس تميزنا</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-check-circle stat-icon"></i>
+                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="3800">0</span></div>
+                    <p class="stat-label">قناة عصب جذرية ناجحة</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-user-md stat-icon"></i>
+                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="15">0</span></div>
+                    <p class="stat-label">أخصائيين خبرة أكثر من 15 عام</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-smile stat-icon"></i>
+                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="9800">0</span></div>
+                    <p class="stat-label">مراجع سعيد</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-stethoscope stat-icon"></i>
+                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="2">0</span></div>
+                    <p class="stat-label">متخصصين في علاج عصب وجذور الأسنان</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- الميكروسكوب الجراحي -->
+        <section class="article-section">
+            <h3 class="section-title">علاج العصب بالمايكروسكوب الجراحي — الفرق الذي يصنع النتيجة</h3>
+            <div class="article-body">
+                <p>معظم عيادات الأسنان في جازان تُجري علاج العصب بالعين المجردة أو بمكبّر بصري بسيط. في مركز أنقى ابتسامة، يستخدم أخصائيونا المايكروسكوب الجراحي (Surgical Microscope) — وهو الجهاز المعياري في أرقى مراكز علاج الجذور عالمياً.</p>
+                <div class="microscope-card">
+                    <div class="percentage">94%</div>
+                    <div class="description">معدل نجاح مع الميكروسكوب، مقابل 59% بدونه.</div>
+                </div>
+                <p>القناة داخل جذر سنك أصغر من 0.3 ملم — أضيق من شعرة الرأس. بدون تكبير عالٍ، يتعامل الطبيب مع ما لا يراه بوضوح. المايكروسكوب يكبّر المجال التشغيلي حتى 25 ضعفاً، مما يتيح:</p>
+                <ul class="microscope-points">
+                    <li>رؤية جميع القنوات بما فيها الإضافية والمخفية التي تُفوَّت بالعين المجردة</li>
+                    <li>تنظيف كامل ودقيق للقناة حتى نهايتها دون إبقاء بؤر التهاب</li>
+                    <li>حفظ أكبر قدر من بنية السن بدلاً من الإزالة الزائدة</li>
+                    <li>تشخيص الشقوق الدقيقة في جدار السن التي لا تظهر في الأشعة</li>
+                </ul>
+                <div class="microscope-card" style="margin-top: 20px;">
+                    <div class="percentage">3x</div>
+                    <div class="description">معدلات شفاء الأسنان المعالجة بالميكروسكوب مقارنةً بالعلاج التقليدي</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- خطوات علاج العصب -->
+        <section class="article-section">
+            <h3 class="section-title">خطوات علاج العصب في أنقى ابتسامة</h3>
+            <div class="article-body">
+                <p>كيف يتم علاج عصب الأسنان وحشو قناة الجذور في مركز أنقى ابتسامة لطب الأسنان؟</p>
+				<p>في أنقى ابتسامة، كل حالة تُدار وفق إطار علاجي منظم يضمن وضوح القرار وجودة النتيجة.</p>
+                <div class="steps-grid">
+                    <div class="step-card"><div class="step-number">01</div><h4>التشخيص الدقيق والأشعة والتخدير الموضعي الكامل</h4><p>أشعة رقمية حديثة لتحديد عدد القنوات وشكلها، ثم تخدير موضعي كامل لراحة تامة.</p></div>
+                    <div class="step-card"><div class="step-number">02</div><h4>عزل السن والوصول للقناة ثم إزالة العصب وتنظيف القنوات بالميكروسكوب</h4><p>استخدام العازل المطاطي وفتح دقيق للسن، ثم إزالة النسيج الملتهب وتنظيف القنوات تحت تكبير عالٍ.</p></div>
+                    <div class="step-card"><div class="step-number">03</div><h4>حشو القنوات وإغلاق السن</h4><p>تعبئة القنوات بمادة حيوية متوافقة وإغلاق السن بشكل مؤقت أو دائم حسب الخطة.</p></div>
+                    <div class="step-card"><div class="step-number">04</div><h4>التاج الواقي (الخطوة النهائية الحاسمة)</h4><p>تركيب تاج لحماية السن المعالج من الكسر وضمان استمراريته لسنوات طويلة.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- إعادة علاج العصب -->
+        <section class="article-section">
+            <h3 class="section-title">فشل علاج العصب في عيادة أخرى؟ حلها موجود عندنا.</h3>
+            <div class="article-body">
+                <p>يخبرنا كثير من المرضى بأن علاج العصب الذي أجروه سابقاً "فشل" وأن الحل الوحيد هو خلع السن. في كثير من هذه الحالات، الخلع ليس الحل الوحيد.</p>
+                <h4>ما هي إعادة علاج العصب (Re-treatment)؟</h4>
+                <p>إعادة علاج العصب هي فتح السن المعالج مسبقاً، إزالة الحشوة القديمة، إعادة تنظيف القنوات بعمق أكبر، والبحث عن القنوات الإضافية أو البكتيريا المتبقية التي أدت للفشل الأول — ثم إعادة الحشو بشكل أدق.</p>
+                <h4>لماذا يفشل علاج العصب؟</h4>
+                <ul class="microscope-points">
+                    <li>قنوات لم تُكتشف ولم تُعالج (السبب الأول)</li>
+                    <li>تنظيف غير كامل بسبب القيود البصرية</li>
+                    <li>كسر في جدار السن غير مُكتشف</li>
+                    <li>تسرب من الحشوة أو التاج بمرور الوقت</li>
+                    <li>عدوى جديدة بعد العلاج</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- فيديوهات العيادة -->
+        <section class="clinic-videos-section" aria-label="فيديوهات عيادة العصب">
+            <h3 class="section-title">فيديوهات عيادة العصب</h3>
+            <div class="videos-scroll" id="rootVideosScroll"></div>
+        </section>
+
+        <!-- الأسئلة الشائعة -->
+        <section class="faq-section" aria-labelledby="faq-title">
+            <h3 class="section-title" id="faq-title">الأسئلة الشائعة</h3>
+            <div class="faq-container" id="faq-container">
+                <div class="faq-item" id="faq-0"><button class="faq-question" onclick="toggleFaq(0)"><span>ما هو علاج عصب الأسنان وحشو قناة الجذر؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>علاج العصب هو إزالة الأنسجة الملتهبة أو الميتة من داخل جذر السن، ثم تنظيف القنوات وتعقيمها وحشوها بمادة خاصة لإغلاقها ومنع العدوى، مما يحافظ على السن بدلاً من خلعه.</p></div></div>
+                <div class="faq-item" id="faq-1"><button class="faq-question" onclick="toggleFaq(1)"><span>هل علاج العصب مؤلم؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>لا، مع التخدير الموضعي الفعال يشعر المريض براحة تامة أثناء العملية. بعد زوال المخدر قد يكون هناك انزعاج بسيط يزول خلال أيام.</p></div></div>
+                <div class="faq-item" id="faq-2"><button class="faq-question" onclick="toggleFaq(2)"><span>كم جلسة يحتاج علاج العصب؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>تتراوح من جلسة إلى ثلاث جلسات حسب تعقيد الحالة وعدد القنوات وشدة الالتهاب.</p></div></div>
+                <div class="faq-item" id="faq-3"><button class="faq-question" onclick="toggleFaq(3)"><span>ما الفرق بين علاج العصب بالمايكروسكوب والعلاج العادي؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>المايكروسكوب يوفر تكبيراً يصل إلى 25 ضعفاً، مما يسمح برؤية جميع القنوات وتنظيفها بدقة، بينما العلاج العادي يعتمد على العين المجردة وقد يفوّت قنوات إضافية.</p></div></div>
+                <div class="faq-item" id="faq-4"><button class="faq-question" onclick="toggleFaq(4)"><span>كم تكلفة علاج العصب في أنقى ابتسامة؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>التكلفة تعتمد على عدد القنوات وموقع السن وحالة الالتهاب. نقدم خطة علاج واضحة مع تكلفة شاملة قبل البدء.</p></div></div>
+                <div class="faq-item" id="faq-5"><button class="faq-question" onclick="toggleFaq(5)"><span>هل يمكن علاج العصب في جلسة واحدة؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>نعم، في كثير من الحالات البسيطة والمتوسطة يمكن إكمال العلاج في جلسة واحدة، خاصة مع استخدام الميكروسكوب.</p></div></div>
+                <div class="faq-item" id="faq-6"><button class="faq-question" onclick="toggleFaq(6)"><span>ما الذي يحدث إذا تركت ألم العصب دون علاج؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>قد يتطور الالتهاب إلى خراج أو انتشار العدوى للأنسجة المحيطة، وقد ينتهي الأمر بفقدان السن.</p></div></div>
+                <div class="faq-item" id="faq-7"><button class="faq-question" onclick="toggleFaq(7)"><span>ماذا أتوقع بعد جلسة علاج العصب؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>قد تشعر بحساسية خفيفة عند المضغ لعدة أيام. ننصح بتجنب الأطعمة الصلبة على السن المعالج حتى اكتمال التاج.</p></div></div>
+                <div class="faq-item" id="faq-8"><button class="faq-question" onclick="toggleFaq(8)"><span>هل يحتاج كل سن معالج بالعصب لتاج؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>نعم في الغالب، لأن السن بعد علاج العصب يصبح أكثر هشاشة. التاج يحميه من الكسر ويطيل عمره.</p></div></div>
+                <div class="faq-item" id="faq-9"><button class="faq-question" onclick="toggleFaq(9)"><span>فشل علاج العصب عندي من قبل وما زلت أتألم — ماذا أفعل؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>ننصح بمراجعة أخصائي علاج جذور لتقييم الحالة. في كثير من الأحيان يمكن إعادة العلاج وإنقاذ السن بدلاً من الخلع.</p></div></div>
+                <div class="faq-item" id="faq-10"><button class="faq-question" onclick="toggleFaq(10)"><span>هل يمكن علاج عصب الأسنان للحامل؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>نعم، يمكن إجراء علاج العصب للحامل في الحالات الضرورية، مع اتخاذ الاحتياطات اللازمة واختيار التوقيت المناسب.</p></div></div>
+                <div class="faq-item" id="faq-11"><button class="faq-question" onclick="toggleFaq(11)"><span>ما الفرق بين علاج العصب وخلع السن؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>علاج العصب يحافظ على السن ويعيد وظيفته، بينما الخلع يعني فقدان السن نهائياً وما يليه من مشاكل في الإطباق والعظم.</p></div></div>
+                <div class="faq-item" id="faq-12"><button class="faq-question" onclick="toggleFaq(12)"><span>كيف أحجز موعداً عاجلاً لعلاج العصب في أنقى ابتسامة؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>يمكنك الاتصال على 0550133938 أو مراسلتنا عبر واتساب وسنخصص لك أقرب موعد متاح.</p></div></div>
+                <div class="faq-item" id="faq-13"><button class="faq-question" onclick="toggleFaq(13)"><span>هل يستقبل مركز انقى ابتسامة حالات علاج العصب من خارج جازان؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>نعم، نستقبل مرضى من جميع المناطق، ونوفر خطة علاج واضحة تتناسب مع سفر المريض.</p></div></div>
+                <div class="faq-item" id="faq-14"><button class="faq-question" onclick="toggleFaq(14)"><span>ما الفرق بين أخصائي علاج العصب وطبيب الأسنان العام؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>أخصائي علاج العصب لديه تدريب متقدم وخبرة أكبر في التعامل مع الحالات المعقدة واستخدام الميكروسكوب، مما يرفع نسب النجاح.</p></div></div>
+            </div>
+        </section>
+
+      
+    </main>
+
+    <!-- FAB -->
+    <div class="fab" id="fab"><div class="fab-popup"><div class="fab-menu">
+        <a href="tel:0550133938" class="fab-item fab-call" aria-label="اتصل"><div class="fab-label">اتصل بنا</div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.7 11.7 0 003.67.59 1 1 0 011 1V20a1 1 0 01-1 1C10.3 21 3 13.7 3 4a1 1 0 011-1h3.47a1 1 0 011 1c0 1.27.2 2.5.59 3.67a1 1 0 01-.25 1.01z"/></svg></a>
+        <a href="https://wa.me/966550133938" target="_blank" rel="noopener" class="fab-item fab-whatsapp" aria-label="واتساب"><div class="fab-label">راسلنا واتساب</div><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3C8.83 3 3 8.74 3 15.83c0 2.5.73 4.82 1.98 6.79L3 29l6.57-1.92a13.08 13.08 0 006.44 1.66c7.18 0 13.01-5.74 13.01-12.83S23.19 3 16.01 3zm0 23.5a10.5 10.5 0 01-5.36-1.47l-.38-.22-3.89 1.14 1.16-3.78-.24-.39a10.34 10.34 0 01-1.58-5.45c0-5.73 4.72-10.39 10.53-10.39s10.53 4.66 10.53 10.39S21.82 26.5 16.01 26.5z"/><path d="M22.1 18.53c-.33-.16-1.96-.96-2.27-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.05 1.29-.19.22-.39.24-.72.08-.33-.16-1.4-.5-2.66-1.58-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.5.14-.66.15-.15.33-.39.5-.58.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.58-.08-.16-.74-1.78-1.01-2.43-.27-.65-.55-.56-.74-.57h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.73s1.18 3.17 1.34 3.39c.16.22 2.32 3.52 5.62 4.94.78.33 1.39.53 1.87.68.79.25 1.5.22 2.07.13.63-.09 1.96-.8 2.24-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.38z"/></svg></a>
+        <a href="index.html" class="fab-item fab-home" aria-label="الرئيسية"><div class="fab-label">الرئيسية</div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></a>
+        <a href="#" class="fab-item fab-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="للأعلى"><div class="fab-label">للأعلى</div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.6L19 12z"/></svg></a>
+    </div></div><button class="fab-main" id="fabMain" aria-label="فتح القائمة"><svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 00-8 8v4a3 3 0 003 3h1v-4H6v-3a6 6 0 1112 0v3h-2v4h1a3 3 0 003-3v-4a8 8 0 00-8-8zm-3 18a3 3 0 003 2 3 3 0 003-2H9z"/></svg></button></div>
+
+    <script>
+        if (history.scrollRestoration) history.scrollRestoration = 'manual';
+        window.addEventListener('load', () => window.scrollTo(0,0));
+
+        function toggleFaq(i){
+            const items=document.querySelectorAll('.faq-item');
+            const cur=document.getElementById(`faq-${i}`);
+            const was=cur.classList.contains('active');
+            items.forEach(el=>el.classList.remove('active'));
+            if(!was) cur.classList.add('active');
+            items.forEach(el=>{ const btn=el.querySelector('.faq-question'); if(btn) btn.setAttribute('aria-expanded', el.classList.contains('active')); });
+        }
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const fab=document.getElementById('fab'),fabMain=document.getElementById('fabMain');
+            if(fab&&fabMain){
+                fabMain.addEventListener('click',e=>{ e.stopPropagation(); fab.classList.toggle('open'); });
+                document.addEventListener('click',e=>{ if(!fab.contains(e.target)) fab.classList.remove('open'); });
+            }
+
+            const scrollContainer = document.getElementById('rootVideosScroll');
+            const videosData = [
+                { src: 'img/video-root1.mp4' },
+                { src: 'img/video-root2.mp4' },
+                { src: 'img/video-root3.mp4' },
+                { src: 'img/video-root4.mp4' },
+                { src: 'img/video-root5.mp4' }
+            ];
+            videosData.forEach(data => {
+                const item = document.createElement('div');
+                item.className = 'video-item';
+                item.innerHTML = `<video controls muted loop playsinline controlsList="nodownload" disablePictureInPicture><source src="${data.src}" type="video/mp4"></video>`;
+                scrollContainer.appendChild(item);
+            });
+            const allVideos = scrollContainer.querySelectorAll('video');
+            allVideos.forEach(video => {
+                video.addEventListener('play', () => {
+                    allVideos.forEach(other => { if (other !== video) other.pause(); });
+                });
+            });
+
+            const counters = document.querySelectorAll('.counter');
+            const animateCounter = (element) => {
+                const target = parseInt(element.dataset.target);
+                const duration = 2000;
+                const startTime = performance.now();
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    element.textContent = Math.floor(eased * target).toLocaleString('en-US');
+                    if (progress < 1) { requestAnimationFrame(update); } else { element.textContent = target.toLocaleString('en-US'); }
+                }
+                requestAnimationFrame(update);
+            };
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(counter => animateCounter(counter));
+                        statsObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) statsObserver.observe(statsSection);
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+                    <img src="img/logo.png" alt="شعار أنقى ابتسامة">
+                    <div class="footer-logo-text">أنقى <span>ابتسامة</span></div>
+                </div>
+                <p class="footer-desc">وجهتك الأولى في جازان لطب الأسنان</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/puresmile.sa?igsi=NHB1NXFkeXFqZ3Rq" target="_blank" rel="noopener"><img src="img/instagram-icon.png" alt="انستقرام"></a>
+                    <a href="https://www.snapchat.com/add/puresmile.sa?share_id=ygteCfX5opY&locale=ar-SA-u-nu-latn" target="_blank" rel="noopener"><img src="img/snapchat-icon.png" alt="سناب شات"></a>
+                    <a href="https://www.tiktok.com/@puresmile.sa?_r=1&_t=ZS-99I24P1m4Z7" target="_blank" rel="noopener"><img src="img/tiktok-icon.png" alt="تيك توك"></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">روابط سريعة</h4>
+                <div class="footer-links-grid">
+                    <a href="about-us.html">من نحن</a>
+                    <a href="index.html#services">خدماتنا</a>
+                    <a href="index.html#doctors">أطباؤنا</a>
+                    <a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a>
+                    <a href="index.html#reviews">تقييماتنا</a>
+                    <a href="contact.html">تواصل معنا</a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-contact">
+                <h4 class="footer-heading">تواصل معنا</h4>
+                <a href="tel:0550133938" class="footer-phone"><img src="img/phone-icon.png" alt="اتصال" style="width:20px; height:20px; object-fit:contain; filter: brightness(0) invert(1);">0550133938</a>
+                <p class="footer-contact-note">للاستفسار عن طريق الإتصال</p>
+            </div>
+            <div class="footer-col footer-col-payment">
+                <h4 class="footer-heading">طرق الدفع</h4>
+                <div class="payment-bar">
+                    <div class="payment-icons payment-icons-desktop">
+                        <div class="payment-row"><img src="img/mada.png" alt="مدى"><img src="img/visa.png" alt="فيزا"></div>
+                        <div class="payment-row"><img src="img/tamara.png" alt="تمارا"><img src="img/tabby.png" alt="التابي"><img src="img/mis.png" alt="MIS"></div>
+                    </div>
+                    <div class="payment-icons-mobile">
+                        <div class="icons-row"><img src="img/mada.png" alt="مدى"><img src="img/visa.png" alt="فيزا"></div>
+                        <div class="icons-row"><img src="img/tamara.png" alt="تمارا"><img src="img/tabby.png" alt="التابي"><img src="img/mis.png" alt="MIS"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>جميع الحقوق محفوظة &copy; لدى مركز أنقى ابتسامة لطب الأسنان 2026</p></div>
+    </footer>
+    <style>
+        .main-footer { background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%); color: #ffffff; font-family: 'Cairo', sans-serif; padding: 0; }
+        .footer-container { max-width: 1200px; margin: 0 auto; padding: 40px 30px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr 1.8fr; gap: 30px; }
+        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .footer-logo img { width: 55px; height: 55px; object-fit: contain; }
+        .footer-logo-text { font-size: 22px; font-weight: 800; color: #ffffff; }
+        .footer-logo-text span { color: #F6F3ED; }
+        .footer-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
+        .footer-social { display: flex; gap: 14px; }
+        .footer-social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.08); transition: 0.3s; border: 1px solid #F6F3ED; }
+        .footer-social a:hover { background: #F6F3ED; transform: translateY(-3px); border-color: #F6F3ED; }
+        .footer-social img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
+        .footer-heading { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; position: relative; padding-bottom: 12px; }
+        .footer-heading::after { content: ''; position: absolute; bottom: 0; right: 0; width: 45px; height: 2px; background: #F6F3ED; }
+        .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+        .footer-links-grid a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 15px; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .footer-links-grid a::before { content: '●'; color: #F6F3ED; font-size: 10px; flex-shrink: 0; opacity: 0.8; }
+        .footer-links-grid a:hover { color: #F6F3ED; transform: translateX(-6px); }
+        .footer-phone { display: inline-flex; align-items: center; gap: 10px; color: #F6F3ED; font-size: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; margin-bottom: 8px; }
+        .footer-phone:hover { color: #ffffff; }
+        .footer-contact-note { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
+        .footer-col-payment .payment-bar { background: rgba(255,255,255,1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #C9C4BA; border-radius: 12px; padding: 20px 15px; display: flex; flex-direction: column; align-items: center; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; }
+        .payment-icons-desktop { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+        .payment-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .payment-row img { height: 28px; width: auto; object-fit: contain; }
+        .payment-icons-mobile { display: none; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 30px; text-align: center; }
+        .footer-bottom p { color: #ffffff; font-size: 14px; margin: 0; white-space: nowrap; }
+        @media (max-width: 1000px) { .footer-container { grid-template-columns: repeat(2, 1fr); } .footer-col-payment { grid-column: span 2; } .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; } }
+        @media (max-width: 600px) { .footer-container { grid-template-columns: 1fr; text-align: center; } .footer-col-payment { grid-column: span 1; } .footer-logo { justify-content: center; } .footer-social { justify-content: center; } .footer-heading::after { right: 50%; transform: translateX(50%); } .footer-links-grid { justify-items: center; } .footer-phone { justify-content: center; } .payment-bar { width: 100%; } .payment-icons-desktop { display: none; } .payment-icons-mobile { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; } .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; } .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; } .footer-bottom p { font-size: 12px; } }
+    </style>
+	<script src="popup.js"></script>
+</body>
+</html>

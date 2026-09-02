@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الخدمة | أنقى ابتسامة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800;900&display=swap" rel="stylesheet">      <!-- cod font -->
+   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/logo-icon.png">
+    <style>
+        /* ===== إعدادات عامة ===== */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f8f9fa;
+            color: #1a1a2e;
+            direction: rtl;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== هيدر الخدمة ===== */
+        .service-hero {
+            background: linear-gradient(135deg, #0a2647 0%, #1a3a5c 100%);
+            color: #fff;
+            padding: 60px 20px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .service-hero .service-icon-large {
+            font-size: 70px;
+            color: #D4AF37;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        .service-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        .service-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .service-hero .gold-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            margin: 0 auto 20px;
+            border-radius: 4px;
+        }
+
+        /* ===== صورة الخدمة ===== */
+        .service-image-section {
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+        .service-image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        /* ===== محتوى الخدمة ===== */
+        .service-content {
+            padding: 30px 0 50px;
+        }
+        .service-content .service-description {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 2;
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .service-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .service-benefits li {
+            background: #fff;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border-right: 4px solid #D4AF37;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: #1a1a2e;
+            transition: 0.3s;
+        }
+        .service-benefits li:hover {
+            transform: translateX(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+        .service-benefits li i {
+            color: #D4AF37;
+            font-size: 20px;
+        }
+
+        /* ===== زر العودة للرئيسية ===== */
+        .service-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px 0 20px;
+        }
+        .service-actions .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0a2647;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            border: 2px solid #D4AF37;
+        }
+        .service-actions .btn-back:hover {
+            background: #D4AF37;
+            color: #0a2647;
+            transform: translateY(-3px);
+        }
+
+        /* ===== التجاوب ===== */
+        @media (max-width: 768px) {
+            .service-hero h1 { font-size: 2rem; }
+            .service-hero .service-icon-large { font-size: 50px; }
+            .service-benefits { grid-template-columns: 1fr; }
+            .service-content .service-description { padding: 20px; font-size: 1rem; }
+            .service-actions { flex-direction: column; align-items: center; }
+            .service-actions .btn-back { width: 100%; justify-content: center; }
+        }
+
+        /* ===== FAB (الزر العائم) ===== */
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
+            width: 64px;
+            height: 64px;
+            pointer-events: none;
+            display: block;
+        }
+        .fab-popup {
+            position: absolute;
+            bottom: 74px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+            width: 64px;
+        }
+        .fab-menu {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .fab.open .fab-menu {
+            display: flex;
+            animation: fadeUp 0.3s ease;
+        }
+        .fab-item {
+            pointer-events: auto;
+            box-sizing: border-box;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+            text-decoration: none;
+            transition: 0.2s;
+            position: relative;
+        }
+        .fab-item svg { width: 24px; height: 24px; }
+        .fab-item:hover { transform: scale(1.05); }
+        .fab-label {
+            position: absolute;
+            right: 68px;
+            background: #fff;
+            color: #222;
+            padding: 8px 14px;
+            border-radius: 30px;
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+        }
+        .fab-item:hover .fab-label {
+            opacity: 1;
+            visibility: visible;
+        }
+        .fab-call { color: #D4AF37; border: 2px solid #D4AF37; }
+        .fab-whatsapp { color: #25D366; border: 2px solid #25D366; }
+        .fab-home { color: #0a2647; border: 2px solid #0a2647; }
+        .fab-top { color: #0A58CA; border: 2px solid #0A58CA; }
+        .fab-call:hover { background: #D4AF37; color: #fff; }
+        .fab-whatsapp:hover { background: #25D366; color: #fff; }
+        .fab-home:hover { background: #0a2647; color: #fff; }
+        .fab-top:hover { background: #0A58CA; color: #fff; }
+        .fab-main {
+            box-sizing: border-box;
+            pointer-events: auto;
+            width: 64px;
+            height: 64px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D4AF37, #b8860b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            animation: pulse 2s infinite;
+            position: relative;
+            z-index: 2;
+        }
+        .fab-main svg { width: 34px; height: 34px; fill: #fff; }
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.6); }
+            70% { box-shadow: 0 0 0 14px rgba(212,175,55,0); }
+            100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================= -->
+    <!-- هيدر الخدمة -->
+    <!-- ========================================================= -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-icon-large" id="service-icon">
+                <i class="fas fa-tooth"></i>
+            </div>
+            <div class="gold-line"></div>
+            <h1 id="service-name">زراعة الأسنان</h1>
+            <p id="service-short-desc">أحدث التقنيات لتعويض الأسنان المفقودة بثبات ومظهر طبيعي</p>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- صورة الخدمة -->
+    <!-- ========================================================= -->
+    <section class="service-image-section">
+        <div class="container">
+            <img id="service-image" src="img/service-1.jpg" alt="صورة الخدمة">
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- محتوى الخدمة -->
+    <!-- ========================================================= -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-description" id="service-description">
+                زراعة الأسنان هي الحل الأمثل لتعويض الأسنان المفقودة. نستخدم أحدث التقنيات والمواد الطبية لضمان ثبات ومظهر طبيعي يدوم طويلاً.
+            </div>
+
+            <ul class="service-benefits" id="service-benefits">
+                <li><i class="fas fa-check-circle"></i> تقنية حديثة وآمنة</li>
+                <li><i class="fas fa-check-circle"></i> نتائج طبيعية ومضمونة</li>
+                <li><i class="fas fa-check-circle"></i> فريق طبي متخصص</li>
+                <li><i class="fas fa-check-circle"></i> راحة تامة أثناء العلاج</li>
+            </ul>
+
+            <!-- زر العودة للرئيسية فقط -->
+            <div class="service-actions">
+               <a href="index.html#services" class="btn-back">
+    <i class="fas fa-arrow-right"></i> العودة للخدمات
+      </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- الزر العائم (FAB) -->
+    <!-- ========================================================= -->
+    <div class="fab" id="fab">
+        <div class="fab-popup">
+            <div class="fab-menu">
+                <a href="tel:0550133938" class="fab-item fab-call">
+                    <div class="fab-label">اتصل بنا</div>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.7 11.7 0 003.67.59 1 1 0 011 1V20a1 1 0 01-1 1C10.3 21 3 13.7 3 4a1 1 0 011-1h3.47a1 1 0 011 1c0 1.27.2 2.5.59 3.67a1 1 0 01-.25 1.01z"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/966550133938" target="_blank" class="fab-item fab-whatsapp">
+                    <div class="fab-label">راسلنا واتساب</div>
+                    <svg viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16.01 3C8.83 3 3 8.74 3 15.83c0 2.5.73 4.82 1.98 6.79L3 29l6.57-1.92a13.08 13.08 0 006.44 1.66c7.18 0 13.01-5.74 13.01-12.83S23.19 3 16.01 3zm0 23.5a10.5 10.5 0 01-5.36-1.47l-.38-.22-3.89 1.14 1.16-3.78-.24-.39a10.34 10.34 0 01-1.58-5.45c0-5.73 4.72-10.39 10.53-10.39s10.53 4.66 10.53 10.39S21.82 26.5 16.01 26.5z"/>
+                        <path d="M22.1 18.53c-.33-.16-1.96-.96-2.27-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.05 1.29-.19.22-.39.24-.72.08-.33-.16-1.4-.5-2.66-1.58-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.5.14-.66.15-.15.33-.39.5-.58.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.58-.08-.16-.74-1.78-1.01-2.43-.27-.65-.55-.56-.74-.57h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.73s1.18 3.17 1.34 3.39c.16.22 2.32 3.52 5.62 4.94.78.33 1.39.53 1.87.68.79.25 1.5.22 2.07.13.63-.09 1.96-.8 2.24-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.38z"/>
+                    </svg>
+                </a>
+                <a href="index.html" class="fab-item fab-home">
+                    <div class="fab-label">الرئيسية</div>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
+                    </svg>
+                </a>
+                <a href="#" class="fab-item fab-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+                    <div class="fab-label">للأعلى</div>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.6L19 12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <button class="fab-main" id="fabMain" aria-label="اختر طريقة التواصل">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2a8 8 0 00-8 8v4a3 3 0 003 3h1v-4H6v-3a6 6 0 1112 0v3h-2v4h1a3 3 0 003-3v-4a8 8 0 00-8-8zm-3 18a3 3 0 003 2 3 3 0 003-2H9z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- السكريبت -->
+    <!-- ========================================================= -->
+    <script>
+        // ===== بيانات الخدمات =====
+        const servicesData = {
+            1: {
+                name: 'زراعة الأسنان',
+                icon: 'fa-tooth',
+                shortDesc: 'أحدث التقنيات لتعويض الأسنان المفقودة بثبات ومظهر طبيعي',
+                description: 'زراعة الأسنان هي الحل الأمثل لتعويض الأسنان المفقودة. نستخدم أحدث التقنيات والمواد الطبية لضمان ثبات ومظهر طبيعي يدوم طويلاً. تتم العملية بزراعة جذر صناعي من التيتانيوم في عظم الفك، ثم تركيب تاج يشبه السن الطبيعي.',
+                image: 'img/service-1.jpg',
+                benefits: [
+                    'تقنية حديثة وآمنة',
+                    'نتائج طبيعية ومضمونة',
+                    'فريق طبي متخصص',
+                    'راحة تامة أثناء العلاج'
+                ]
+            },
+            2: {
+                name: 'تجميل الأسنان',
+                icon: 'fa-magic',
+                shortDesc: 'عدسات التبييض وتثبيت الأسنان بأحدث التقنيات',
+                description: 'نقدم خدمات تجميل الأسنان المتكاملة مثل عدسات الفينير، التبييض بالليزر، والحشوات التجميلية. نمنحك ابتسامة مشرقة وطبيعية تعزز ثقتك بنفسك.',
+                image: 'img/service-2.jpg',
+                benefits: [
+                    'ابتسامة مشرقة وطبيعية',
+                    'إجراءات غير مؤلمة',
+                    'نتائج فورية',
+                    'تقنيات حديثة'
+                ]
+            },
+            3: {
+                name: 'تقويم الأسنان',
+                icon: 'fa-teeth',
+                shortDesc: 'حلول تقويم متكاملة للأطفال والكبار بأحدث الأجهزة',
+                description: 'نقدم حلول تقويم متكاملة للأطفال والكبار باستخدام أحدث الأجهزة. نوفر التقويم الشفاف (Invisalign) والتقويم المعدني التقليدي لتحقيق نتائج دقيقة ومريحة.',
+                image: 'img/service-3.jpg',
+                benefits: [
+                    'تقويم شفاف ومريح',
+                    'نتائج دقيقة وسريعة',
+                    'متابعة مستمرة من الأخصائي',
+                    'تقويم للأطفال والكبار'
+                ]
+            },
+            4: {
+                name: 'جراحة الأسنان',
+                icon: 'fa-syringe',
+                shortDesc: 'عمليات دقيقة وآمنة بأعلى معايير الجودة والتعقيم',
+                description: 'عمليات جراحية دقيقة وآمنة بأعلى معايير الجودة والتعقيم. تشمل خلع الأسنان، زراعة العظم، وجراحة الفكين. نضمن لك راحة تامة ونتائج مذهلة.',
+                image: 'img/service-4.jpg',
+                benefits: [
+                    'عمليات دقيقة وآمنة',
+                    'تعقيم عالي الجودة',
+                    'فريق جراحي متخصص',
+                    'راحة تامة بعد العملية'
+                ]
+            },
+            5: {
+                name: 'التجميل',
+                icon: 'fa-spa',
+                shortDesc: 'إنشاء طبيعة وحماية بلمسات جمالية احترافية',
+                description: 'خدمات تجميلية متقدمة تشمل غمازات الخدود، توريد الشفايف، وتوريد اللثة. نمنحك مظهراً جذاباً وطبيعياً يعزز جمالك.',
+                image: 'img/service-5.jpg',
+                benefits: [
+                    'نتائج طبيعية وجذابة',
+                    'إجراءات غير جراحية',
+                    'فريق متخصص في التجميل',
+                    'راحة تامة أثناء الجلسة'
+                ]
+            },
+            6: {
+                name: 'التركيبات',
+                icon: 'fa-crown',
+                shortDesc: 'تركيبات ثابتة ومتحركة بتقنيات عالية الجودة',
+                description: 'تركيبات ثابتة ومتحركة بتقنيات عالية الجودة. نوفر تركيبات الزيركون والإيماكس والدايركت فينير لتلبية جميع احتياجاتك.',
+                image: 'img/service-6.jpg',
+                benefits: [
+                    'تركيبات دقيقة ومريحة',
+                    'مواد طبية عالية الجودة',
+                    'نتائج طبيعية',
+                    'فريق متخصص في التركيبات'
+                ]
+            }
+        };
+
+        // ===== قراءة ID من الرابط =====
+        function getServiceId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        // ===== عرض بيانات الخدمة =====
+        function displayService() {
+            const id = getServiceId();
+            const service = servicesData[id];
+
+            if (service) {
+                document.getElementById('service-name').textContent = service.name;
+                document.getElementById('service-short-desc').textContent = service.shortDesc;
+                document.getElementById('service-description').textContent = service.description;
+                document.getElementById('service-image').src = service.image;
+                document.getElementById('service-image').alt = service.name;
+                document.getElementById('service-icon').innerHTML = `<i class="fas ${service.icon}"></i>`;
+
+                // عرض المميزات
+                const benefitsList = document.getElementById('service-benefits');
+                benefitsList.innerHTML = '';
+                service.benefits.forEach(benefit => {
+                    benefitsList.innerHTML += `
+                        <li><i class="fas fa-check-circle"></i> ${benefit}</li>
+                    `;
+                });
+            } else {
+                document.getElementById('service-name').textContent = 'الخدمة غير موجودة';
+                document.getElementById('service-short-desc').textContent = 'عذراً، لم نتمكن من العثور على هذه الخدمة.';
+                document.getElementById('service-description').textContent = 'يرجى التأكد من الرابط أو العودة للصفحة الرئيسية.';
+            }
+        }
+
+        // ===== تشغيل الكود =====
+        document.addEventListener('DOMContentLoaded', function() {
+            displayService();
+
+            // ===== تشغيل الزر العائم (FAB) =====
+            var fab = document.getElementById('fab');
+            var fabMain = document.getElementById('fabMain');
+            if (fab && fabMain) {
+                fabMain.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    fab.classList.toggle('open');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!fab.contains(e.target)) {
+                        fab.classList.remove('open');
+                    }
+                });
+                document.querySelectorAll('.fab-item').forEach(function(item) {
+                    item.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

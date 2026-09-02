@@ -5,57 +5,764 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن | أنقى ابتسامة</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/png" href="img/logo-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo-icon.png">
+	<link rel="stylesheet" href="popup.css">
     <style>
-        .about-hero {
-            background: linear-gradient(rgba(10,38,71,0.85), rgba(10,38,71,0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop');
-            height: 45vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-top: 65px;
+        :root {
+            --primary: #151F6D;
+            --accent: #F6F3ED;
+            --bg-soft: #FAF8F4;
+            --white: #ffffff;
+            --border-light: #C9C4BA;
         }
-        .vision-section { padding: 80px 0; }
-        .v-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .v-card { background: white; padding: 40px; border-radius: 20px; border-top: 6px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
-        .v-card:hover { transform: translateY(-10px); }
-        .v-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
-        @media (max-width: 768px) { .v-grid { grid-template-columns: 1fr; } }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-soft);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .header { display: none !important; }
+
+        .back-home-container {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+            text-align: right;
+        }
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .btn-back-home i { font-size: 16px; transition: transform 0.3s ease; }
+        .btn-back-home:hover {
+            background: var(--accent);
+            color: var(--primary) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(246, 243, 237, 0.3);
+        }
+        .btn-back-home:hover i { transform: translateX(-5px); }
+
+        /* ===== الهيرو بصورة محلية ===== */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(21, 31, 109, 0.92), rgba(21, 31, 109, 0.75)), 
+                        url('img/pure1.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 0;
+            position: relative;
+            padding: 60px 20px;
+        }
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to left, var(--accent), transparent);
+        }
+        .about-hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+        .about-hero p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== القصة (بدون شارة قصتنا) ===== */
+        .story-section {
+            padding: 70px 20px 50px;
+            background: var(--white);
+        }
+        .story-section .container { max-width: 900px; margin: 0 auto; }
+        .story-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .story-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        /* ===== الرؤية والرسالة ===== */
+        .vision-section {
+            padding: 70px 20px;
+            background: var(--bg-soft);
+        }
+        .section-title-wrapper {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title-wrapper h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 800;
+            display: inline-block;
+            position: relative;
+        }
+        .section-title-wrapper h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 3px;
+        }
+        .v-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .v-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 20px;
+            border-bottom: 6px solid var(--accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .v-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(246, 243, 237, 0.12);
+        }
+        .v-card i {
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .v-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .v-card p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* ===== بطاقات تفاعلية سريعة (بدون عنوان) ===== */
+        .quick-links-section {
+            padding: 70px 20px;
+            background: var(--white);
+        }
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .quick-link-card {
+            background: var(--bg-soft);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .quick-link-card:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .quick-link-card i {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        .quick-link-card span {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* ===== إحصائيات (بنفس تصميم صفحة التركيبات) ===== */
+        .stats-about {
+            padding: 60px 20px;
+            background: var(--bg-soft);
+            text-align: center;
+        }
+        .stats-about-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .stats-about-item {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 18px;
+            padding: 25px 15px;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+        .stats-about-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 25px rgba(246,243,237,0.3);
+        }
+        .stats-about-item .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+        .stats-about-item .stat-label {
+            font-size: 1rem;
+            color: #555;
+            font-weight: 600;
+            margin-top: 5px;
+            word-wrap: break-word;
+        }
+
+        .back-home-bottom {
+            text-align: center;
+            padding: 40px 20px 50px;
+            background: var(--bg-soft);
+        }
+
+        /* ===== تنسيق الجوال ===== */
+        @media (max-width: 992px) {
+            .quick-links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-about-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2.5rem; }
+            .about-hero p { font-size: 1rem; }
+            .v-grid { grid-template-columns: 1fr; }
+            .stats-about-item .stat-number { font-size: 2rem; }
+            .story-section h2 { font-size: 1.7rem; }
+            .back-home-container { text-align: center; }
+            .btn-back-home { padding: 10px 20px; font-size: 13px; }
+        }
+        @media (max-width: 480px) {
+            .quick-links-grid {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .stats-about-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .stats-about-item .stat-number { font-size: 1.8rem; }
+            .about-hero h1 { font-size: 2rem; }
+        }
+
+        /* ===== تنسيق الزر العائم FAB ===== */
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
+            width: 60px;
+            height: 60px;
+            pointer-events: none;
+        }
+        .fab-popup {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+            width: 60px;
+        }
+        .fab-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .fab.open .fab-menu { display: flex; }
+        .fab-item {
+            pointer-events: auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            text-decoration: none;
+            transition: 0.2s;
+            position: relative;
+            color: var(--primary);
+        }
+        .fab-item:hover { transform: scale(1.1); }
+        .fab-label {
+            position: absolute;
+            right: 55px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-size: 11px;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+        }
+        .fab-item:hover .fab-label { opacity: 1; visibility: visible; right: 60px; }
+        .fab-call { color: #C9C4BA; border: 2px solid #C9C4BA; }
+        .fab-whatsapp { color: #25D366; border: 2px solid #25D366; }
+        .fab-home { color: var(--primary); border: 2px solid var(--primary); }
+        .fab-top { color: #F6F3ED; border: 2px solid #F6F3ED; }
+        .fab-call:hover { background: #C9C4BA; color: var(--primary); }
+        .fab-whatsapp:hover { background: #25D366; color: #fff; }
+        .fab-home:hover { background: var(--primary); color: #fff; }
+        .fab-top:hover { background: #F6F3ED; color: var(--primary); }
+        .fab-main {
+            pointer-events: auto;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C9C4BA, #F6F3ED);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(201,196,186,0.4);
+            animation: pulse 2s infinite;
+            position: relative;
+            z-index: 2;
+        }
+        .fab-main svg { width: 30px; height: 30px; fill: var(--primary); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(201,196,186,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(201,196,186,0); }
+            100% { box-shadow: 0 0 0 0 rgba(201,196,186,0); }
+        }
     </style>
 </head>
 <body>
-    <header class="header">
-        </header>
 
+    <!-- الهيرو بدون عبارة زائدة -->
     <section class="about-hero">
         <div class="container">
-            <h1 style="font-size: 3.5rem;">عن أنقى ابتسامة</h1>
-            <p style="color: var(--accent); font-size: 1.5rem; font-weight: bold;">رواد طب الأسنان في منطقة جازان</p>
+            <h1>مركز أنقى ابتسامة لطب الأسنان</h1>
+            <p>رواد طب الأسنان في منطقة جازان</p>
         </div>
     </section>
 
-    <section class="container vision-section">
-        <div class="section-title-wrapper">
-            <div class="main-title-box"><h2>معنى أنقى ابتسامة</h2></div>
+    <!-- القصة (بدون شارة قصتنا) -->
+    <section class="story-section">
+        <div class="container">
+            <h2>معنى أنقى ابتسامة</h2>
+            <p>
+                اخترنا اسم <strong>أنقى ابتسامة</strong> لأنه يرمز إلى عناية خالية من المبالغة، وتشخيص أمين، وعلاج يقدم بما يحتاجه المراجع فقط. 
+                أنقى ابتسامة تعكس بيئة علاجية تقدم فيها الرعاية بضمير، نصنع فيها تجارب لابتسامات استثنائية بمعايير طبية وإنسانية.
+            </p>
+            <p>
+                نحن نؤمن أن الابتسامة الجميلة ليست رفاهية، بل هي جزء أساسي من الثقة بالنفس وجودة الحياة. لذلك، نضع خبراتنا وأحدث تقنياتنا 
+                في خدمة كل مريض يبحث عن العناية المثالية لأسنانه.
+            </p>
         </div>
-        <p style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto; color: #555; line-height: 2;">
-           اخترنا اسم أنقى ابتسامة لأنه يرمز إلى عناية خالية من المبالغة، وتشخيص أمين، وعلاج يقدم بما يحتاجه المراجع فقط. أنقى ابتسامة تعكس بيئة علاجية ثقدم فيها الرعاية بضمير نصنع فيها تجارب لابتسامات استتنائية بمعايير طبية وإنسانية.
-			
-        </p>
-        
-        <div class="v-grid">
-            <div class="v-card">
-                <i class="fas fa-eye"></i>
-                <h3>طموحنا</h3>
-                <p>في أنقى ابتسامة، نؤمن أن العلاج ليس مجرد إجراء طبي بل تجربة نفسية يشعر به الإنسان. طموحنا لايقتصر على تقديم العلاج بل صناعة تجربة تشعر المراجع بالأمان، وتترك أثرا يبتسم له طويل.</p>
+    </section>
+
+    <!-- الرؤية والرسالة -->
+    <section class="vision-section">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2>رؤيتنا ورسالتنا</h2>
             </div>
-            <div class="v-card">
-                <i class="fas fa-bullseye"></i>
-                <h3>Our Ambition</h3>
-                <p>At Pure Smile, treatment goes beyond Procedures-it'sahumanexperience.We provide care that makes patients feel safe and leaves them with a lasting smile.</p>
+            <div class="v-grid">
+                <div class="v-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>رؤيتنا</h3>
+                    <p>
+                        في أنقى ابتسامة، نؤمن أن العلاج ليس مجرد إجراء طبي، بل تجربة نفسية يشعر بها الإنسان. 
+                        طموحنا لا يقتصر على تقديم العلاج، بل صناعة تجربة تشعر المراجع بالأمان، وتترك أثراً يبتسم له طويلاً.
+                    </p>
+                </div>
+                <div class="v-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>رسالتنا</h3>
+                    <p>
+                        نهدف إلى تقديم رعاية أسنان متكاملة تجمع بين الدقة الطبية واللمسة الإنسانية، باستخدام أحدث التقنيات 
+                        وبأعلى معايير الجودة، لنمنح كل مريض ابتسامة تدوم مدى الحياة.
+                    </p>
+                </div>
             </div>
         </div>
-      </section>
-	 <div class="footer-actions">
-    <a href="index.html" class="custom-button">العودة للقائمة الرئيسية</a>
-</div>
+    </section>
+
+    <!-- بطاقات سريعة تفاعلية (بدون عنوان) -->
+    <section class="quick-links-section">
+        <div class="container">
+            <div class="quick-links-grid">
+                <a href="index.html#doctors" class="quick-link-card">
+                    <i class="fas fa-user-md"></i>
+                    <span>كادرنا الطبي</span>
+                </a>
+                <a href="index.html#services" class="quick-link-card">
+                    <i class="fas fa-tooth"></i>
+                    <span>خدماتنا</span>
+                </a>
+                <a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank" class="quick-link-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>موقعنا الجغرافي</span>
+                </a>
+                <a href="index.html#reviews" class="quick-link-card">
+                    <i class="fas fa-star"></i>
+                    <span>تقييمات حقيقية</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- إحصائيات بنفس تصميم صفحة التركيبات -->
+    <section class="stats-about">
+        <div class="container">
+            <div class="stats-about-grid">
+                <div class="stats-about-item">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-label">سنوات من التميز</span>
+                </div>
+                <div class="stats-about-item">
+                    <span class="stat-number" data-target="9454">0</span>
+                    <span class="stat-label">عميل سعيد</span>
+                </div>
+                <div class="stats-about-item">
+                    <span class="stat-number" data-target="1200">0</span>
+                    <span class="stat-label">عملية ناجحة</span>
+                </div>
+                <div class="stats-about-item">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-label">أطباء متميزون</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- زر عائم FAB -->
+    <div class="fab" id="fab">
+        <div class="fab-popup">
+            <div class="fab-menu">
+                <a href="tel:0550133938" class="fab-item fab-call">
+                    <div class="fab-label">اتصل بنا</div>
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.7 11.7 0 003.67.59 1 1 0 011 1V20a1 1 0 01-1 1C10.3 21 3 13.7 3 4a1 1 0 011-1h3.47a1 1 0 011 1c0 1.27.2 2.5.59 3.67a1 1 0 01-.25 1.01z"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/966550133938" target="_blank" class="fab-item fab-whatsapp">
+                    <div class="fab-label">راسلنا عبر واتساب</div>
+                    <svg viewBox="0 0 32 32" width="24" height="24" fill="currentColor">
+                        <path d="M16.01 3C8.83 3 3 8.74 3 15.83c0 2.5.73 4.82 1.98 6.79L3 29l6.57-1.92a13.08 13.08 0 006.44 1.66c7.18 0 13.01-5.74 13.01-12.83S23.19 3 16.01 3zm0 23.5a10.5 10.5 0 01-5.36-1.47l-.38-.22-3.89 1.14 1.16-3.78-.24-.39a10.34 10.34 0 01-1.58-5.45c0-5.73 4.72-10.39 10.53-10.39s10.53 4.66 10.53 10.39S21.82 26.5 16.01 26.5z"/>
+                        <path d="M22.1 18.53c-.33-.16-1.96-.96-2.27-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.05 1.29-.19.22-.39.24-.72.08-.33-.16-1.4-.5-2.66-1.58-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.5.14-.66.15-.15.33-.39.5-.58.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.58-.08-.16-.74-1.78-1.01-2.43-.27-.65-.55-.56-.74-.57h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.73s1.18 3.17 1.34 3.39c.16.22 2.32 3.52 5.62 4.94.78.33 1.39.53 1.87.68.79.25 1.5.22 2.07.13.63-.09 1.96-.8 2.24-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.38z"/>
+                    </svg>
+                </a>
+                <a href="index.html" class="fab-item fab-home">
+                    <div class="fab-label">الرئيسية</div>
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
+                    </svg>
+                </a>
+                <a href="#" class="fab-item fab-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+                    <div class="fab-label">العودة للأعلى</div>
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.6L19 12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <button class="fab-main" id="fabMain" aria-label="اختر طريقة التواصل">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2a8 8 0 00-8 8v4a3 3 0 003 3h1v-4H6v-3a6 6 0 1112 0v3h-2v4h1a3 3 0 003-3v-4a8 8 0 00-8-8zm-3 18a3 3 0 003 2 3 3 0 003-2H9z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- الفوتر الأزرق -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+                    <img src="img/logo.png" alt="شعار أنقى ابتسامة">
+                    <div class="footer-logo-text">أنقى <span>ابتسامة</span></div>
+                </div>
+                <p class="footer-desc">وجهتك الأولى في جازان لطب الأسنان</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/puresmile.sa?igsi=NHB1NXFkeXFqZ3Rq" target="_blank" rel="noopener">
+                        <img src="img/instagram-icon.png" alt="انستقرام">
+                    </a>
+                    <a href="https://www.snapchat.com/add/puresmile.sa?share_id=ygteCfX5opY&locale=ar-SA-u-nu-latn" target="_blank" rel="noopener">
+                        <img src="img/snapchat-icon.png" alt="سناب شات">
+                    </a>
+                    <a href="https://www.tiktok.com/@puresmile.sa?_r=1&_t=ZS-99I24P1m4Z7" target="_blank" rel="noopener">
+                        <img src="img/tiktok-icon.png" alt="تيك توك">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">روابط سريعة</h4>
+                <div class="footer-links-grid">
+                    <a href="about-us.html">من نحن</a>
+                    <a href="index.html#services">خدماتنا</a>
+                    <a href="index.html#doctors">أطباؤنا</a>
+                    <a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a>
+                    <a href="index.html#reviews">تقييماتنا</a>
+                    <a href="contact.html">تواصل معنا</a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-contact">
+                <h4 class="footer-heading">تواصل معنا</h4>
+                <a href="tel:0550133938" class="footer-phone">
+                    <img src="img/phone-icon.png" alt="اتصال" style="width:20px; height:20px; object-fit:contain; filter: brightness(0) invert(1);">
+                    0550133938
+                </a>
+                <p class="footer-contact-note">للاستفسار عن طريق الإتصال</p>
+            </div>
+            <div class="footer-col footer-col-payment">
+                <h4 class="footer-heading">طرق الدفع</h4>
+                <div class="payment-bar">
+                    <div class="payment-icons payment-icons-desktop">
+                        <div class="payment-row">
+                            <img src="img/mada.png" alt="مدى">
+                            <img src="img/visa.png" alt="فيزا">
+                        </div>
+                        <div class="payment-row">
+                            <img src="img/tamara.png" alt="تمارا">
+                            <img src="img/tabby.png" alt="التابي">
+                            <img src="img/mis.png" alt="MIS">
+                        </div>
+                    </div>
+                    <div class="payment-icons-mobile">
+                        <div class="icons-row">
+                            <img src="img/mada.png" alt="مدى">
+                            <img src="img/visa.png" alt="فيزا">
+                        </div>
+                        <div class="icons-row">
+                            <img src="img/tamara.png" alt="تمارا">
+                            <img src="img/tabby.png" alt="التابي">
+                            <img src="img/mis.png" alt="MIS">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; لدى مركز أنقى ابتسامة لطب الأسنان 2026</p>
+        </div>
+    </footer>
+
+    <style>
+        .main-footer {
+            background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%);
+            color: #ffffff;
+            font-family: 'Cairo', sans-serif;
+            padding: 0;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1.8fr;
+            gap: 30px;
+        }
+        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .footer-logo img { width: 55px; height: 55px; object-fit: contain; }
+        .footer-logo-text { font-size: 22px; font-weight: 800; color: #ffffff; }
+        .footer-logo-text span { color: #F6F3ED; }
+        .footer-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
+        .footer-social { display: flex; gap: 14px; }
+        .footer-social a {
+            display: flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            transition: 0.3s; border: 1px solid #F6F3ED;
+        }
+        .footer-social a:hover {
+            background: #F6F3ED; transform: translateY(-3px); border-color: #F6F3ED;
+        }
+        .footer-social img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
+        .footer-heading {
+            font-size: 18px; font-weight: 700; color: #ffffff;
+            margin-bottom: 20px; position: relative; padding-bottom: 12px;
+        }
+        .footer-heading::after {
+            content: ''; position: absolute; bottom: 0; right: 0;
+            width: 45px; height: 2px; background: #F6F3ED;
+        }
+        .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+        .footer-links-grid a {
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 15px;
+            transition: 0.3s; display: flex; align-items: center; gap: 8px;
+        }
+        .footer-links-grid a::before {
+            content: '●'; color: #F6F3ED; font-size: 10px; flex-shrink: 0; opacity: 0.8;
+        }
+        .footer-links-grid a:hover { color: #F6F3ED; transform: translateX(-6px); }
+        .footer-phone {
+            display: inline-flex; align-items: center; gap: 10px; color: #F6F3ED;
+            font-size: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; margin-bottom: 8px;
+        }
+        .footer-phone:hover { color: #ffffff; }
+        .footer-contact-note { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
+        .footer-col-payment .payment-bar {
+            background: rgba(255,255,255,1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid #C9C4BA;
+            border-radius: 12px;
+            padding: 20px 15px;
+            display: flex; flex-direction: column; align-items: center;
+            gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%;
+        }
+        .payment-icons-desktop { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+        .payment-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .payment-row img { height: 28px; width: auto; object-fit: contain; }
+        .payment-icons-mobile { display: none; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 30px; text-align: center; }
+        .footer-bottom p { color: #ffffff; font-size: 14px; margin: 0; white-space: nowrap; }
+        @media (max-width: 1000px) {
+            .footer-container { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .footer-col-payment { grid-column: span 2; }
+            .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; }
+        }
+        @media (max-width: 600px) {
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+            .footer-col-payment { grid-column: span 1; }
+            .footer-logo { justify-content: center; }
+            .footer-social { justify-content: center; }
+            .footer-heading::after { right: 50%; transform: translateX(50%); }
+            .footer-links-grid { justify-items: center; }
+            .footer-phone { justify-content: center; }
+            .payment-bar { width: 100%; }
+            .payment-icons-desktop { display: none; }
+            .payment-icons-mobile {
+                display: flex; flex-direction: column; align-items: center;
+                gap: 1.5rem; width: 100%;
+            }
+            .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; }
+            .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; }
+            .footer-bottom p { font-size: 12px; }
+        }
+    </style>
+
+    <script src="script.js"></script>
+    <script>
+        // عدادات الإحصائيات
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const counterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'), 10);
+                        if (isNaN(target) || target === 0) return;
+                        let current = 0;
+                        const duration = 2000;
+                        const stepTime = 16;
+                        const steps = duration / stepTime;
+                        const increment = target / steps;
+                        function updateCounter() {
+                            current += increment;
+                            if (current >= target) {
+                                counter.innerText = target.toLocaleString() + '+';
+                                return;
+                            }
+                            counter.innerText = Math.floor(current).toLocaleString() + '+';
+                            requestAnimationFrame(updateCounter);
+                        }
+                        updateCounter();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.3 });
+            statNumbers.forEach(function(counter) { counterObserver.observe(counter); });
+        });
+
+        // تشغيل الزر العائم FAB
+        (function() {
+            var fab = document.getElementById('fab');
+            var fabMain = document.getElementById('fabMain');
+            if (!fab || !fabMain) return;
+            var closeTimeout;
+            function openFab() { clearTimeout(closeTimeout); fab.classList.add('open'); }
+            function closeFabDelayed() {
+                clearTimeout(closeTimeout);
+                closeTimeout = setTimeout(function() { fab.classList.remove('open'); }, 300);
+            }
+            if (window.innerWidth > 768) {
+                fabMain.addEventListener('mouseenter', openFab);
+                fabMain.addEventListener('mouseleave', closeFabDelayed);
+                document.querySelectorAll('.fab-item').forEach(function(item) {
+                    item.addEventListener('mouseenter', function() { clearTimeout(closeTimeout); });
+                    item.addEventListener('mouseleave', closeFabDelayed);
+                });
+            }
+            fabMain.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (window.innerWidth <= 768) fab.classList.toggle('open');
+            });
+            document.addEventListener('click', function(e) {
+                if (!fab.contains(e.target)) {
+                    fab.classList.remove('open');
+                    clearTimeout(closeTimeout);
+                }
+            });
+        })();
+    </script>
+	   <script src="popup.js"></script>
 </body>
 </html>
