@@ -47,7 +47,7 @@ body {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(90%, 1200px);   /* استخدام min() لضمان عدم تجاوز العرض */
+    width: min(90%, 1200px);
     background: rgba(21, 31, 109, 0.5);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -432,7 +432,6 @@ body {
     box-shadow: 0 6px 20px rgba(201, 196, 186, 0.35);
 }
 
-/* أيقونات الخدمات */
 .service-icon img {
     width: 30px;
     height: 30px;
@@ -1401,4 +1400,29 @@ body {
         font-size: 12px;
         padding: 5px 10px;
     }
+}
+
+/* ===== تمت إضافته: حل مشكلة شعارات الدفع ===== */
+.footer-col-payment .payment-bar {
+    overflow: hidden;                /* منع خروج المحتوى */
+    width: 100%;
+    box-sizing: border-box;
+}
+.payment-row,
+.payment-icons-mobile .icons-row {
+    flex-wrap: wrap;                 /* السماح بالتفاف الصور إذا ضاقت */
+    justify-content: center;
+    gap: 15px;                      /* تقليل المسافة قليلاً */
+}
+.payment-row img,
+.payment-icons-mobile img {
+    max-width: 100%;                /* ضمان عدم تجاوز الصورة للحاوية */
+    height: auto;
+    max-height: 28px;               /* الحفاظ على ارتفاع مناسب */
+    object-fit: contain;
+    flex-shrink: 0;
+}
+/* إضافة مسافة صغيرة أعلى الفوتر لمنع أي تداخل محتمل مع القسم السابق */
+.main-footer {
+    padding-top: 10px;              /* يمكن زيادتها إذا لزم */
 }

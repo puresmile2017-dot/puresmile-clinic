@@ -352,7 +352,7 @@
     </div>
 </div>
 
-<!-- ===== FOOTER الأزرق ===== -->
+<!-- ===== FOOTER الأزرق (نسخة محسّنة) ===== -->
 <footer class="main-footer">
     <div class="footer-container">
         <!-- العمود 1 (يمين): الشعار والأيقونات -->
@@ -366,7 +366,7 @@
                 <a href="https://www.instagram.com/puresmile.sa?igsi=NHB1NXFkeXFqZ3Rq" target="_blank" rel="noopener">
                     <img src="img/instagram-icon.png" alt="انستقرام">
                 </a>
-                <a href="https://www.snapchat.com/add/puresmile.sa?share_id=ygteCfX5opY&locale=ar-SA-u-nu-latn0" target="_blank" rel="noopener">
+                <a href="https://www.snapchat.com/add/puresmile.sa?share_id=ygteCfX5opY&locale=ar-SA-u-nu-latn" target="_blank" rel="noopener">
                     <img src="img/snapchat-icon.png" alt="سناب شات">
                 </a>
                 <a href="https://www.tiktok.com/@puresmile.sa?_r=1&_t=ZS-99I24P1m4Z7" target="_blank" rel="noopener">
@@ -392,8 +392,8 @@
         <div class="footer-col footer-col-contact">
             <h4 class="footer-heading">تواصل معنا</h4>
             <a href="tel:0550133938" class="footer-phone">
-        <img src="img/phone-icon.png" alt="اتصال" style="width:20px; height:20px; object-fit:contain; filter: brightness(0) invert(1);">
-              0550133938
+                <img src="img/phone-icon.png" alt="اتصال" style="width:20px; height:20px; object-fit:contain; filter: brightness(0) invert(1);">
+                0550133938
             </a>
             <p class="footer-contact-note">للاستفسار عن طريق الإتصال</p>
         </div>
@@ -435,31 +435,14 @@
 </footer>
 
 <style>
-/* === قسم الخريطة === */
-.map-section {
-    background: #ffffff;
-    padding: 0;
-    border-top: 4px solid #C9C4BA; /* إطار على خلفية فاتحة */
-}
-.map-wrapper {
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-}
-.map-wrapper iframe {
-    height: 250px;
-    display: block;
-}
-
 /* === الفوتر الأزرق === */
 .main-footer {
     background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%);
     color: #ffffff;
     font-family: 'Cairo', sans-serif;
-    padding: 0;
+    padding-top: 10px;
 }
 
-/* === الأعمدة الأربعة - عمود الدفع ممتد === */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -469,130 +452,32 @@
     gap: 30px;
 }
 
-/* === تنسيقات عامة للأعمدة === */
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-.footer-logo img {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-}
-.footer-logo-text {
-    font-size: 22px;
-    font-weight: 800;
-    color: #ffffff;
-}
-.footer-logo-text span {
-    color: #F6F3ED;
-}
-.footer-desc {
-    font-size: 14px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-.footer-social {
-    display: flex;
-    gap: 14px;
-}
-.footer-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    transition: all 0.3s ease;
-    border: 1px solid #F6F3ED; /* إطار على خلفية زرقاء */
-}
-.footer-social a:hover {
-    background: #F6F3ED;
-    transform: translateY(-3px);
-    border-color: #F6F3ED;
-}
-.footer-social img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-}
-.footer-heading {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 12px;
-}
-.footer-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 45px;
-    height: 2px;
-    background: #F6F3ED;
-}
+.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.footer-logo img { width: 55px; height: 55px; object-fit: contain; }
+.footer-logo-text { font-size: 22px; font-weight: 800; color: #ffffff; }
+.footer-logo-text span { color: #F6F3ED; }
+.footer-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
+.footer-social { display: flex; gap: 14px; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.08); transition: all 0.3s ease; border: 1px solid #F6F3ED; }
+.footer-social a:hover { background: #F6F3ED; transform: translateY(-3px); border-color: #F6F3ED; }
+.footer-social img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
+.footer-heading { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; position: relative; padding-bottom: 12px; }
+.footer-heading::after { content: ''; position: absolute; bottom: 0; right: 0; width: 45px; height: 2px; background: #F6F3ED; }
 
-/* روابط سريعة مع دوائر ذهبية */
-.footer-links-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px 20px;
-}
-.footer-links-grid a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.footer-links-grid a::before {
-    content: '●';
-    color: #F6F3ED;
-    font-size: 10px;
-    flex-shrink: 0;
-    opacity: 0.8;
-}
-.footer-links-grid a:hover {
-    color: #F6F3ED;
-    transform: translateX(-6px);
-}
+.footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+.footer-links-grid a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 15px; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; }
+.footer-links-grid a::before { content: '●'; color: #F6F3ED; font-size: 10px; flex-shrink: 0; opacity: 0.8; }
+.footer-links-grid a:hover { color: #F6F3ED; transform: translateX(-6px); }
 
-/* تواصل معنا */
-.footer-phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #F6F3ED;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.3s;
-    margin-bottom: 8px;
-}
-.footer-phone:hover {
-    color: #ffffff;
-}
-.footer-contact-note {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    margin: 0;
-}
+.footer-phone { display: inline-flex; align-items: center; gap: 10px; color: #F6F3ED; font-size: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; margin-bottom: 8px; }
+.footer-phone:hover { color: #ffffff; }
+.footer-contact-note { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
 
-/* === عمود طرق الدفع === */
 .footer-col-payment .payment-bar {
     background: rgba(255, 255, 255, 1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid #C9C4BA; /* إطار على خلفية فاتحة */
+    border: 1px solid #C9C4BA;
     border-radius: 12px;
     padding: 20px 15px;
     display: flex;
@@ -601,108 +486,60 @@
     gap: 16px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
-.payment-icons-desktop {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-}
-.payment-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.payment-row img {
-    height: 28px;
-    width: auto;
-    object-fit: contain;
-}
-.payment-icons-mobile {
-    display: none;
-}
+.payment-icons-desktop { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+.payment-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+.payment-row img { height: 28px; width: auto; object-fit: contain; max-width: 100%; }
+.payment-icons-mobile { display: none; }
 
-/* === شريط الحقوق === */
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
     padding: 18px 30px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 .footer-bottom p {
     color: #ffffff;
-    font-size: 11px;
+    font-size: 14px;
     margin: 0;
     white-space: nowrap;
+    direction: rtl;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* === تجاوب: 4 أعمدة → 2 عمودين → 1 عمود === */
 @media (max-width: 1000px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-    .footer-col-payment {
-        grid-column: span 2;
-    }
-    .footer-col-payment .payment-bar {
-        max-width: 500px;
-        margin: 0 auto;
-    }
+    .footer-container { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    .footer-col-payment { grid-column: span 2; }
+    .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; }
 }
 
 @media (max-width: 600px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .footer-col-payment {
-        grid-column: span 1;
-    }
-    .footer-logo {
-        justify-content: center;
-    }
-    .footer-social {
-        justify-content: center;
-    }
-    .footer-heading::after {
-        right: 50%;
-        transform: translateX(50%);
-    }
-    .footer-links-grid {
-        justify-items: center;
-    }
-    .footer-phone {
-        justify-content: center;
-    }
-    .payment-bar {
-        width: 100%;
-    }
-    .payment-icons-desktop {
-        display: none;
-    }
-    .payment-icons-mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        width: 100%;
-    }
-    .icons-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-    }
-    .payment-icons-mobile img {
-        height: 26px;
-        width: auto;
-        object-fit: contain;
-    }
-    .footer-bottom p {
-        font-size: 11px;
-    }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .footer-col-payment { grid-column: span 1; }
+    .footer-logo { justify-content: center; }
+    .footer-social { justify-content: center; }
+    .footer-heading::after { right: 50%; transform: translateX(50%); }
+    .footer-links-grid { justify-items: center; }
+    .footer-phone { justify-content: center; }
+    .payment-bar { width: 100%; max-width: 100%; }
+    .payment-icons-desktop { display: none; }
+    .payment-icons-mobile { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; }
+    .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; max-width: 100%; }
+    .footer-bottom p { font-size: 12px; white-space: normal; line-height: 1.6; }
+}
+
+@media (max-width: 360px) {
+    .payment-icons-mobile .icons-row { gap: 1rem; }
+    .payment-icons-mobile img { height: 22px; }
+    .footer-bottom p { font-size: 10px; }
 }
 </style>
 
@@ -731,6 +568,7 @@
 
 <!-- ===== SCRIPTS ===== -->
 <script src="script.js"></script>
+
     <script src="popup.js"></script>
 </body>
 </html>

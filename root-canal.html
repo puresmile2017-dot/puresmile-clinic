@@ -44,7 +44,8 @@
             padding: 80px 20px 70px;
             text-align: center;
             position: relative;
-            clip-path: ellipse(150% 100% at 50% 0%);
+            overflow: hidden; /* إزالة clip-path نهائياً */
+            border-radius: 0 0 40% 40% / 0 0 15% 15%; /* شكل بيضاوي سفلي بدون تجاوز */
         }
         .hero-icon-box {
             width: 90px; height: 90px;
@@ -309,12 +310,14 @@
             width: 100%;
             max-width: 100%;
             box-sizing: border-box;
+            scroll-snap-type: x mandatory; /* تفعيل الانجذاب الأفقي */
         }
         .videos-scroll::-webkit-scrollbar { height: 6px; }
         .videos-scroll::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
         .videos-scroll::-webkit-scrollbar-track { background: transparent; }
         .video-item {
             flex: 0 0 190px;
+            scroll-snap-align: center;
             border-radius: 16px;
             overflow: hidden;
             background: #000;
@@ -447,7 +450,7 @@
             .stat-number { font-size: 1.8rem; }
             .stat-number .prefix, .stat-number .suffix { font-size: 1.3rem; }
             .stat-icon { font-size: 1.8rem; }
-            .video-item { flex: 0 0 180px; }
+            .video-item { flex: 0 0 55%; } /* تكبير الفيديو في التابلت */
         }
         @media (max-width: 480px) {
             .signs-video { max-width: 250px; }
@@ -457,7 +460,7 @@
             .stat-number { font-size: 1.5rem; }
             .stat-number .prefix, .stat-number .suffix { font-size: 1.1rem; }
             .stat-label { font-size: 0.8rem; }
-            .video-item { flex: 0 0 150px; }
+            .video-item { flex: 0 0 85%; } /* تكبير الفيديو في الهاتف */
             .article-title { font-size: 1.4rem; }
             .steps-grid { grid-template-columns: 1fr; }
         }
@@ -645,6 +648,13 @@
             if(fab&&fabMain){
                 fabMain.addEventListener('click',e=>{ e.stopPropagation(); fab.classList.toggle('open'); });
                 document.addEventListener('click',e=>{ if(!fab.contains(e.target)) fab.classList.remove('open'); });
+
+                // إغلاق القائمة تلقائيًا عند النقر على أي خيار داخلي
+                document.querySelectorAll('.fab-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        fab.classList.remove('open');
+                    });
+                });
             }
 
             const scrollContainer = document.getElementById('rootVideosScroll');
@@ -743,7 +753,7 @@
         <div class="footer-bottom"><p>جميع الحقوق محفوظة &copy; لدى مركز أنقى ابتسامة لطب الأسنان 2026</p></div>
     </footer>
     <style>
-        .main-footer { background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%); color: #ffffff; font-family: 'Cairo', sans-serif; padding: 0; }
+        .main-footer { background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%); color: #ffffff; font-family: 'Cairo', sans-serif; padding-top: 10px; }
         .footer-container { max-width: 1200px; margin: 0 auto; padding: 40px 30px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr 1.8fr; gap: 30px; }
         .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
         .footer-logo img { width: 55px; height: 55px; object-fit: contain; }
@@ -763,15 +773,16 @@
         .footer-phone { display: inline-flex; align-items: center; gap: 10px; color: #F6F3ED; font-size: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; margin-bottom: 8px; }
         .footer-phone:hover { color: #ffffff; }
         .footer-contact-note { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
-        .footer-col-payment .payment-bar { background: rgba(255,255,255,1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #C9C4BA; border-radius: 12px; padding: 20px 15px; display: flex; flex-direction: column; align-items: center; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; }
+        .footer-col-payment .payment-bar { background: rgba(255,255,255,1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #C9C4BA; border-radius: 12px; padding: 20px 15px; display: flex; flex-direction: column; align-items: center; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; overflow: hidden; box-sizing: border-box; }
         .payment-icons-desktop { display: flex; flex-direction: column; gap: 16px; width: 100%; }
         .payment-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
-        .payment-row img { height: 28px; width: auto; object-fit: contain; }
+        .payment-row img { height: 28px; width: auto; object-fit: contain; max-width: 100%; }
         .payment-icons-mobile { display: none; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 30px; text-align: center; }
-        .footer-bottom p { color: #ffffff; font-size: 14px; margin: 0; white-space: nowrap; }
-        @media (max-width: 1000px) { .footer-container { grid-template-columns: repeat(2, 1fr); } .footer-col-payment { grid-column: span 2; } .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; } }
-        @media (max-width: 600px) { .footer-container { grid-template-columns: 1fr; text-align: center; } .footer-col-payment { grid-column: span 1; } .footer-logo { justify-content: center; } .footer-social { justify-content: center; } .footer-heading::after { right: 50%; transform: translateX(50%); } .footer-links-grid { justify-items: center; } .footer-phone { justify-content: center; } .payment-bar { width: 100%; } .payment-icons-desktop { display: none; } .payment-icons-mobile { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; } .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; } .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; } .footer-bottom p { font-size: 12px; } }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 30px; text-align: center; width: 100%; box-sizing: border-box; }
+        .footer-bottom p { color: #ffffff; font-size: 14px; margin: 0; white-space: nowrap; direction: rtl; text-align: center; width: 100%; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+        @media (max-width: 1000px) { .footer-container { grid-template-columns: repeat(2, 1fr); gap: 25px; } .footer-col-payment { grid-column: span 2; } .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; } }
+        @media (max-width: 600px) { .footer-container { grid-template-columns: 1fr; text-align: center; } .footer-col-payment { grid-column: span 1; } .footer-logo { justify-content: center; } .footer-social { justify-content: center; } .footer-heading::after { right: 50%; transform: translateX(50%); } .footer-links-grid { justify-items: center; } .footer-phone { justify-content: center; } .payment-bar { width: 100%; max-width: 100%; } .payment-icons-desktop { display: none; } .payment-icons-mobile { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; } .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; } .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; max-width: 100%; } .footer-bottom p { font-size: 12px; white-space: normal; line-height: 1.6; } }
+        @media (max-width: 360px) { .payment-icons-mobile .icons-row { gap: 1rem; } .payment-icons-mobile img { height: 22px; } .footer-bottom p { font-size: 10px; } }
     </style>
 	<script src="popup.js"></script>
 </body>

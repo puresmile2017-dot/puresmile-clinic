@@ -25,7 +25,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background: var(--bg-color); color: var(--text-dark); direction: rtl; overflow-x: hidden; line-height: 1.8; font-size: 16px; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .elite-hero { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--white); padding: 80px 20px 70px; text-align: center; position: relative; clip-path: ellipse(150% 100% at 50% 0%); }
+        .elite-hero { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--white); padding: 80px 20px 70px; text-align: center; position: relative; overflow: hidden; border-radius: 0 0 40% 40% / 0 0 15% 15%; }
         .hero-icon-box { width: 90px; height: 90px; background: rgba(255,255,255,0.05); border: 2px solid var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 38px; color: var(--accent-gold); box-shadow: 0 0 25px rgba(246,243,237,0.3); animation: floatIcon 3s ease-in-out infinite; }
         @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .elite-hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; }
@@ -58,11 +58,11 @@
 
         /* === فيديوهات العيادة === */
         .clinic-videos-section { background: var(--white); border-radius: 24px; box-shadow: var(--shadow-elite); padding: 30px 25px; margin-bottom: 50px; }
-        .videos-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 6px 0 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border-color) transparent; }
+        .videos-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 6px 10px 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border-color) transparent; scroll-snap-type: x mandatory; }
         .videos-scroll::-webkit-scrollbar { height: 6px; }
         .videos-scroll::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
         .videos-scroll::-webkit-scrollbar-track { background: transparent; }
-        .video-item { flex: 0 0 190px; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 8px 18px rgba(21,31,109,0.12); transition: transform 0.3s ease; position: relative; aspect-ratio: 9 / 16; border: 2px solid var(--border-color); }
+        .video-item { flex: 0 0 190px; scroll-snap-align: center; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 8px 18px rgba(21,31,109,0.12); transition: transform 0.3s ease; position: relative; aspect-ratio: 9 / 16; border: 2px solid var(--border-color); }
         .video-item:hover { transform: translateY(-2px) scale(1.02); border-color: var(--accent-gold); }
         .video-item video { width: 100%; height: 100%; display: block; object-fit: cover; }
 
@@ -93,8 +93,8 @@
         .fab-main svg { width: 30px; height: 30px; fill: var(--primary-blue); }
         @keyframes fadeUp { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
         @keyframes elitePulse { 0% { box-shadow: 0 0 0 0 rgba(201,196,186,0.7); } 70% { box-shadow: 0 0 0 15px rgba(201,196,186,0); } 100% { box-shadow: 0 0 0 0 rgba(201,196,186,0); } }
-        @media (max-width: 900px) { .elite-hero { padding: 60px 15px 50px; clip-path: ellipse(180% 100% at 50% 0%); } .elite-hero h1 { font-size: 2.2rem; } .hero-icon-box { width: 70px; height: 70px; font-size: 30px; } .intro-description { font-size: 0.9rem; padding: 15px 20px; } .external-journey-header h2 { font-size: 1.7rem; } .section-title { font-size: 1.6rem; } .journey-summary-section, .faq-section, .stats-section, .clinic-videos-section { padding: 30px 20px; } .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } .video-item { flex: 0 0 180px; } }
-        @media (max-width: 480px) { body { font-size: 15px; } .elite-hero { padding: 50px 15px 40px; } .elite-hero h1 { font-size: 1.9rem; } .hero-icon-box { width: 60px; height: 60px; font-size: 26px; } .intro-description { font-size: 0.85rem; } .external-journey-header h2 { font-size: 1.5rem; } .section-title { font-size: 1.4rem; } .journey-card { padding: 20px 15px; } .journey-card h4 { font-size: 1.05rem; } .journey-card p { font-size: 0.9rem; } .faq-question { font-size: 0.95rem; padding: 15px; } .btn-elite-back { padding: 8px 20px; font-size: 0.9rem; } .video-item { flex: 0 0 150px; } .stats-grid { gap: 10px; } .stat-number { font-size: 1.5rem; } .stat-number .prefix, .stat-number .suffix { font-size: 1.2rem; } .stat-label { font-size: 0.8rem; } }
+        @media (max-width: 900px) { .elite-hero { padding: 60px 15px 50px; } .elite-hero h1 { font-size: 2.2rem; } .hero-icon-box { width: 70px; height: 70px; font-size: 30px; } .intro-description { font-size: 0.9rem; padding: 15px 20px; } .external-journey-header h2 { font-size: 1.7rem; } .section-title { font-size: 1.6rem; } .journey-summary-section, .faq-section, .stats-section, .clinic-videos-section { padding: 30px 20px; } .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } .video-item { flex: 0 0 55%; } }
+        @media (max-width: 480px) { body { font-size: 15px; } .elite-hero { padding: 50px 15px 40px; } .elite-hero h1 { font-size: 1.9rem; } .hero-icon-box { width: 60px; height: 60px; font-size: 26px; } .intro-description { font-size: 0.85rem; } .external-journey-header h2 { font-size: 1.5rem; } .section-title { font-size: 1.4rem; } .journey-card { padding: 20px 15px; } .journey-card h4 { font-size: 1.05rem; } .journey-card p { font-size: 0.9rem; } .faq-question { font-size: 0.95rem; padding: 15px; } .btn-elite-back { padding: 8px 20px; font-size: 0.9rem; } .video-item { flex: 0 0 85%; } .stats-grid { gap: 10px; } .stat-number { font-size: 1.5rem; } .stat-number .prefix, .stat-number .suffix { font-size: 1.2rem; } .stat-label { font-size: 0.8rem; } }
     </style>
 </head>
 <body>
@@ -109,7 +109,7 @@
 
     <main class="main-wrapper container">
         <div class="external-journey-header">
-            <h2>ابتسامة متألقة بخدمات تجميلية متكاملة</h2>
+            <h2>ابتسامة متألقة<br>بخدمات تجميلية متكاملة</h2>
             <p>اختر من بين مجموعتنا الواسعة من حلول تجميل الأسنان المصممة خصيصاً لك.</p>
         </div>
 
@@ -213,6 +213,13 @@
             if(fab&&fabMain){
                 fabMain.addEventListener('click',e=>{ e.stopPropagation(); fab.classList.toggle('open'); });
                 document.addEventListener('click',e=>{ if(!fab.contains(e.target)) fab.classList.remove('open'); });
+
+                // إغلاق القائمة تلقائيًا عند النقر على أي خيار داخلي
+                document.querySelectorAll('.fab-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        fab.classList.remove('open');
+                    });
+                });
             }
 
             const scrollContainer = document.getElementById('clinicVideosScroll');
@@ -363,7 +370,7 @@
     background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%);
     color: #ffffff;
     font-family: 'Cairo', sans-serif;
-    padding: 0;
+    padding-top: 10px; /* مسافة فاصلة عن القسم السابق */
 }
 
 .footer-container {
@@ -490,6 +497,7 @@
     margin: 0;
 }
 
+/* === تعديلات خاصة لحل مشاكل الفوتر === */
 .footer-col-payment .payment-bar {
     background: rgba(255, 255, 255, 1);
     backdrop-filter: blur(10px);
@@ -503,6 +511,8 @@
     gap: 16px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     width: 100%;
+    overflow: hidden; /* منع خروج الشعارات نهائياً */
+    box-sizing: border-box;
 }
 .payment-icons-desktop {
     display: flex;
@@ -521,23 +531,32 @@
     height: 28px;
     width: auto;
     object-fit: contain;
+    max-width: 100%; /* ضمان عدم تجاوز الصورة للحاوية */
 }
 .payment-icons-mobile {
     display: none;
 }
-
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
     padding: 18px 30px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 .footer-bottom p {
     color: #ffffff;
     font-size: 14px;
     margin: 0;
-    white-space: nowrap;
+    white-space: nowrap; /* يمكن إزالتها إذا أردت التفاف النص */
+    direction: rtl; /* ضمان الاتجاه الصحيح */
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+/* تجاوب الشاشات الصغيرة */
 @media (max-width: 1000px) {
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
@@ -578,6 +597,7 @@
     }
     .payment-bar {
         width: 100%;
+        max-width: 100%;
     }
     .payment-icons-desktop {
         display: none;
@@ -594,14 +614,31 @@
         justify-content: center;
         align-items: center;
         gap: 2rem;
+        flex-wrap: wrap;
     }
     .payment-icons-mobile img {
         height: 26px;
         width: auto;
         object-fit: contain;
+        max-width: 100%;
     }
     .footer-bottom p {
         font-size: 12px;
+        white-space: normal; /* السماح بالتفاف النص في الهواتف */
+        line-height: 1.6;
+    }
+}
+
+/* تحسينات إضافية للهواتف الصغيرة جداً */
+@media (max-width: 360px) {
+    .payment-icons-mobile .icons-row {
+        gap: 1rem;
+    }
+    .payment-icons-mobile img {
+        height: 22px;
+    }
+    .footer-bottom p {
+        font-size: 10px;
     }
 }
 </style>

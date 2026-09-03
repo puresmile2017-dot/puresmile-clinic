@@ -31,7 +31,7 @@
         }
         body { font-family: 'Cairo', sans-serif; background: var(--bg-color); color: var(--text-dark); direction: rtl; line-height: 1.8; font-size: 16px; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
-        .elite-hero { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--white); padding: 80px 20px 70px; text-align: center; position: relative; clip-path: ellipse(150% 100% at 50% 0%); }
+        .elite-hero { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--white); padding: 80px 20px 70px; text-align: center; position: relative; overflow: hidden; border-radius: 0 0 40% 40% / 0 0 15% 15%; }
         .hero-icon-box { width: 90px; height: 90px; background: rgba(255,255,255,0.05); border: 2px solid var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 38px; color: var(--accent-gold); box-shadow: 0 0 25px rgba(246,243,237,0.3); animation: floatIcon 3s ease-in-out infinite; }
         @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .elite-hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; }
@@ -85,11 +85,11 @@
 
         /* ===== فيديوهات العيادة ===== */
         .clinic-videos-section { background: var(--white); border-radius: 24px; box-shadow: var(--shadow-elite); padding: 30px 25px; margin-bottom: 50px; width: 100%; box-sizing: border-box; }
-        .videos-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 6px 0 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border-color) transparent; width: 100%; max-width: 100%; box-sizing: border-box; }
+        .videos-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 6px 0 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border-color) transparent; width: 100%; max-width: 100%; box-sizing: border-box; scroll-snap-type: x mandatory; }
         .videos-scroll::-webkit-scrollbar { height: 6px; }
         .videos-scroll::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
         .videos-scroll::-webkit-scrollbar-track { background: transparent; }
-        .video-item { flex: 0 0 190px; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 8px 18px rgba(21,31,109,0.12); transition: transform 0.3s ease; position: relative; aspect-ratio: 9 / 16; border: 2px solid var(--border-color); }
+        .video-item { flex: 0 0 190px; scroll-snap-align: center; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 8px 18px rgba(21,31,109,0.12); transition: transform 0.3s ease; position: relative; aspect-ratio: 9 / 16; border: 2px solid var(--border-color); }
         .video-item:hover { transform: translateY(-2px) scale(1.02); border-color: var(--accent-gold); }
         .video-item video { width: 100%; height: 100%; display: block; object-fit: cover; }
 
@@ -126,7 +126,7 @@
 
         /* تجاوب */
         @media (max-width: 900px) {
-            .elite-hero { padding: 60px 15px 50px; clip-path: ellipse(180% 100% at 50% 0%); }
+            .elite-hero { padding: 60px 15px 50px; }
             .elite-hero h1 { font-size: 2.2rem; }
             .hero-icon-box { width: 70px; height: 70px; font-size: 30px; }
             .intro-description { font-size: 0.9rem; padding: 15px 20px; }
@@ -137,7 +137,7 @@
             .stat-number { font-size: 1.8rem; }
             .stat-number .prefix, .stat-number .suffix { font-size: 1.3rem; }
             .stat-icon { font-size: 1.8rem; }
-            .video-item { flex: 0 0 180px; }
+            .video-item { flex: 0 0 55%; }
         }
         @media (max-width: 480px) {
             body { font-size: 15px; }
@@ -157,7 +157,7 @@
             .stat-number { font-size: 1.5rem; }
             .stat-number .prefix, .stat-number .suffix { font-size: 1.1rem; }
             .stat-label { font-size: 0.8rem; }
-            .video-item { flex: 0 0 150px; }
+            .video-item { flex: 0 0 85%; }
             .article-section .article-title { font-size: 1.4rem; }
             .journey-steps-grid { grid-template-columns: 1fr; }
         }
@@ -168,7 +168,6 @@
     <main class="main-wrapper container">
         <div class="external-journey-header"><h2>إجراءات جراحية آمنة ودقيقة</h2><p>من التشخيص إلى التعافي، نضمن أعلى معايير السلامة والراحة.</p></div>
 
-        <!-- الخدمات الجراحية -->
         <section class="journey-summary-section"><h3 class="section-title">الخدمات الجراحية</h3><div class="journey-grid">
             <div class="journey-card"><div class="journey-num">1</div><h4>خلع الأسنان الجراحي</h4><ul class="service-list"><li>خلع الأسنان المدفونة (ضرس العقل المدفون).</li><li>خلع الأسنان المتكسرة أو المعقدة.</li><li>إزالة بقايا الجذور.</li></ul></div>
             <div class="journey-card"><div class="journey-num">2</div><h4>أمراض الغدد اللعابية</h4><ul class="service-list"><li>تشخيص وعلاج التهابات الغدد اللعابية.</li><li>إزالة الحصوات اللعابية.</li></ul></div>
@@ -177,62 +176,33 @@
             <div class="journey-card"><div class="journey-num">5</div><h4>تقويم الأسنان الجراحي</h4><ul class="service-list"><li>الجراحة المساندة للتقويم (Exposure of impacted teeth).</li><li>كشف الأسنان المدفونة قبل التقويم.</li></ul></div>
             <div class="journey-card"><div class="journey-num">6</div><h4>جراحة ما قبل التركيبات</h4><ul class="service-list"><li>تجهيز الفك لتركيبات الأسنان.</li><li>استئصال النتوءات العظمية (Tori Removal).</li></ul></div>
             <div class="journey-card"><div class="journey-num">7</div><h4>التجميل الجراحي للفم</h4><ul class="service-list"><li>تجميل اللثة الجراحي.</li><li>قص للثة بالليزر.</li><li>قص اللجام الفرانكتومي.</li><li>قص اللسان المربوط.</li></ul></div>
-            <!-- القسم الجديد المضاف -->
             <div class="journey-card"><div class="journey-num">8</div><h4>تجميل الوجه والفكين</h4><ul class="service-list"><li>عمليات الخدود (الغمازات).</li><li>توريد الشفايف.</li></ul></div>
         </div></section>
 
-        <!-- الإحصائيات -->
         <section class="stats-section" aria-label="إحصائيات جراحة الأسنان">
             <h3 class="section-title">أرقام تعكس تميزنا</h3>
             <div class="stats-grid">
-                <div class="stat-item">
-                    <i class="fas fa-tooth stat-icon"></i>
-                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="4300">0</span></div>
-                    <p class="stat-label">عملية خلع ضرس عقل ناجحة</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-smile stat-icon"></i>
-                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="9700">0</span></div>
-                    <p class="stat-label">مراجع سعيد</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-user-md stat-icon"></i>
-                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="20">0</span></div>
-                    <p class="stat-label">عام خبرة أخصائي جراحة الوجه والفكين</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-award stat-icon"></i>
-                    <div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="10">0</span></div>
-                    <p class="stat-label">سنوات من التميز</p>
-                </div>
+                <div class="stat-item"><i class="fas fa-tooth stat-icon"></i><div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="4300">0</span></div><p class="stat-label">عملية خلع ضرس عقل ناجحة</p></div>
+                <div class="stat-item"><i class="fas fa-smile stat-icon"></i><div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="9700">0</span></div><p class="stat-label">مراجع سعيد</p></div>
+                <div class="stat-item"><i class="fas fa-user-md stat-icon"></i><div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="20">0</span></div><p class="stat-label">عام خبرة أخصائي جراحة الوجه والفكين</p></div>
+                <div class="stat-item"><i class="fas fa-award stat-icon"></i><div class="stat-number"><span class="prefix">+</span><span class="counter" data-target="10">0</span></div><p class="stat-label">سنوات من التميز</p></div>
             </div>
         </section>
 
-        <!-- مقال ضرس العقل -->
         <section class="article-section">
             <h3 class="section-title">خلع ضرس العقل في أنقى ابتسامة— بسيط وجراحي، بيد متخصصة</h3>
             <div class="article-body">
                 <p>ضرس العقل المدفون في جازان هو أكثر ما يبحث عنه المرضى في مركزنا — ولسبب وجيه.</p>
                 <p>الضرس المدفون كلياً داخل العظم يختلف جذرياً عن الضرس الظاهر. يتطلب دراسة أشعة مقطعية مسبقة لتحديد مسار العصب السفلي تحديداً، ثم تدخلاً جراحياً دقيقاً يُجريه طبيب يفهم تشريح الفك من الداخل — لا مجرد طبيب أسنان عام.</p>
                 <p>في انقى ابتسامة جازان، نُجري خلع ضروس العقل المدفونة يومياً. معظم الحالات جلسة واحدة بتخدير موضعي مريح، مع متابعة ٤٨ ساعة بعد الإجراء وإرشادات تعافٍ واضحة.</p>
-                <h4>الخلع البسيط:</h4>
-                <p>للضرس الظاهر، لا يحتاج شقاً جراحياً.</p>
-                <h4>الخلع الجراحي:</h4>
-                <p>للضرس المدفون جزئياً أو كلياً — يشمل شقاً محكوماً في اللثة وصولاً للعظم، مع إغلاق دقيق بعد الإزالة.</p>
-                <h4>متى يجب خلع ضرس العقل؟</h4>
-                <p>ليس كل ضرس عقل يحتاج خلعاً فورياً — لكن هذه العلامات الأربع تعني أن الانتظار يُضاعف المشكلة:</p>
-                <ul>
-                    <li>ألم متكرر في منطقة آخر الفك لا يزول بالمسكنات</li>
-                    <li>التهاب اللثة المحيطة بالضرس (Pericoronitis)</li>
-                    <li>ضغط الضرس على الضرس المجاور وبداية تلفه</li>
-                    <li>كيس أو ورم يتشكّل حول الضرس المدفون</li>
-                </ul>
-                <h4>ما هي تكلفة خلع ضرس العقل في أنقى ابتسامة؟</h4>
-                <p>تختلف التكلفة بحسب نوع الحالة: الخلع البسيط أقل تكلفة من الجراحي، والضرس المدفون كلياً في العظم يتطلب تدخلاً أعقد. في انقى ابتسامة، يشمل سعر الخلع الأشعة المقطعية التشخيصية المسبقة وجلسة المتابعة. تواصل معنا للحصول على تقييم مجاني في الزيارة الأولى.</p>
+                <h4>الخلع البسيط:</h4><p>للضرس الظاهر، لا يحتاج شقاً جراحياً.</p>
+                <h4>الخلع الجراحي:</h4><p>للضرس المدفون جزئياً أو كلياً — يشمل شقاً محكوماً في اللثة وصولاً للعظم، مع إغلاق دقيق بعد الإزالة.</p>
+                <h4>متى يجب خلع ضرس العقل؟</h4><p>ليس كل ضرس عقل يحتاج خلعاً فورياً — لكن هذه العلامات الأربع تعني أن الانتظار يُضاعف المشكلة:</p>
+                <ul><li>ألم متكرر في منطقة آخر الفك لا يزول بالمسكنات</li><li>التهاب اللثة المحيطة بالضرس (Pericoronitis)</li><li>ضغط الضرس على الضرس المجاور وبداية تلفه</li><li>كيس أو ورم يتشكّل حول الضرس المدفون</li></ul>
+                <h4>ما هي تكلفة خلع ضرس العقل في أنقى ابتسامة؟</h4><p>تختلف التكلفة بحسب نوع الحالة: الخلع البسيط أقل تكلفة من الجراحي، والضرس المدفون كلياً في العظم يتطلب تدخلاً أعقد. في انقى ابتسامة، يشمل سعر الخلع الأشعة المقطعية التشخيصية المسبقة وجلسة المتابعة. تواصل معنا للحصول على تقييم مجاني في الزيارة الأولى.</p>
             </div>
         </section>
 
-        <!-- رحلة المريض -->
         <section class="article-section">
             <h3 class="section-title" style="font-size:1.5rem;">رحلة المريض</h3>
             <h4 class="article-title">من التشخيص إلى التعافي — 3 خطوات واضحة في أنقى ابتسامة</h4>
@@ -243,13 +213,11 @@
             </div>
         </section>
 
-        <!-- فيديوهات العيادة -->
         <section class="clinic-videos-section" aria-label="فيديوهات عيادة الجراحة">
             <h3 class="section-title">فيديوهات عيادة الجراحة</h3>
             <div class="videos-scroll" id="surgeryVideosScroll"></div>
         </section>
 
-        <!-- الأسئلة الشائعة -->
         <section class="faq-section" aria-labelledby="faq-title">
             <h3 class="section-title" id="faq-title">الأسئلة الشائعة</h3>
             <div class="faq-container" id="faq-container">
@@ -265,12 +233,9 @@
                 <div class="faq-item" id="faq-9"><button class="faq-question" onclick="toggleFaq(9)"><span>هل يمكن خلع ضرس العقل للحامل؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>يفضل تأجيل الخلع غير الضروري لما بعد الولادة. في الحالات الطارئة، يمكن إجراؤه في الثلث الثاني من الحمل بحذر وتحت إشراف طبي.</p></div></div>
                 <div class="faq-item" id="faq-10"><button class="faq-question" onclick="toggleFaq(10)"><span>ما هي مضاعفات خلع ضرس العقل؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>قد تشمل التورم، الألم، النزيف الخفيف، أو الالتهاب. المضاعفات الخطيرة نادرة جداً إذا اتبع المريض تعليمات الطبيب.</p></div></div>
                 <div class="faq-item" id="faq-11"><button class="faq-question" onclick="toggleFaq(11)"><span>كيف أحجز موعداً لجراحة الفم في عيادة انقى ابتسامة؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>يمكنك الحجز بالاتصال على 0550133938 أو عبر واتساب، وسيتم تحديد موعد استشارة مع أخصائي الجراحة.</p></div></div>
-                <!-- السؤال الجديد المضاف -->
                 <div class="faq-item" id="faq-12"><button class="faq-question" onclick="toggleFaq(12)"><span>هل عملية الغمازة دائمة؟</span><div class="faq-plus-icon">+</div></button><div class="faq-answer"><p>نعم، لأنها ترتبط بالأنسجة الداخلية للخد، على عكس الأنواع المؤقتة التي تختفي بعد أسابيع.</p></div></div>
             </div>
         </section>
-
-       
     </main>
 
     <div class="fab" id="fab"><div class="fab-popup"><div class="fab-menu">
@@ -298,6 +263,13 @@
             if(fab&&fabMain){
                 fabMain.addEventListener('click',e=>{ e.stopPropagation(); fab.classList.toggle('open'); });
                 document.addEventListener('click',e=>{ if(!fab.contains(e.target)) fab.classList.remove('open'); });
+
+                // إغلاق القائمة تلقائيًا عند النقر على أي خيار داخلي
+                document.querySelectorAll('.fab-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        fab.classList.remove('open');
+                    });
+                });
             }
 
             const scrollContainer = document.getElementById('surgeryVideosScroll');
@@ -394,7 +366,7 @@
         <div class="footer-bottom"><p>جميع الحقوق محفوظة &copy; لدى مركز أنقى ابتسامة لطب الأسنان 2026</p></div>
     </footer>
     <style>
-        .main-footer { background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%); color: #ffffff; font-family: 'Cairo', sans-serif; padding: 0; }
+        .main-footer { background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%); color: #ffffff; font-family: 'Cairo', sans-serif; padding-top: 10px; }
         .footer-container { max-width: 1200px; margin: 0 auto; padding: 40px 30px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr 1.8fr; gap: 30px; }
         .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
         .footer-logo img { width: 55px; height: 55px; object-fit: contain; }
@@ -414,15 +386,16 @@
         .footer-phone { display: inline-flex; align-items: center; gap: 10px; color: #F6F3ED; font-size: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; margin-bottom: 8px; }
         .footer-phone:hover { color: #ffffff; }
         .footer-contact-note { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
-        .footer-col-payment .payment-bar { background: rgba(255,255,255,1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #C9C4BA; border-radius: 12px; padding: 20px 15px; display: flex; flex-direction: column; align-items: center; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; }
+        .footer-col-payment .payment-bar { background: rgba(255,255,255,1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #C9C4BA; border-radius: 12px; padding: 20px 15px; display: flex; flex-direction: column; align-items: center; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; overflow: hidden; box-sizing: border-box; }
         .payment-icons-desktop { display: flex; flex-direction: column; gap: 16px; width: 100%; }
         .payment-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
-        .payment-row img { height: 28px; width: auto; object-fit: contain; }
+        .payment-row img { height: 28px; width: auto; object-fit: contain; max-width: 100%; }
         .payment-icons-mobile { display: none; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 30px; text-align: center; }
-        .footer-bottom p { color: #ffffff; font-size: 14px; margin: 0; white-space: nowrap; }
-        @media (max-width: 1000px) { .footer-container { grid-template-columns: repeat(2, 1fr); } .footer-col-payment { grid-column: span 2; } .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; } }
-        @media (max-width: 600px) { .footer-container { grid-template-columns: 1fr; text-align: center; } .footer-col-payment { grid-column: span 1; } .footer-logo { justify-content: center; } .footer-social { justify-content: center; } .footer-heading::after { right: 50%; transform: translateX(50%); } .footer-links-grid { justify-items: center; } .footer-phone { justify-content: center; } .payment-bar { width: 100%; } .payment-icons-desktop { display: none; } .payment-icons-mobile { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; } .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; } .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; } .footer-bottom p { font-size: 12px; } }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 30px; text-align: center; width: 100%; box-sizing: border-box; }
+        .footer-bottom p { color: #ffffff; font-size: 14px; margin: 0; white-space: nowrap; direction: rtl; text-align: center; width: 100%; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+        @media (max-width: 1000px) { .footer-container { grid-template-columns: repeat(2, 1fr); gap: 25px; } .footer-col-payment { grid-column: span 2; } .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; } }
+        @media (max-width: 600px) { .footer-container { grid-template-columns: 1fr; text-align: center; } .footer-col-payment { grid-column: span 1; } .footer-logo { justify-content: center; } .footer-social { justify-content: center; } .footer-heading::after { right: 50%; transform: translateX(50%); } .footer-links-grid { justify-items: center; } .footer-phone { justify-content: center; } .payment-bar { width: 100%; max-width: 100%; } .payment-icons-desktop { display: none; } .payment-icons-mobile { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; } .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; } .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; max-width: 100%; } .footer-bottom p { font-size: 12px; white-space: normal; line-height: 1.6; } }
+        @media (max-width: 360px) { .payment-icons-mobile .icons-row { gap: 1rem; } .payment-icons-mobile img { height: 22px; } .footer-bottom p { font-size: 10px; } }
     </style>
 	<script src="popup.js"></script>
 </body>

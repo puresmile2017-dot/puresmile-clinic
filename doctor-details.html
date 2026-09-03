@@ -4,46 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تفاصيل الطبيب | أنقى ابتسامة</title>
-      <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- الخطوط والأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="img/logo-icon.png">
-	<link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="popup.css">
+
     <style>
-        /* ===== إعدادات عامة ===== */
+        /* ===================== المتغيرات العامة ===================== */
         :root {
             --primary: #151F6D;
             --accent: #F6F3ED;
             --bg-soft: #FAF8F4;
             --white: #ffffff;
-            --shadow: 0 10px 40px rgba(0,0,0,0.06);
-            --shadow-hover: 0 20px 60px rgba(0,0,0,0.1);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.1);
             --radius: 20px;
             --border-light: #C9C4BA;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===================== إعادة الضبط العامة ===================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Cairo', sans-serif;
             background: var(--bg-soft);
             color: #333;
             line-height: 1.7;
         }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* ===== هيدر الطبيب ===== */
+        /* ===================== ترويسة الطبيب ===================== */
         .dr-header {
             background: linear-gradient(135deg, #151F6D 0%, #1a3a5c 100%);
             color: white;
-            padding: 40px 20px 40px;
+            padding: 40px 20px;
             text-align: center;
             border-bottom: 4px solid var(--accent);
             position: relative;
             overflow: hidden;
         }
+
         .dr-header::before {
             content: '';
             position: absolute;
@@ -51,7 +63,7 @@
             right: -20%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(246,243,237,0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(246, 243, 237, 0.06) 0%, transparent 70%);
             border-radius: 50%;
         }
 
@@ -62,38 +74,84 @@
             border-radius: 16px;
             overflow: hidden;
             border: 4px solid var(--accent);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
             position: relative;
             z-index: 2;
             background: #2c4a6a;
         }
-        .dr-image-wrapper:hover { transform: scale(1.03) rotate(-1deg); }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        .dr-info { position: relative; z-index: 2; margin-bottom: 20px; }
-        .dr-info h1 { font-size: 2.2rem; font-weight: 900; color: #ffffff; margin-bottom: 5px; }
-        .dr-info .specialty { color: var(--accent); font-size: 1.15rem; font-weight: 700; margin: 0; }
+        .dr-image-wrapper:hover {
+            transform: scale(1.03) rotate(-1deg);
+        }
 
-        .dr-header .bio-wrapper { max-width: 750px; margin: 0 auto 25px; position: relative; z-index: 2; }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .dr-info {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        .dr-info h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .dr-info .specialty {
+            color: var(--accent);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .dr-header .bio-wrapper {
+            max-width: 750px;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 2;
+        }
+
         .dr-header .bio-wrapper .bio-card {
-            background: rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(10px);
             padding: 22px 30px;
             border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
         }
+
         .dr-header .bio-wrapper .bio-card:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-        .dr-header .bio-wrapper .bio-card .bio-icon { color: var(--accent); font-size: 1.4rem; margin-bottom: 8px; display: block; }
-        .dr-header .bio-wrapper .bio-card p { font-size: 0.95rem; line-height: 1.9; color: rgba(255,255,255,0.9); margin: 0; }
+
+        .dr-header .bio-wrapper .bio-card .bio-icon {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .dr-header .bio-wrapper .bio-card p {
+            font-size: 0.95rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
 
         .dr-header .whatsapp-btn {
-            display: inline-flex; align-items: center; gap: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background: linear-gradient(135deg, #C9C4BA, #F6F3ED);
             color: var(--primary);
             padding: 10px 20px;
@@ -105,54 +163,128 @@
             transition: all 0.3s ease;
             position: relative;
             z-index: 2;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
+
         .dr-header .whatsapp-btn:hover {
             background: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(246,243,237,0.25);
+            box-shadow: 0 6px 20px rgba(246, 243, 237, 0.25);
             color: var(--primary);
             border-color: #C9C4BA;
         }
-        .dr-header .whatsapp-btn i { font-size: 16px; color: var(--primary); }
 
-        /* ===== قسم الحالات ===== */
-        .cases-section { padding: 60px 0 50px; }
-        .section-title { text-align: center; font-size: 2.2rem; color: var(--primary); font-weight: 700; margin-bottom: 40px; }
-        .section-title span { color: var(--primary); }
+        .dr-header .whatsapp-btn i {
+            font-size: 16px;
+            color: var(--primary);
+        }
 
-        .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; max-width: 1000px; margin: 0 auto; }
+        /* ===================== قسم الحالات ===================== */
+        .cases-section {
+            padding: 60px 0 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
         .case-card {
-            background: var(--white); border-radius: var(--radius); overflow: hidden;
-            box-shadow: var(--shadow); transition: all 0.3s ease;
-            border-top: 4px solid var(--primary); display: flex; flex-direction: column;
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
         }
-        .case-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-top-color: var(--accent); }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--accent);
+        }
 
         .case-card .case-title {
-            padding: 22px 28px 16px; font-size: 1.2rem; font-weight: 700;
-            color: var(--primary); display: flex; align-items: center;
-            justify-content: center; gap: 12px; text-align: center; min-height: 70px;
+            padding: 22px 28px 16px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+            min-height: 70px;
         }
-        .case-card .case-title i { color: var(--accent); }
 
-        .case-card .images-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 0 22px 22px; flex: 1; }
-        .case-card .images-grid .img-box {
-            border-radius: 16px; overflow: hidden; position: relative;
-            background: #f0ede8; display: flex; align-items: center; justify-content: center;
+        .case-card .case-title i {
+            color: var(--accent);
         }
-        .case-card .images-grid .img-box img { width: 100%; height: auto; object-fit: contain; transition: transform 0.3s ease; display: block; }
-        .case-card .images-grid .img-box:hover img { transform: scale(1.04); }
+
+        .case-card .images-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 0 22px 22px;
+            flex: 1;
+        }
+
+        .case-card .images-grid .img-box {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            background: #f0ede8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .case-card .images-grid .img-box img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .case-card .images-grid .img-box:hover img {
+            transform: scale(1.04);
+        }
 
         .case-card .images-grid .img-box .label {
-            position: absolute; bottom: 0; right: 0; background: rgba(0,0,0,0.78);
-            color: white; padding: 3px 10px; border-radius: 0 0 0 10px;
-            font-size: 9.6px; font-weight: 700; backdrop-filter: blur(4px);
-            letter-spacing: 0.4px; border: none; line-height: 1.3;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.78);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 0 0 0 10px;
+            font-size: 9.6px;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.4px;
+            border: none;
+            line-height: 1.3;
         }
 
-        /* ===== الفيديوهات (مطابقة تماماً لصفحة تجميل الأسنان) ===== */
+        /* ===================== قسم الفيديوهات ===================== */
         .videos-section {
             background: var(--white);
             border-radius: 24px;
@@ -170,147 +302,498 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
             scrollbar-color: var(--border-light) transparent;
+            scroll-snap-type: x mandatory;
         }
-        .videos-scroll::-webkit-scrollbar { height: 6px; }
-        .videos-scroll::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 10px; }
-        .videos-scroll::-webkit-scrollbar-track { background: transparent; }
+
+        .videos-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .videos-scroll::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 10px;
+        }
+
+        .videos-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
 
         .video-item {
             flex: 0 0 190px;
+            scroll-snap-align: center;
             border-radius: 16px;
             overflow: hidden;
             background: #000;
-            box-shadow: 0 8px 18px rgba(21,31,109,0.12);
+            box-shadow: 0 8px 18px rgba(21, 31, 109, 0.12);
             transition: transform 0.3s ease;
             position: relative;
-            aspect-ratio: 9 / 16;
+            height: 0;
+            padding-bottom: 177.78%; /* نسبة 9:16 */
             border: 2px solid var(--border-light);
         }
+
         .video-item:hover {
             transform: translateY(-2px) scale(1.02);
             border-color: var(--accent);
         }
+
         .video-item video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            display: block;
             object-fit: cover;
+            display: block;
+            min-height: auto !important;
+            max-height: none !important;
         }
 
-        .back-home-wrapper { text-align: center; padding: 30px 0 40px; background: var(--bg-soft); }
+        .back-home-wrapper {
+            text-align: center;
+            padding: 30px 0 40px;
+            background: var(--bg-soft);
+        }
+
         .btn-back {
-            display: inline-flex; align-items: center; gap: 7px;
-            background: var(--primary); color: var(--white) !important;
-            padding: 8px 22px; border-radius: 40px; text-decoration: none;
-            font-weight: 700; font-size: 12px; border: 2px solid var(--accent);
-            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 22px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 12px;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
-        .btn-back:hover { background: var(--accent); color: var(--primary) !important; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(246,243,237,0.3); }
-        .btn-back i { font-size: 12px; }
 
-        /* ===== FAB ===== */
-        .fab { position: fixed; bottom: 24px; right: 24px; z-index: 99999; width: 64px; height: 64px; pointer-events: none; }
-        .fab-popup { position: absolute; bottom: 74px; right: 0; display: flex; flex-direction: column; align-items: center; pointer-events: none; width: 64px; }
-        .fab-menu { display: none; flex-direction: column; gap: 12px; align-items: center; }
-        .fab.open .fab-menu { display: flex; animation: fadeUp 0.3s ease; }
-        .fab-item { pointer-events: auto; width: 56px; height: 56px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.15); text-decoration: none; transition: 0.2s; position: relative; border: 2px solid transparent; cursor: pointer; }
-        .fab-item svg { width: 24px; height: 24px; }
-        .fab-item:hover { transform: scale(1.08); }
-        .fab-label { position: absolute; right: 68px; background: #fff; color: #222; padding: 6px 14px; border-radius: 30px; white-space: nowrap; font-size: 13px; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: 0.25s; }
-        .fab-item:hover .fab-label { opacity: 1; visibility: visible; }
+        .btn-back:hover {
+            background: var(--accent);
+            color: var(--primary) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(246, 243, 237, 0.3);
+        }
 
-        .fab-call { color: #C9C4BA; border-color: #C9C4BA; }
-        .fab-whatsapp { color: #25D366; border-color: #25D366; }
-        .fab-home { color: #151F6D; border-color: #151F6D; }
-        .fab-top { color: #F6F3ED; border-color: #F6F3ED; }
+        .btn-back i {
+            font-size: 12px;
+        }
 
-        .fab-call:hover { background: #C9C4BA; color: #151F6D; }
-        .fab-whatsapp:hover { background: #25D366; color: #fff; }
-        .fab-home:hover { background: #151F6D; color: #fff; }
-        .fab-top:hover { background: #F6F3ED; color: #151F6D; }
+        /* ===================== الزر العائم (FAB) ===================== */
+        .fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            width: 64px;
+            height: 64px;
+            pointer-events: none;
+        }
 
-        .fab-main { pointer-events: auto; width: 64px; height: 64px; border: none; border-radius: 50%; background: linear-gradient(135deg, #C9C4BA, #F6F3ED); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.25); animation: pulse 2s infinite; position: relative; z-index: 2; transition: transform 0.3s ease; }
-        .fab-main:hover { transform: scale(1.05); }
-        .fab-main svg { width: 34px; height: 34px; fill: #151F6D; }
+        .fab-popup {
+            position: absolute;
+            bottom: 74px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+            width: 64px;
+        }
 
-        @keyframes fadeUp { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,196,186,0.5); } 70% { box-shadow: 0 0 0 14px rgba(201,196,186,0); } 100% { box-shadow: 0 0 0 0 rgba(201,196,186,0); } }
+        .fab-menu {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
 
-        .no-cases { text-align: center; padding: 50px 20px; color: #888; background: white; border-radius: var(--radius); grid-column: 1 / -1; }
-        .no-cases i { font-size: 3rem; color: var(--accent); display: block; margin-bottom: 12px; }
+        .fab.open .fab-menu {
+            display: flex;
+            animation: fadeUp 0.3s ease;
+        }
 
-        /* ===== التجاوب ===== */
+        .fab-item {
+            pointer-events: auto;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            transition: 0.2s;
+            position: relative;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .fab-item svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .fab-item:hover {
+            transform: scale(1.08);
+        }
+
+        .fab-label {
+            position: absolute;
+            right: 68px;
+            background: #fff;
+            color: #222;
+            padding: 6px 14px;
+            border-radius: 30px;
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+        }
+
+        .fab-item:hover .fab-label {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fab-call {
+            color: #C9C4BA;
+            border-color: #C9C4BA;
+        }
+
+        .fab-whatsapp {
+            color: #25D366;
+            border-color: #25D366;
+        }
+
+        .fab-home {
+            color: #151F6D;
+            border-color: #151F6D;
+        }
+
+        .fab-top {
+            color: #F6F3ED;
+            border-color: #F6F3ED;
+        }
+
+        .fab-call:hover {
+            background: #C9C4BA;
+            color: #151F6D;
+        }
+
+        .fab-whatsapp:hover {
+            background: #25D366;
+            color: #fff;
+        }
+
+        .fab-home:hover {
+            background: #151F6D;
+            color: #fff;
+        }
+
+        .fab-top:hover {
+            background: #F6F3ED;
+            color: #151F6D;
+        }
+
+        .fab-main {
+            pointer-events: auto;
+            width: 64px;
+            height: 64px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C9C4BA, #F6F3ED);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            animation: pulse 2s infinite;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .fab-main:hover {
+            transform: scale(1.05);
+        }
+
+        .fab-main svg {
+            width: 34px;
+            height: 34px;
+            fill: #151F6D;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(201, 196, 186, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 14px rgba(201, 196, 186, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(201, 196, 186, 0);
+            }
+        }
+
+        .no-cases {
+            text-align: center;
+            padding: 50px 20px;
+            color: #888;
+            background: white;
+            border-radius: var(--radius);
+            grid-column: 1 / -1;
+        }
+
+        .no-cases i {
+            font-size: 3rem;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* ===================== استعلامات الوسائط ===================== */
         @media (max-width: 768px) {
-            .dr-image-wrapper { width: 160px; height: 200px; }
-            .dr-info h1 { font-size: 1.6rem; }
-            .dr-info .specialty { font-size: 1rem; }
-            .dr-header .bio-wrapper .bio-card { padding: 18px 20px; }
+            .dr-image-wrapper {
+                width: 160px;
+                height: 200px;
+            }
 
-            .cases-grid { grid-template-columns: 1fr; max-width: 100%; gap: 25px; }
+            .dr-info h1 {
+                font-size: 1.6rem;
+            }
 
-            .case-card .case-title { font-size: 1rem; padding: 18px 20px 12px; min-height: 55px; }
-            .case-card .images-grid { gap: 12px; padding: 0 16px 16px; }
-            .case-card .images-grid .img-box .label { font-size: 8px; padding: 2px 8px; }
+            .dr-info .specialty {
+                font-size: 1rem;
+            }
 
-            .video-item { flex: 0 0 160px; }
-            .video-item video { min-height: 240px; max-height: 320px; }
+            .dr-header .bio-wrapper .bio-card {
+                padding: 18px 20px;
+            }
 
-            .dr-header .whatsapp-btn { padding: 8px 16px; font-size: 12px; }
-            .dr-header .whatsapp-btn i { font-size: 13px; }
+            .cases-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                gap: 25px;
+            }
 
-            .btn-back { padding: 6px 18px; font-size: 11px; }
-            .btn-back i { font-size: 11px; }
+            .case-card .case-title {
+                font-size: 1rem;
+                padding: 18px 20px 12px;
+                min-height: 55px;
+            }
 
-            .fab { right: 12px !important; bottom: 12px !important; width: 60px !important; height: 60px !important; }
-            .fab-main { width: 60px !important; height: 60px !important; }
-            .fab-main svg { width: 32px !important; height: 32px !important; }
-            .fab-item { width: 50px !important; height: 50px !important; }
-            .fab-item svg { width: 22px !important; height: 22px !important; }
-            .fab-label { right: 58px !important; font-size: 12px !important; padding: 5px 10px !important; }
-            .fab-popup { bottom: 68px !important; width: 60px !important; }
+            .case-card .images-grid {
+                gap: 12px;
+                padding: 0 16px 16px;
+            }
+
+            .case-card .images-grid .img-box .label {
+                font-size: 8px;
+                padding: 2px 8px;
+            }
+
+            .video-item {
+                flex: 0 0 55%;
+            }
+
+            .dr-header .whatsapp-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .dr-header .whatsapp-btn i {
+                font-size: 13px;
+            }
+
+            .btn-back {
+                padding: 6px 18px;
+                font-size: 11px;
+            }
+
+            .btn-back i {
+                font-size: 11px;
+            }
+
+            .fab {
+                right: 12px !important;
+                bottom: 12px !important;
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            .fab-main {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            .fab-main svg {
+                width: 32px !important;
+                height: 32px !important;
+            }
+
+            .fab-item {
+                width: 50px !important;
+                height: 50px !important;
+            }
+
+            .fab-item svg {
+                width: 22px !important;
+                height: 22px !important;
+            }
+
+            .fab-label {
+                right: 58px !important;
+                font-size: 12px !important;
+                padding: 5px 10px !important;
+            }
+
+            .fab-popup {
+                bottom: 68px !important;
+                width: 60px !important;
+            }
         }
 
         @media (max-width: 480px) {
-            .video-item { flex: 0 0 130px; }
-            .video-item video { min-height: 200px; max-height: 280px; }
-            .section-title { font-size: 1.6rem; }
-            .dr-info h1 { font-size: 1.3rem; }
-            .dr-image-wrapper { width: 130px; height: 170px; }
-            .case-card .images-grid .img-box .label { font-size: 7px; padding: 2px 6px; }
-            .dr-header .whatsapp-btn { padding: 6px 14px; font-size: 10px; }
-            .dr-header .whatsapp-btn i { font-size: 11px; }
+            .video-item {
+                flex: 0 0 85%;
+            }
 
-            .fab { right: 10px !important; bottom: 10px !important; width: 54px !important; height: 54px !important; }
-            .fab-main { width: 54px !important; height: 54px !important; }
-            .fab-main svg { width: 28px !important; height: 28px !important; }
-            .fab-item { width: 46px !important; height: 46px !important; }
-            .fab-item svg { width: 20px !important; height: 20px !important; }
-            .fab-label { right: 54px !important; font-size: 11px !important; padding: 4px 8px !important; }
-            .fab-popup { bottom: 62px !important; width: 54px !important; }
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .dr-info h1 {
+                font-size: 1.3rem;
+            }
+
+            .dr-image-wrapper {
+                width: 130px;
+                height: 170px;
+            }
+
+            .case-card .images-grid .img-box .label {
+                font-size: 7px;
+                padding: 2px 6px;
+            }
+
+            .dr-header .whatsapp-btn {
+                padding: 6px 14px;
+                font-size: 10px;
+            }
+
+            .dr-header .whatsapp-btn i {
+                font-size: 11px;
+            }
+
+            .fab {
+                right: 10px !important;
+                bottom: 10px !important;
+                width: 54px !important;
+                height: 54px !important;
+            }
+
+            .fab-main {
+                width: 54px !important;
+                height: 54px !important;
+            }
+
+            .fab-main svg {
+                width: 28px !important;
+                height: 28px !important;
+            }
+
+            .fab-item {
+                width: 46px !important;
+                height: 46px !important;
+            }
+
+            .fab-item svg {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+            .fab-label {
+                right: 54px !important;
+                font-size: 11px !important;
+                padding: 4px 8px !important;
+            }
+
+            .fab-popup {
+                bottom: 62px !important;
+                width: 54px !important;
+            }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
-            .cases-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; gap: 28px; }
+            .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 100%;
+                gap: 28px;
+            }
         }
 
         @media (min-width: 1025px) {
-            .cases-grid { max-width: 1100px; gap: 40px; }
-            .case-card .case-title { font-size: 1.35rem; padding: 28px 32px 18px; min-height: 80px; }
-            .case-card .images-grid { gap: 18px; padding: 0 26px 26px; }
-            .case-card .images-grid .img-box { border-radius: 18px; }
-            .case-card .images-grid .img-box .label { font-size: 11px; padding: 4px 12px; border-radius: 0 0 0 12px; }
+            .cases-grid {
+                max-width: 1100px;
+                gap: 40px;
+            }
+
+            .case-card .case-title {
+                font-size: 1.35rem;
+                padding: 28px 32px 18px;
+                min-height: 80px;
+            }
+
+            .case-card .images-grid {
+                gap: 18px;
+                padding: 0 26px 26px;
+            }
+
+            .case-card .images-grid .img-box {
+                border-radius: 18px;
+            }
+
+            .case-card .images-grid .img-box .label {
+                font-size: 11px;
+                padding: 4px 12px;
+                border-radius: 0 0 0 12px;
+            }
         }
 
-        /* ===== منع التجاوز الأفقي نهائياً ===== */
-        html, body {
+        /* ===================== منع التجاوز الأفقي ===================== */
+        html,
+        body {
             overflow-x: hidden !important;
             width: 100% !important;
             max-width: 100% !important;
             position: relative;
         }
-        *, *::before, *::after {
+
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
+
         .container {
             width: 100% !important;
             max-width: 100% !important;
@@ -320,11 +803,13 @@
             margin-left: 0;
             margin-right: 0;
         }
+
         .dr-header::before {
             right: -10% !important;
             width: 300px !important;
             height: 300px !important;
         }
+
         .videos-scroll {
             width: 100% !important;
             max-width: 100% !important;
@@ -332,12 +817,14 @@
             overflow-x: auto !important;
             -webkit-overflow-scrolling: touch;
         }
+
         .case-card .images-grid .img-box img {
             width: 100%;
             height: auto;
             max-width: 100%;
             object-fit: contain;
         }
+
         .main-footer,
         .footer-container,
         .footer-logo,
@@ -350,7 +837,7 @@
 </head>
 <body>
 
-    <!-- هيدر الطبيب (يتم تعبئته ديناميكياً من JavaScript) -->
+    <!-- ===================== هيدر الطبيب ===================== -->
     <section class="dr-header">
         <div class="container">
             <div class="dr-image-wrapper">
@@ -362,7 +849,9 @@
             </div>
             <div class="bio-wrapper">
                 <div class="bio-card">
-                    <span class="bio-icon"><i class="fas fa-quote-right"></i></span>
+                    <span class="bio-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </span>
                     <p id="dr-bio">جاري تحميل بيانات الطبيب...</p>
                 </div>
             </div>
@@ -372,7 +861,7 @@
         </div>
     </section>
 
-    <!-- قسم الحالات -->
+    <!-- ===================== قسم الحالات ===================== -->
     <section class="cases-section">
         <div class="container">
             <h2 class="section-title">حالات <span>قبل وبعد</span></h2>
@@ -380,7 +869,7 @@
         </div>
     </section>
 
-    <!-- الفيديوهات -->
+    <!-- ===================== قسم الفيديوهات ===================== -->
     <section class="videos-section">
         <div class="container">
             <h2 class="section-title">فيديوهات <span>العيادة</span></h2>
@@ -388,7 +877,7 @@
         </div>
     </section>
 
-    <!-- FAB -->
+    <!-- ===================== الزر العائم ===================== -->
     <div class="fab" id="fab">
         <div class="fab-popup">
             <div class="fab-menu">
@@ -426,8 +915,9 @@
         </button>
     </div>
 
-    <!-- السكريبت -->
+    <!-- ===================== السكريبت ===================== -->
     <script>
+        // بيانات الأطباء
         const doctorsData = {
             1: {
                 name: 'د. عصام الشميري',
@@ -515,17 +1005,19 @@
                 bio: 'أخصائي علاج عصب وجذور الأسنان، متخصص في إنقاذ الأسنان الطبيعية والحفاظ عليها باستخدام تقنيات علاجية متقدمة. يعتمد على الميكروسكوب والأجهزة الرقمية الحديثة لتشخيص وعلاج الحالات المعقدة بدقة عالية، مع تركيزه على تخفيف الألم واستعادة وظيفة السن بشكل كامل.',
                 image: 'img/dr-hussein.jpg',
                 cases: [
-                    { title: 'علاج عصب متقدم', before: 'img/hussein_c1_before.jpg', after: 'img/hussein_c1_after.jpg' },
-                    { title: 'إعادة علاج جذور', before: 'img/hussein_c2_before.jpg', after: 'img/hussein_c2_after.jpg' }
+                    { title: 'عـــلاج عصــب ', before: 'img/hussein_c1_before.jpg', after: 'img/hussein_c1_after.jpg' },
+                    { title: 'إعـــادة عـــلاج عصــب', before: 'img/hussein_c2_before.jpg', after: 'img/hussein_c2_after.jpg' }
                 ]
-            },
+            }
         };
 
+        // استخراج معرف الطبيب من الرابط
         function getDoctorId() {
             const params = new URLSearchParams(window.location.search);
             return params.get('id');
         }
 
+        // عرض بيانات الطبيب
         function displayDoctor() {
             const id = getDoctorId();
             const doctor = doctorsData[id];
@@ -543,7 +1035,9 @@
                     doctor.cases.forEach(c => {
                         html += `
                             <div class="case-card">
-                                <div class="case-title"><i class="fas fa-star"></i> ${c.title}</div>
+                                <div class="case-title">
+                                    <i class="fas fa-star"></i> ${c.title}
+                                </div>
                                 <div class="images-grid">
                                     <div class="img-box">
                                         <img src="${c.before}" alt="قبل" onerror="this.src='img/placeholder.jpg'">
@@ -580,16 +1074,17 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        // تشغيل الصفحة
+        document.addEventListener('DOMContentLoaded', function () {
             displayDoctor();
 
-            // ===== إنشاء فيديوهات الأطباء (مطابقة لصفحة تجميل الأسنان) =====
+            // إنشاء فيديوهات الأطباء
             const videosScroll = document.getElementById('doctorVideosScroll');
             const videosData = [
                 { src: 'img/vid-1.mp4' },
                 { src: 'img/vid-2.mp4' },
                 { src: 'img/vid-3.mp4' },
-			    { src: 'img/vid-4.mp4' },
+                { src: 'img/vid-4.mp4' },
                 { src: 'img/vid-5.mp4' },
                 { src: 'img/vid-6.mp4' },
                 { src: 'img/vid-7.mp4' }
@@ -610,104 +1105,117 @@
             const allVideos = videosScroll.querySelectorAll('video');
             allVideos.forEach(video => {
                 video.addEventListener('play', () => {
-                    allVideos.forEach(other => { if (other !== video) other.pause(); });
+                    allVideos.forEach(other => {
+                        if (other !== video) other.pause();
+                    });
                 });
             });
 
-            // ===== FAB =====
+            // الزر العائم
             const fab = document.getElementById('fab');
             const fabMain = document.getElementById('fabMain');
             if (fab && fabMain) {
-                fabMain.addEventListener('click', function(e) {
+                fabMain.addEventListener('click', function (e) {
                     e.stopPropagation();
                     fab.classList.toggle('open');
                 });
-                document.addEventListener('click', function(e) {
+
+                document.addEventListener('click', function (e) {
                     if (!fab.contains(e.target)) {
                         fab.classList.remove('open');
                     }
                 });
-                document.querySelectorAll('.fab-item').forEach(function(item) {
-                    item.addEventListener('click', function(e) {
-                        e.stopPropagation();
+
+                document.querySelectorAll('.fab-item').forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        fab.classList.remove('open');
                     });
                 });
             }
         });
     </script>
-<!-- الفوتر -->
-<footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-col footer-col-brand">
-            <div class="footer-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
-                <img src="img/logo.png" alt="شعار أنقى ابتسامة">
-                <div class="footer-logo-text">أنقى <span>ابتسامة</span></div>
-            </div>
-            <p class="footer-desc">وجهتك الأولى في جازان لطب الأسنان</p>
-            <div class="footer-social">
-                <a href="https://www.instagram.com/puresmile.sa?igsi=NHB1NXFkeXFqZ3Rq" target="_blank" rel="noopener"><img src="img/instagram-icon.png" alt="انستقرام"></a>
-                <a href="https://www.snapchat.com/add/puresmile.sa?share_id=ygteCfX5opY&locale=ar-SA-u-nu-latn" target="_blank" rel="noopener"><img src="img/snapchat-icon.png" alt="سناب شات"></a>
-                <a href="https://www.tiktok.com/@puresmile.sa?_r=1&_t=ZS-99I24P1m4Z7" target="_blank" rel="noopener"><img src="img/tiktok-icon.png" alt="تيك توك"></a>
-            </div>
-        </div>
-        <div class="footer-col">
-            <h4 class="footer-heading">روابط سريعة</h4>
-            <div class="footer-links-grid">
-                <a href="about-us.html">من نحن</a>
-                <a href="index.html#services">خدماتنا</a>
-                <a href="index.html#doctors">أطباؤنا</a>
-                <a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a>
-                <a href="index.html#reviews">تقييماتنا</a>
-                <a href="contact.html">تواصل معنا</a>
-            </div>
-        </div>
-        <div class="footer-col footer-col-contact">
-            <h4 class="footer-heading">تواصل معنا</h4>
-            <a href="tel:0550133938" class="footer-phone">
-                <img src="img/phone-icon.png" alt="اتصال" style="width:20px; height:20px; object-fit:contain; filter: brightness(0) invert(1);">
-                0550133938
-            </a>
-            <p class="footer-contact-note">للاستفسار عن طريق الإتصال</p>
-        </div>
-        <div class="footer-col footer-col-payment">
-            <h4 class="footer-heading">طرق الدفع</h4>
-            <div class="payment-bar">
-                <div class="payment-icons payment-icons-desktop">
-                    <div class="payment-row">
-                        <img src="img/mada.png" alt="مدى">
-                        <img src="img/visa.png" alt="فيزا">
-                    </div>
-                    <div class="payment-row">
-                        <img src="img/tamara.png" alt="تمارا">
-                        <img src="img/tabby.png" alt="التابي">
-                        <img src="img/mis.png" alt="MIS">
-                    </div>
+
+    <!-- ===================== الفوتر ===================== -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+                    <img src="img/logo.png" alt="شعار أنقى ابتسامة">
+                    <div class="footer-logo-text">أنقى <span>ابتسامة</span></div>
                 </div>
-                <div class="payment-icons-mobile">
-                    <div class="icons-row">
-                        <img src="img/mada.png" alt="مدى">
-                        <img src="img/visa.png" alt="فيزا">
-                    </div>
-                    <div class="icons-row">
-                        <img src="img/tamara.png" alt="تمارا">
-                        <img src="img/tabby.png" alt="التابي">
-                        <img src="img/mis.png" alt="MIS">
-                    </div>
+                <p class="footer-desc">وجهتك الأولى في جازان لطب الأسنان</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/puresmile.sa?igsi=NHB1NXFkeXFqZ3Rq" target="_blank" rel="noopener">
+                        <img src="img/instagram-icon.png" alt="انستقرام">
+                    </a>
+                    <a href="https://www.snapchat.com/add/puresmile.sa?share_id=ygteCfX5opY&locale=ar-SA-u-nu-latn" target="_blank" rel="noopener">
+                        <img src="img/snapchat-icon.png" alt="سناب شات">
+                    </a>
+                    <a href="https://www.tiktok.com/@puresmile.sa?_r=1&_t=ZS-99I24P1m4Z7" target="_blank" rel="noopener">
+                        <img src="img/tiktok-icon.png" alt="تيك توك">
+                    </a>
                 </div>
             </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">روابط سريعة</h4>
+                <div class="footer-links-grid">
+                    <a href="about-us.html">من نحن</a>
+                    <a href="index.html#services">خدماتنا</a>
+                    <a href="index.html#doctors">أطباؤنا</a>
+                    <a href="https://maps.app.goo.gl/JumxBdYUWkNzksq97" target="_blank">موقعنا الجغرافي</a>
+                    <a href="index.html#reviews">تقييماتنا</a>
+                    <a href="contact.html">تواصل معنا</a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-contact">
+                <h4 class="footer-heading">تواصل معنا</h4>
+                <a href="tel:0550133938" class="footer-phone">
+                    <img src="img/phone-icon.png" alt="اتصال" style="width:20px; height:20px; object-fit:contain; filter: brightness(0) invert(1);">
+                    0550133938
+                </a>
+                <p class="footer-contact-note">للاستفسار عن طريق الإتصال</p>
+            </div>
+            <div class="footer-col footer-col-payment">
+                <h4 class="footer-heading">طرق الدفع</h4>
+                <div class="payment-bar">
+                    <div class="payment-icons payment-icons-desktop">
+                        <div class="payment-row">
+                            <img src="img/mada.png" alt="مدى">
+                            <img src="img/visa.png" alt="فيزا">
+                        </div>
+                        <div class="payment-row">
+                            <img src="img/tamara.png" alt="تمارا">
+                            <img src="img/tabby.png" alt="التابي">
+                            <img src="img/mis.png" alt="MIS">
+                        </div>
+                    </div>
+                    <div class="payment-icons-mobile">
+                        <div class="icons-row">
+                            <img src="img/mada.png" alt="مدى">
+                            <img src="img/visa.png" alt="فيزا">
+                        </div>
+                        <div class="icons-row">
+                            <img src="img/tamara.png" alt="تمارا">
+                            <img src="img/tabby.png" alt="التابي">
+                            <img src="img/mis.png" alt="MIS">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>جميع الحقوق محفوظة &copy; لدى مركز أنقى ابتسامة لطب الأسنان 2026</p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; لدى مركز أنقى ابتسامة لطب الأسنان 2026</p>
+        </div>
+    </footer>
+
     <style>
         .main-footer {
             background: linear-gradient(180deg, #151F6D 0%, #0F1654 100%);
             color: #ffffff;
             font-family: 'Cairo', sans-serif;
-            padding: 0;
+            padding-top: 10px;
         }
+
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -716,31 +1224,139 @@
             grid-template-columns: 1fr 1fr 1fr 1.8fr;
             gap: 30px;
         }
-        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .footer-logo img { width: 55px; height: 55px; object-fit: contain; }
-        .footer-logo-text { font-size: 22px; font-weight: 800; color: #ffffff; }
-        .footer-logo-text span { color: #F6F3ED; }
-        .footer-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
-        .footer-social { display: flex; gap: 14px; }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .footer-logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .footer-logo-text span {
+            color: #F6F3ED;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+
         .footer-social a {
-            display: flex; align-items: center; justify-content: center;
-            width: 44px; height: 44px; border-radius: 50%;
-            background: rgba(255,255,255,0.08); transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
             border: 1px solid #F6F3ED;
         }
-        .footer-social a:hover { background: #F6F3ED; transform: translateY(-3px); border-color: #F6F3ED; }
-        .footer-social img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
-        .footer-heading { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; position: relative; padding-bottom: 12px; }
-        .footer-heading::after { content: ''; position: absolute; bottom: 0; right: 0; width: 45px; height: 2px; background: #F6F3ED; }
-        .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
-        .footer-links-grid a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 15px; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; }
-        .footer-links-grid a::before { content: '●'; color: #F6F3ED; font-size: 10px; flex-shrink: 0; opacity: 0.8; }
-        .footer-links-grid a:hover { color: #F6F3ED; transform: translateX(-6px); }
-        .footer-phone { display: inline-flex; align-items: center; gap: 10px; color: #F6F3ED; font-size: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; margin-bottom: 8px; }
-        .footer-phone:hover { color: #ffffff; }
-        .footer-contact-note { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
+
+        .footer-social a:hover {
+            background: #F6F3ED;
+            transform: translateY(-3px);
+            border-color: #F6F3ED;
+        }
+
+        .footer-social img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45px;
+            height: 2px;
+            background: #F6F3ED;
+        }
+
+        .footer-links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 20px;
+        }
+
+        .footer-links-grid a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links-grid a::before {
+            content: '●';
+            color: #F6F3ED;
+            font-size: 10px;
+            flex-shrink: 0;
+            opacity: 0.8;
+        }
+
+        .footer-links-grid a:hover {
+            color: #F6F3ED;
+            transform: translateX(-6px);
+        }
+
+        .footer-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #F6F3ED;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            margin-bottom: 8px;
+        }
+
+        .footer-phone:hover {
+            color: #ffffff;
+        }
+
+        .footer-contact-note {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+        }
+
         .footer-col-payment .payment-bar {
-            background: rgba(255,255,255,1);
+            background: rgba(255, 255, 255, 1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid #C9C4BA;
@@ -750,37 +1366,160 @@
             flex-direction: column;
             align-items: center;
             gap: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .payment-icons-desktop {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
             width: 100%;
         }
-        .payment-icons-desktop { display: flex; flex-direction: column; gap: 16px; width: 100%; }
-        .payment-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
-        .payment-row img { height: 28px; width: auto; object-fit: contain; }
-        .payment-icons-mobile { display: none; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 30px; text-align: center; }
-        .footer-bottom p { color: #ffffff; font-size: 14px; margin: 0; white-space: nowrap; }
+
+        .payment-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .payment-row img {
+            height: 28px;
+            width: auto;
+            object-fit: contain;
+            max-width: 100%;
+        }
+
+        .payment-icons-mobile {
+            display: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 18px 30px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .footer-bottom p {
+            color: #ffffff;
+            font-size: 14px;
+            margin: 0;
+            white-space: nowrap;
+            direction: rtl;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
         @media (max-width: 1000px) {
-            .footer-container { grid-template-columns: repeat(2, 1fr); gap: 25px; }
-            .footer-col-payment { grid-column: span 2; }
-            .footer-col-payment .payment-bar { max-width: 500px; margin: 0 auto; }
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .footer-col-payment {
+                grid-column: span 2;
+            }
+
+            .footer-col-payment .payment-bar {
+                max-width: 500px;
+                margin: 0 auto;
+            }
         }
+
         @media (max-width: 600px) {
-            .footer-container { grid-template-columns: 1fr; text-align: center; }
-            .footer-col-payment { grid-column: span 1; }
-            .footer-logo { justify-content: center; }
-            .footer-social { justify-content: center; }
-            .footer-heading::after { right: 50%; transform: translateX(50%); }
-            .footer-links-grid { justify-items: center; }
-            .footer-phone { justify-content: center; }
-            .payment-bar { width: 100%; }
-            .payment-icons-desktop { display: none; }
-            .payment-icons-mobile { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; }
-            .icons-row { display: flex; justify-content: center; align-items: center; gap: 2rem; }
-            .payment-icons-mobile img { height: 26px; width: auto; object-fit: contain; }
-            .footer-bottom p { font-size: 12px; }
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col-payment {
+                grid-column: span 1;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-heading::after {
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .footer-links-grid {
+                justify-items: center;
+            }
+
+            .footer-phone {
+                justify-content: center;
+            }
+
+            .payment-bar {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .payment-icons-desktop {
+                display: none;
+            }
+
+            .payment-icons-mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                width: 100%;
+            }
+
+            .icons-row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .payment-icons-mobile img {
+                height: 26px;
+                width: auto;
+                object-fit: contain;
+                max-width: 100%;
+            }
+
+            .footer-bottom p {
+                font-size: 12px;
+                white-space: normal;
+                line-height: 1.6;
+            }
         }
-    </style>  
-	    <script src="popup.js"></script>
+
+        @media (max-width: 360px) {
+            .payment-icons-mobile .icons-row {
+                gap: 1rem;
+            }
+
+            .payment-icons-mobile img {
+                height: 22px;
+            }
+
+            .footer-bottom p {
+                font-size: 10px;
+            }
+        }
+    </style>
+
+    <script src="popup.js"></script>
 </body>
 </html>
