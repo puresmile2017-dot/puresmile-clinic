@@ -1,5 +1,4 @@
-
-    if (true) return; // إيقاف مؤقت للنافذة
+//  if (true) return; // إيقاف مؤقت للنافذة
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -30,16 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // منطق منع الظهور
     // ==========================================
     if (!isReload) {
-        // إذا لم تكن إعادة تحميل، تحقق من مدة الإغلاق
         const closedAt = sessionStorage.getItem(STORAGE_CLOSED);
         if (closedAt) {
             const elapsed = Date.now() - parseInt(closedAt, 10);
             if (elapsed < CLOSE_DURATION) {
-                return; // لم تمر 15 دقيقة منذ الإغلاق → لا تظهر
+                return;
             }
         }
     } else {
-        // إذا كانت إعادة تحميل، نمسح حالة الإغلاق لكي تظهر دائمًا
         sessionStorage.removeItem(STORAGE_CLOSED);
     }
 
@@ -57,13 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="img/popup-promo.jpg" alt="عرض أنقى ابتسامة">
                 </div>
                 <div class="puresmile-popup-info">
-                    <span class="puresmile-popup-label">عرض خاص لفترة محدودة</span>
-                    <h2>ابتسامتك تبدأ من هنا</h2>
-                    <p>احجز استشارتك الآن مع فريق <strong>أنقى ابتسامة</strong></p>
                     <form id="puresmilePopupForm">
-                        <label for="puresmilePhone">رقم الجوال</label>
-                        <input type="tel" id="puresmilePhone" placeholder="05XXXXXXXX" inputmode="numeric" required>
-                        <button type="submit">احجز استشارتي</button>
+                        <input type="tel" id="puresmilePhone" placeholder="أدخل رقم الجوال" inputmode="numeric" required>
+                        <button type="submit">احجز للاستشارة</button>
                     </form>
                 </div>
             </div>
@@ -113,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const phoneInput = document.getElementById("puresmilePhone");
         const phone = phoneInput.value.trim();
 
-        // التحقق من صحة الرقم
         const phonePattern = /^05\d{8}$/;
         if (!phonePattern.test(phone)) {
             alert("يرجى إدخال رقم جوال صحيح يبدأ بـ 05 ويتكون من 10 أرقام");
@@ -121,15 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // بناء رسالة واتساب
         const message = "مرحباً، أنا مهتم بحجز استشارة لديكم . رقم جوالي: " + phone;
         const encodedMessage = encodeURIComponent(message);
         const whatsappLink = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodedMessage}`;
 
-        // فتح واتساب
         window.open(whatsappLink, "_blank");
 
-        // إغلاق النافذة وحفظ وقت الإغلاق (منع مؤقت)
         closePopup();
     });
 

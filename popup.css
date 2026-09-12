@@ -39,7 +39,7 @@ body.puresmile-popup-open {
    ========================================= */
 .puresmile-popup {
     position: relative;
-    width: min(800px, 100%);
+    width: min(560px, 100%);
     background: #ffffff;
     border-radius: 18px;
     overflow: hidden;
@@ -82,85 +82,48 @@ body.puresmile-popup-open {
 }
 
 /* =========================================
-   محتوى النافذة
+   محتوى النافذة (عمودي)
    ========================================= */
 .puresmile-popup-content {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    min-height: 380px;
-    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 /* =========================================
-   الصورة
+   الصورة — تملأ المستطيل بالكامل من الأعلى والجوانب
    ========================================= */
 .puresmile-popup-image {
     width: 100%;
-    min-height: 380px;
+    margin: 0;
+    padding: 0;
     position: relative;
     overflow: hidden;
+    display: block;
+    line-height: 0;
 }
 
 .puresmile-popup-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
-}
-
-/* شريط علوي فوق الصورة */
-.puresmile-popup-image::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60%;
-    background: linear-gradient(to top, rgba(21, 31, 109, 0.55), transparent);
-    pointer-events: none;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
 }
 
 /* =========================================
-   معلومات العرض (الجهة اليسرى/اليمنى)
+   منطقة النموذج
    ========================================= */
 .puresmile-popup-info {
-    padding: 30px 28px;
+    width: 100%;
+    padding: 16px 22px 22px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     direction: rtl;
     text-align: right;
-}
-
-.puresmile-popup-label {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    color: #151F6D;
-    background: #F6F3ED;
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    align-self: flex-start;
-}
-
-.puresmile-popup-info h2 {
-    margin: 0 0 8px;
-    color: #151F6D;
-    font-size: 26px;
-    line-height: 1.3;
-    font-weight: 900;
-}
-
-.puresmile-popup-info p {
-    margin: 0 0 18px;
-    color: #555770;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.puresmile-popup-info strong {
-    color: #151F6D;
+    box-sizing: border-box;
 }
 
 /* =========================================
@@ -170,12 +133,6 @@ body.puresmile-popup-open {
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
-
-#puresmilePopupForm label {
-    font-size: 13px;
-    font-weight: 600;
-    color: #151F6D;
 }
 
 #puresmilePopupForm input {
@@ -204,7 +161,7 @@ body.puresmile-popup-open {
 #puresmilePopupForm button {
     width: 100%;
     height: 48px;
-    margin-top: 6px;
+    margin-top: 4px;
     border: none;
     border-radius: 10px;
     background: linear-gradient(135deg, #151F6D, #1a3a5c);
@@ -226,7 +183,7 @@ body.puresmile-popup-open {
 }
 
 /* =========================================
-   الجوال - تصميم مختلف
+   الجوال
    ========================================= */
 @media (max-width: 700px) {
     .puresmile-overlay {
@@ -240,34 +197,12 @@ body.puresmile-popup-open {
         border-radius: 14px;
     }
 
-    .puresmile-popup-content {
-        display: block;
-        min-height: auto;
-        max-height: none;
-    }
-
     .puresmile-popup-image {
-        height: 160px;
-        min-height: 160px;
-        max-height: 160px;
+        width: 100%;
     }
 
     .puresmile-popup-info {
-        padding: 20px 18px 22px;
-    }
-
-    .puresmile-popup-info h2 {
-        font-size: 20px;
-    }
-
-    .puresmile-popup-info p {
-        font-size: 13px;
-        margin-bottom: 12px;
-    }
-
-    .puresmile-popup-label {
-        font-size: 11px;
-        padding: 4px 12px;
+        padding: 14px 18px 18px;
     }
 
     .puresmile-close {
