@@ -1,4 +1,4 @@
- if (true) return; // إيقاف مؤقت للنافذة
+ //if (true) return; // إيقاف مؤقت للنافذة
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="puresmile-popup-info">
                     <form id="puresmilePopupForm">
                         <input type="tel" id="puresmilePhone" placeholder="أدخل رقم الجوال" inputmode="numeric" required>
-                        <button type="submit">احجز للاستشارة</button>
+                        <button type="submit">احجز موعدك الآن</button>
                     </form>
                 </div>
             </div>
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const message = "مرحباً، أنا مهتم بحجز استشارة لديكم . رقم جوالي: " + phone;
+        const message = "مرحباً، أنا مهتم بحجز موعد تنظيف بجهاز ال Airflow . رقم جوالي: " + phone;
         const encodedMessage = encodeURIComponent(message);
         const whatsappLink = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodedMessage}`;
 
