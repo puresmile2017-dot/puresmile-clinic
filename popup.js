@@ -1,4 +1,4 @@
- //if (true) return; // إيقاف مؤقت للنافذة
+ if (true) return; // إيقاف مؤقت للنافذة
 
 
 document.addEventListener("DOMContentLoaded", function () {
